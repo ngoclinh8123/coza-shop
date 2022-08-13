@@ -1,0 +1,144 @@
+:root {
+  --primary-color: #222222;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Popins", sans-serif;
+  line-height: 1.6rem;
+  box-sizing: border-box;
+}
+
+.f-c-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes longer {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes slowOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slowOpacity2 {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appearance {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scrolldown {
+  from {
+    /* height: 0; */
+    top: -100%;
+  }
+  to {
+    /* height: 100vh; */
+    top: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    opacity: 0;
+    transform: rotate(-90deg) translateX(-20%) translateY(-20%);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) translateX(0) translateY(0);
+  }
+}
+
+@keyframes slip {
+  0% {
+    transform: skew(-75deg) translateX(60%);
+    opacity: 0;
+  }
+  70% {
+    transform: skew(30deg) translateX(-10%);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0deg) translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slipUp {
+  from {
+    transform: translateY(80%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes openLine {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes upWide {
+  0% {
+    transform: translateY(36px) scaleX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes upDetail {
+  from {
+    top: 100%;
+  }
+  to {
+    top: 65%;
+  }
+}
+
+@keyframes openCart {
+  from {
+    right: -390px;
+  }
+  to {
+    right: 0;
+  }
+}
