@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="../users/css/grid.css">
+    <link rel="stylesheet" href="./css/reponsive.css">
+    
 </head>
 <body>
     <div class="ad-wrap">

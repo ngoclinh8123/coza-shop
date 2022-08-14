@@ -765,9 +765,46 @@ html {
 .od-product {
 }
 
-.ad-product-item {
-  display: flex;
+.od-product-item {
+  display: flex !important;
 }
-.ad-product-image img {
+
+/* .od-product-image {
+  display: inline-block;
+} */
+.od-product-image img {
   width: 52px;
+}
+
+.od-product--title,
+.od-product--row-heading {
+  background-color: blanchedalmond;
+}
+
+.od-product--title {
+  display: inline-block;
+  padding: 4px 13px;
+  position: relative;
+  left: -12px;
+  font-weight: bold;
+  color: crimson;
+}
+
+.od-product--row-heading {
+  padding: 4px 0;
+}
+
+.od-product--row-item div,
+.od-product--row-heading div {
+  margin: 0 !important;
+}
+
+.od-product--row-item {
+  background-color: rgba(255, 228, 196, 0.4);
+  margin: 3px 0 6px;
+  padding: 8px 0;
+}
+
+.od-note-title {
+  color: red;
 }

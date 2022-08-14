@@ -45,25 +45,25 @@
             </div>
             <div class="od-product--row">
                 <div class="row od-product--row-heading">
-                    <div class="col c-1"><span>ID</span></div>
-                    <div class="col c-4"><span>Sản phẩm</span></div>
-                    <div class="col c-1"><span>Màu sắc</span></div>
-                    <div class="col c-1"><span>Kích thước</span></div>
-                    <div class="col c5"><span>Ghi chú</span></div>
+                    <div class="col c-1 m-1 l-1"><span>ID</span></div>
+                    <div class="col c-7 m-7 l-4"><span>Sản phẩm</span></div>
+                    <div class="col c-2 m-2 l-1"><span>Màu sắc</span></div>
+                    <div class="col c-2 m-2 l-1"><span>Size</span></div>
+                    <div class="col c-12 m-12 l-5 hide-on-mobile-tablet "><span>Ghi chú</span></div>
                 </div>
-                <div class="row">
-                    <div class="col c-1"><span>35</span></div>
-                    <div class="col c-4 ad-product-item">
-                        <div class="ad-product-image">
+                <div class="row od-product--row-item">
+                    <div class="col c-1 m-1 l-1"><span>35</span></div>
+                    <div class="col c-7 m-7 l-4 od-product-item">
+                        <div class="od-product-image">
                             <img src="../../includes/images/220531jInk7W1pz.jpg" alt="">
                         </div>
                         <div class="ad-product-name">
                             <span>Lorem ipsum dolor sit amet, consectetur adipis Lorem ipsum dolor sit</span>
                         </div>
                     </div>
-                    <div class="col c-1"><span>Xanh den</span></div>
-                    <div class="col c-1"><span>Size M</span></div>
-                    <div class="col c-5"><span>Lorem ipsum dolor sit Lorem ipsum dolor sit Lorem ipsum dolor sit</span></div>
+                    <div class="col c-2 m-2 l-1"><span>Xanh den</span></div>
+                    <div class="col c-2 m-2 l-1"><span>Size M</span></div>
+                    <div class="col c-12 m-5 l-5"><span class="od-note-title">Ghi chú : </span><span>Lorem ipsum dolor sit Lorem ipsum dolor sit Lorem ipsum dolor sit</span></div>
                 </div>
             </div>
         </div>
