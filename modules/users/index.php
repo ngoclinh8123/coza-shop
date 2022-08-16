@@ -1,3 +1,5 @@
 <?php
-    include './home.php';
+    // echo 'ok';
+    // echo $_GET['url'];
+    // // include './home.php';
 ?>

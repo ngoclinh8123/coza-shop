@@ -626,6 +626,7 @@ html {
   padding: 3px 8px;
 }
 
+/* .o-action-item input[type="submit"]:hover, */
 .o-action-item:hover {
   /* color: blue; */
   background-color: rgba(0, 0, 255, 0.6);
@@ -635,6 +636,15 @@ html {
 .o-action-item:hover a {
   color: white;
 }
+
+.o-action-item {
+  display: block;
+}
+
+/* .o-action-item input[type="submit"] {
+  border: none;
+  outline: none;
+} */
 
 .modal-change-title {
   position: fixed;
@@ -734,6 +744,7 @@ html {
   top: 4px;
 }
 
+.od-price,
 .od-product,
 .od-address,
 .od-order-id {
@@ -757,6 +768,11 @@ html {
   margin: 4px 0;
 }
 
+.od-product--row > a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+}
+
 .od-address--row span:first-child {
   font-weight: bold;
   color: rgba(0, 139, 139, 0.7);
@@ -769,13 +785,27 @@ html {
   display: flex !important;
 }
 
+.od-product-image {
+  flex-basis: 40%;
+}
+
+.od-product-image img {
+  width: 100%;
+}
+
+.od-product-name > span {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  height: 3.4rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
 /* .od-product-image {
   display: inline-block;
 } */
-.od-product-image img {
-  width: 52px;
-}
-
 .od-product--title,
 .od-product--row-heading {
   background-color: blanchedalmond;
@@ -799,6 +829,16 @@ html {
   margin: 0 !important;
 }
 
+.od-product--row-heading > div:not(:last-child) {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  height: 1.7rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
 .od-product--row-item {
   background-color: rgba(255, 228, 196, 0.4);
   margin: 3px 0 6px;
@@ -807,4 +847,27 @@ html {
 
 .od-note-title {
   color: red;
+}
+
+.od-price {
+  margin: 8px 21px 36px 21px;
+  background-color: antiquewhite;
+}
+
+/* .od-price-total,
+.od-price-unit, */
+.od-price--title {
+  font-size: 1.8rem;
+  /* font-weight: bold;
+  letter-spacing: 0.8px; */
+}
+
+.od-price--title {
+  color: red;
+}
+.od-price-total {
+  font-size: 1.5rem;
+}
+.od-price-unit {
+  font-size: 1.7rem;
 }

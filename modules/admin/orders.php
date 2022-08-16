@@ -42,7 +42,7 @@
                         <!-- <i class="fas fa-times"></i> -->
                         <i class="fas fa-times-circle"></i>
                     </div>
-                    <form action="../handle/change-title-order.php" method="post">
+                    <form action="../handle/change-title-order.php" method="post" name="change-title-order">
                         <div class="o-modal-title">
                             <span>Đổi trạng thái đơn hàng</span>
                         </div>
@@ -131,9 +131,11 @@
                             <div class="o-action-item">
                                 <span>Hủy đơn</span>
                             </div>
-                            <div class="o-action-item">
-                                <span>Xóa đơn</span>
-                            </div>
+                            <label for="o-detete--<?php echo $value['id'] ?>" class="o-action-item">Xóa đơn</label>
+                                <form action="../handle/delete-order.php" method="POST">
+                                    <input type="text" value="<?php echo $value['id'] ?>" name="id-product-delete" hidden>
+                                    <input type="submit" value="Xóa đơn" id="o-detete--<?php echo $value['id'] ?>" hidden>
+                                </form>
                         </div>
                     </div>
                 </div>

@@ -18,5 +18,5 @@ if(isset($_SESSION['id'])){
         $email=$userdata['email']; 
       } else  $email="";
 
-  }
+  }else $userid=33;
 ?>

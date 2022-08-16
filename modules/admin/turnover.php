@@ -1,7 +1,7 @@
 <?php
     include './heading-ad.php';
-    include '../handle/function.php';
     include '../handle/connect-database.php';
+    include '../handle/function.php';
 ?>
     <div class="chart">
     <?php  
@@ -20,6 +20,7 @@
                 array_push($dataOrders,$row);
             }
             // echo '<pre>';print_r($dataOrders);
+            $dayOfMonth=countDay($thisMonth,$thisYear);
             
         }
 
@@ -37,7 +38,7 @@
             data: {
                 labels: [
                     <?php 
-                        for($i=1;$i<=(int)$thisDay;$i++){
+                        for($i=1;$i<=$dayOfMonth;$i++){
                             echo $i.",";
                         }
                     ?>
@@ -46,10 +47,10 @@
                     label: 'Số lượng đơn hàng tháng <?php echo $thisMonth.'/'.$thisYear; ?>',
                     data: [
                         <?php
-                            for($i=1;$i<=(int)$thisDay;$i++){
+                            for($i=1;$i<=$dayOfMonth;$i++){
                                 $count=0;
                                 foreach($dataOrders as $key=>$value){
-                                    if($i==$value['day']) $count++;
+                                    if($i==$value['day'] && $thisMonth==$value['month'] && $thisYear==$value['year']) $count++;
                                 }
                                 echo $count.",";
                             }
