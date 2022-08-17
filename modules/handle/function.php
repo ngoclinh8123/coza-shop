@@ -44,3 +44,31 @@
         }
         return $max;
     }
+
+function handleUrl(&$module=null,&$action=null){
+    $url=$_GET['url'];
+    echo 'url cu:'.$url.'</br>';
+    global $routers;
+    foreach($routers as $key=>$value){
+        $pattern='#^'.$key.'$#';
+        if(preg_match($pattern,$url)){
+            $url=preg_replace($pattern,$value,$url);
+            break;
+        }
+    }
+    $urlArr=explode('/',$url);
+    // echo '<pre>';print_r($urlArr);
+    if(isset($urlArr[0])){
+        $module=$urlArr[0];
+        unset($urlArr[0]);
+    }
+
+    if(isset($urlArr[1])){
+        $action=$urlArr[1];
+        unset($urlArr[1]);
+    }
+
+    $urlArr=array_values($urlArr);
+    // echo $urlArr;
+    return $urlArr;
+}

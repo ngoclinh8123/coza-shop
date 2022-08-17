@@ -1,5 +1,7 @@
 <?php
-    include '../handle/connect-database.php';
+    include './modules/handle/connect-database.php';
+    echo 'xoa san pham';
+    echo $_GET['id'];
     if($connect){
         // delete image
         $sql='select * from product where id = '.$_GET['id'];
@@ -10,8 +12,9 @@
         }
         $data=$data[0];
         $image=explode("|",$data['productimage']);
+        $path='./includes/images/';
         foreach($image as $key=>$value){
-            unlink($value);
+            unlink($path.$value);
         }
 
         // delete in mysql

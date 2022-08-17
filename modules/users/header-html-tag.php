@@ -9,16 +9,16 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="../../includes/libraries/slick-1.8.1/slick/slick.css"
+      href="./includes/libraries/slick-1.8.1/slick/slick.css"
     />
     <link
       rel="stylesheet"
-      href="../../includes/fonts/fontawesome-free-5.15.4-web/css/all.min.css"
+      href="./includes/fonts/fontawesome-free-5.15.4-web/css/all.min.css"
     />
-    <link rel="stylesheet" href="../../includes/fonts/poppins/Poppins-Regular.ttf" />
-    <link rel="stylesheet" href="./css/grid.css" />
-    <link rel="stylesheet" href="./css/base.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/responsive.css" />
+    <link rel="stylesheet" href="./includes/fonts/poppins/Poppins-Regular.ttf" />
+    <link rel="stylesheet" href="./modules/users/css/grid.css" />
+    <link rel="stylesheet" href="./modules/users/css/base.css" />
+    <link rel="stylesheet" href="./modules/users/css/style.css" />
+    <link rel="stylesheet" href="./modules/users/css/responsive.css" />
   </head>
   <body>

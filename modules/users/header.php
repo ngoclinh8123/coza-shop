@@ -1,7 +1,7 @@
 
       <!-- heading -->
       <?php
-          include '../handle/get-user-info.php';
+          include './modules/handle/get-user-info.php';
           // get all product from database
           $allProduct=array();
           if($connect){
@@ -16,7 +16,7 @@
         <div class="wrap f-c-c">
           <div class="logo">
             <a href="./index.php"
-              ><img src="../../includes/images/logo-coza-store.png" alt="logo coza-store"
+              ><img src="./includes/images/logo-coza-store.png"
             /></a>
           </div>
           <div class="heading-nav">
@@ -186,4 +186,4 @@
           </div>
         </div>
       </div>
-<script src="./js/heading.js"></script>
+<script src="./modules/users/js/heading.js"></script>

@@ -41,7 +41,7 @@
                         <div class="form-row">
                             <div class="form-title">Hình ảnh(1) <span>(Bắt buộc)</span></div>
                             <?php
-                                $path="../../includes/images/";
+                                $path="./includes/images/";
                                 if($_FILES["add-image-1"]['error']===UPLOAD_ERR_OK){
                                     echo '<img src="'.$path.$_FILES["add-image-1"]["name"].'">';
                                 }
@@ -49,7 +49,7 @@
                             <input type="file" name="add-image-1" >
                             <div class="form-title">Hình ảnh(2) <span>(Bắt buộc)</span></div>
                             <?php
-                                $path="../../includes/images/";
+                                $path="./includes/images/";
                                 if($_FILES["add-image-2"]['error']===UPLOAD_ERR_OK){
                                     echo '<img src="'.$path.$_FILES["add-image-2"]["name"].'">';
                                 }
@@ -57,7 +57,7 @@
                             <input type="file" name="add-image-2">
                             <div class="form-title">Hình ảnh(3) <span>(Bắt buộc)</span></div>
                             <?php
-                                $path="../../includes/images/";
+                                $path="./includes/images/";
                                 if($_FILES["add-image-3"]['error']===UPLOAD_ERR_OK){
                                     echo '<img src="'.$path.$_FILES["add-image-3"]["name"].'">';
                                 }
@@ -140,22 +140,22 @@
                 
                 if( trim($_POST['add-name'])!="" && trim($_POST['add-desc'])!="" && trim($_POST['add-price'])!="" && trim($_FILES['add-image-1']['tmp_name'])!="" && trim($_FILES['add-image-2']['tmp_name'])!=""  && trim($_FILES['add-image-3']['tmp_name'])!=""){
 
-                    $path='../../includes/images/';
+                    $path='./includes/images/';
                     $image=array();
 
                     $image1Name=createImageName($_FILES['add-image-1']);
                     $destination=$path.$image1Name;
-                    array_push($image,$destination);
+                    array_push($image,$image1Name);
                     move_uploaded_file($_FILES['add-image-1']['tmp_name'],$destination);
                         
                     $image2Name=createImageName($_FILES['add-image-2']);
                     $destination=$path.$image2Name;
-                    array_push($image,$destination);
+                    array_push($image,$image2Name);
                     move_uploaded_file($_FILES['add-image-2']['tmp_name'],$destination);
 
                     $image3Name=createImageName($_FILES['add-image-3']);
                     $destination=$path.$image3Name;
-                    array_push($image,$destination);
+                    array_push($image,$image3Name);
                     move_uploaded_file($_FILES['add-image-3']['tmp_name'],$destination);
 
                     $image=implode('|',$image);

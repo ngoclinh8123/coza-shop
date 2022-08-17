@@ -58,11 +58,12 @@
                             <div class="form-title">Hình ảnh(1) <span>(Bắt buộc)</span></div>
                             <div class="ep-img">
                             <?php
-                                    $path="../../includes/images/";
+                                    // $path="./includes/images/";
+                                    $path="./includes/images/";
                                     if($_FILES["add-image-1"]['error']===UPLOAD_ERR_OK){
                                         echo '<img src="'.$path.$_FILES["add-image-1"]["name"].'">';
                                     }else{
-                                        echo '<img src="'.$image[0].'">';
+                                        echo '<img src="'.$path.$image[0].'">';
 
                                     } 
                                 ?>
@@ -71,11 +72,11 @@
                             <div class="form-title">Hình ảnh(2) <span>(Bắt buộc)</span></div>
                             <div class="ep-img">
                             <?php
-                                    $path="../../includes/images/";
+                                    $path="./includes/images/";
                                     if($_FILES["add-image-2"]['error']===UPLOAD_ERR_OK){
                                         echo '<img src="'.$path.$_FILES["add-image-2"]["name"].'">';
                                     }else{
-                                        echo '<img src="'.$image[1].'">';
+                                        echo '<img src="'.$path.$image[1].'">';
 
                                     } 
                                 ?>
@@ -84,11 +85,11 @@
                             <div class="form-title">Hình ảnh(3) <span>(Bắt buộc)</span></div>
                             <div class="ep-img">
                                 <?php
-                                    $path="../../includes/images/";
+                                    $path="./includes/images/";
                                     if($_FILES["add-image-3"]['error']===UPLOAD_ERR_OK){
                                         echo '<img src="'.$path.$_FILES["add-image-3"]["name"].'">';
                                     }else{
-                                        echo '<img src="'.$image[2].'">';
+                                        echo '<img src="'.$path.$_image[2].'">';
 
                                     } 
                                 ?>
@@ -217,22 +218,22 @@
                     foreach($image as $key=>$value){
                         unlink($value);
                     }
-                    $path='../../includes/images/';
+                    $path='./includes/images/';
                     $image=array();
 
                     $image1Name=createImageName($_FILES['add-image-1']);
                     $destination=$path.$image1Name;
-                    array_push($image,$destination);
+                    array_push($image,$image1Name);
                     move_uploaded_file($_FILES['add-image-1']['tmp_name'],$destination);
                         
                     $image2Name=createImageName($_FILES['add-image-2']);
                     $destination=$path.$image2Name;
-                    array_push($image,$destination);
+                    array_push($image,$image2Name);
                     move_uploaded_file($_FILES['add-image-2']['tmp_name'],$destination);
 
                     $image3Name=createImageName($_FILES['add-image-3']);
                     $destination=$path.$image3Name;
-                    array_push($image,$destination);
+                    array_push($image,$image3Name);
                     move_uploaded_file($_FILES['add-image-3']['tmp_name'],$destination);
 
                     $image=implode('|',$image);

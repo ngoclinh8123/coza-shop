@@ -1,8 +1,8 @@
 <?php
-  session_start();
-  include '../handle/connect-database.php';
+  // session_start();
+  include './modules/handle/connect-database.php';
   
-  include './header-html-tag.php';
+  include './modules/users/header-html-tag.php';
 
 
   // get product infomation
@@ -10,14 +10,14 @@
 ?>
     <div class="home-user">
       <?php
-        include './header-top.php';
-        include './header.php';
+        include './modules/users/header-top.php';
+        include './modules/users/header.php';
       ?>
 
       <!-- slide -->
       <div class="home-slide">
         <div class="home-slide__item active">
-          <img src="../../includes/images/slide-01.jpg" alt="" />
+          <img src="./includes/images/slide-01.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
               <span>Women Collection 2018</span>
@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="home-slide__item">
-          <img src="../../includes/images/slide-02.jpg" alt="" />
+          <img src="./includes/images/slide-02.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
               <span>Men New-Season</span>
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="home-slide__item">
-          <img src="../../includes/images/slide-03.jpg" alt="" />
+          <img src="./includes/images/slide-03.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
               <span>Men Collection 2018</span>
@@ -74,7 +74,7 @@
           <div class="row">
             <div class="col l-4">
               <div class="banner-item">
-                <img src="../../includes/images/banner-01.jpg" alt="" />
+                <img src="./includes/images/banner-01.jpg" alt="" />
                 <div class="banner-content">
                   <div class="banner-content--top">
                     <p>Women</p>
@@ -97,7 +97,7 @@
             </div>
             <div class="col l-4">
               <div class="banner-item">
-                <img src="../../includes/images/banner-02.jpg" alt="" />
+                <img src="./includes/images/banner-02.jpg" alt="" />
                 <div class="banner-content">
                   <div class="banner-content--top">
                     <p>Men</p>
@@ -120,7 +120,7 @@
             </div>
             <div class="col l-4">
               <div class="banner-item">
-                <img src="../../includes/images/banner-01.jpg" alt="" />
+                <img src="./includes/images/banner-01.jpg" alt="" />
                 <div class="banner-content">
                   <div class="banner-content--top">
                     <p>Accessories</p>
@@ -170,8 +170,8 @@
                       array_push($dataBestSeller,$row);
                     }
                   }
-                  // echo '<pre>';
-                  // print_r($dataBestSeller[0]);
+                  echo '<pre>';
+                  print_r($dataBestSeller[0]);
                   foreach($dataBestSeller as $key=>$value){
                 ?>
 
@@ -185,7 +185,7 @@
                          ?>
                          " alt="" />
                         <div class="store-ovv__detail">
-                          <a href="./product-detail.php?id=<?php echo $value['id']; ?>"
+                          <a href=".modules/users/product-detail.php?id=<?php echo $value['id']; ?>"
                             ><span class="store-ovv__detail-content"
                               >DETAIL</span
                             ></a
@@ -214,7 +214,7 @@
                 <!-- <div class="store-ovv__item">
            
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href="./product-detail.php"
                         ><span class="store-ovv__detail-content"
@@ -245,7 +245,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -271,7 +271,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -297,7 +297,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -323,7 +323,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -349,7 +349,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -375,7 +375,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -401,7 +401,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -427,7 +427,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -457,7 +457,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -483,7 +483,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -509,7 +509,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -535,7 +535,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -561,7 +561,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -587,7 +587,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -617,7 +617,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -643,7 +643,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -669,7 +669,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -695,7 +695,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -721,7 +721,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -747,7 +747,7 @@
                 <div class="store-ovv__item">
                   <!-- <a href=""> -->
                   <div class="store-ovv__item-img">
-                    <img src="../../includes/images/product-01.jpg" alt="" />
+                    <img src="./includes/images/product-01.jpg" alt="" />
                     <div class="store-ovv__detail">
                       <a href=""
                         ><span class="store-ovv__detail-content"
@@ -792,7 +792,7 @@
               <div class="col l-4 c-12 m-4">
                 <div class="h-blog__item-img">
                   <a href="">
-                    <img src="../../includes/images/blog-02.jpg" alt="" />
+                    <img src="./includes/images/blog-02.jpg" alt="" />
                   </a>
                 </div>
                 <div class="h-blog__item-info">
@@ -817,7 +817,7 @@
               <div class="col l-4 c-12 m-4">
                 <div class="h-blog__item-img">
                   <a href="">
-                    <img src="../../includes/images/blog-01.jpg" alt="" />
+                    <img src="./includes/images/blog-01.jpg" alt="" />
                   </a>
                 </div>
                 <div class="h-blog__item-info">
@@ -842,7 +842,7 @@
               <div class="col l-4 c-12 m-4">
                 <div class="h-blog__item-img">
                   <a href="">
-                    <img src="../../includes/images/blog-01.jpg" alt="" />
+                    <img src="./includes/images/blog-01.jpg" alt="" />
                   </a>
                 </div>
                 <div class="h-blog__item-info">
@@ -871,7 +871,7 @@
     </div>
 
     <?php
-      include './footer.php';
+      include './modules/users/footer.php';
     ?>
 
     <script
@@ -886,8 +886,8 @@
       type="text/javascript"
       src="../../includes/libraries/slick-1.8.1/slick/slick.min.js"
     ></script>
-    <script src="./js/home-user.js"></script>
+    <script src="./modules/users/js/home-user.js"></script>
 <?php
-  include './footer-html-tag.php';
+  include './modules/users/footer-html-tag.php';
 ?>
 <!-- https://technext.github.io/cozastore/contact.html# -->
