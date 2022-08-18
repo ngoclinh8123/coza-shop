@@ -47,7 +47,7 @@
 
 function handleUrl(&$module=null,&$action=null){
     $url=$_GET['url'];
-    echo 'url cu:'.$url.'</br>';
+    // echo 'url cu:'.$url.'</br>';
     global $routers;
     foreach($routers as $key=>$value){
         $pattern='#^'.$key.'$#';
@@ -58,6 +58,7 @@ function handleUrl(&$module=null,&$action=null){
     }
     $urlArr=explode('/',$url);
     // echo '<pre>';print_r($urlArr);
+
     if(isset($urlArr[0])){
         $module=$urlArr[0];
         unset($urlArr[0]);

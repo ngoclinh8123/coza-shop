@@ -4,9 +4,11 @@
     $module='module';
     $action='users';
     $path=handleUrl($module,$action);
-    echo $module.'</br>';
-    echo $action.'</br>';
-    echo $path.'</br>';
+    // echo $module.'</br>';
+    // echo $action.'</br>';
+    // echo '<pre>';print_r($path);
+    $file=$path[0];
+    include './'.$module.'/'.$action.'/'.$file;
 
     // foreach ($routers as $key=>$value){
     //     if($key==$url) $path=$value;
