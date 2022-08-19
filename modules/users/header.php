@@ -51,7 +51,7 @@
                 <a href="">Features</a>
               </li>
               <li class="nav-item">
-                <a href="./blog.php">Blog</a>
+                <a href="./modules/users/blog.php">Blog</a>
               </li>
               <li class="nav-item">
                 <a href="">About</a>

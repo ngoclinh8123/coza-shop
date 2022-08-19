@@ -1,7 +1,7 @@
 <?php
-    include './heading-ad.php';
-    include '../handle/connect-database.php';
-    include '../handle/function.php';
+    include './modules/admin/heading-ad.php';
+    include './modules/handle/connect-database.php';
+    include_once './modules/handle/function.php';
 ?>
     <div class="chart">
     <?php  

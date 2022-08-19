@@ -69,7 +69,7 @@ session_start();
                 $data=$data[0];
                 // echo '<pre>';print_r($data);echo '</pre>';
                 if($data['admin']=='admin'){
-                  echo '<a href="../admin/list-product.php" class="id"></a>';
+                  echo '<a href="./modules/admin/turnover.php" class="id"></a>';
                 }else{
                   $data=$data['id'];
                   $_SESSION['id']=$data;

@@ -46,7 +46,8 @@
     }
 
 function handleUrl(&$module=null,&$action=null){
-    $url=$_GET['url'];
+    if(isset($_GET['url'])) $url=$_GET['url'];
+    else $url='trang-chu';
 
     // echo 'url cu:'.$url.'</br>';
     global $routers;
