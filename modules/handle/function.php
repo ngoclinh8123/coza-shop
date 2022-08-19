@@ -47,6 +47,7 @@
 
 function handleUrl(&$module=null,&$action=null){
     $url=$_GET['url'];
+
     // echo 'url cu:'.$url.'</br>';
     global $routers;
     foreach($routers as $key=>$value){

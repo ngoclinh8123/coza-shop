@@ -1,10 +1,10 @@
 <?php
     session_start();
-    include './header-html-tag.php';
-    include './header-top.php';
-    include '../handle/connect-database.php';
-    include './header.php';
-    include '../handle/function.php';
+    include './modules/users/header-html-tag.php';
+    include './modules/users/header-top.php';
+    include './modules/handle/connect-database.php';
+    include './modules/users/header.php';
+    include './modules/handle/function.php';
     $data=array();
     if($connect){
         $sql='select * from product';

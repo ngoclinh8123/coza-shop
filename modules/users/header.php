@@ -28,7 +28,7 @@
                 <a href="">Shop</a>
                 <ul class="sub-nav">
                   <li class="sub-nav-item">
-                    <a href="./list-all-product.php?page=1">All Products</a>
+                    <a href="tat-ca-san-pham?page=1">All Products</a>
                   </li>
                   <li class="sub-nav-item">
                     <a href="">Women</a>

@@ -71,7 +71,7 @@
               <div class="pl-col--6">
                 <span class="pl-edit-btn"><a href="./modules/handle/edit-product.php?id=<?php echo $value['id']; ?>">Sửa</a></span>
                 <span>|</span>
-                <span class="pl-delete-btn"><a href="xu-lu-san-pham?id=<?php echo $value['id']; ?>">Xóa</a></span>
+                <span class="pl-delete-btn"><a href="./delete-product.php?id=<?php echo $value['id']; ?>">Xóa</a></span>
               </div>
             </div>
             <?php
