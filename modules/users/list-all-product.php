@@ -3,8 +3,8 @@
     include './modules/users/header-html-tag.php';
     include './modules/users/header-top.php';
     include './modules/handle/connect-database.php';
-    include './modules/users/header.php';
-    include './modules/handle/function.php';
+    include_once './modules/users/header.php';
+    include_once './modules/handle/function.php';
     $data=array();
     if($connect){
         $sql='select * from product';
@@ -31,7 +31,7 @@
                         foreach($data as $key => $product){
                             if($key> $start && $key<=$end){
                                 $imgs=explode("|",$product['productimage']);
-                                $image=$imgs[0];
+                                $image='./includes/images/'.$imgs[0];
                                 $id=$product['id'];
                                 $name=$product['productname'];
                                 $price=$product['productprice'];
@@ -94,6 +94,6 @@
 
     <script src="./js/shop-all.js"></script>
 <?php
-    include './footer.php';
-    include './footer-html-tag.php';
+    include './modules/users/footer.php';
+    include './modules/users/footer-html-tag.php';
 ?>

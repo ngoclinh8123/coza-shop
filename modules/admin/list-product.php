@@ -53,7 +53,7 @@
                 <div class="pl-item-img">
                   <img src="<?php 
                   $img=explode('|',$value['productimage']); 
-                  echo $img[0];
+                  echo '../../includes/images/'.$img[0];
                   ?>" alt="" />
                 </div>
                 <div class="pl-item-info">

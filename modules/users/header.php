@@ -22,7 +22,7 @@
           <div class="heading-nav">
             <ul class="nav">
               <li class="nav-item">
-                <a href="./index.php">Home</a>
+                <a href="trang-chu">Home</a>
               </li>
               <li class="nav-item">
                 <a href="">Shop</a>
