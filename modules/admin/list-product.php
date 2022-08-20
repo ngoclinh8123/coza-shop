@@ -1,9 +1,9 @@
         <?php
-            include './heading-ad.php';
+            include './modules/admin/heading-ad.php';
         ?>
         <!-- product list -->
         <?php
-          include '../handle/connect-database.php';
+          include './modules/handle/connect-database.php';
 
           $data=array();
           if($connect){
@@ -53,7 +53,7 @@
                 <div class="pl-item-img">
                   <img src="<?php 
                   $img=explode('|',$value['productimage']); 
-                  echo '../../includes/images/'.$img[0];
+                  echo './includes/images/'.$img[0];
                   ?>" alt="" />
                 </div>
                 <div class="pl-item-info">
@@ -83,5 +83,5 @@
           </form>
         </div>
         <?php
-          include './foot-ad.php';
+          include './modules/admin/foot-ad.php';
         ?>

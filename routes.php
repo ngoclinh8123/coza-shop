@@ -3,6 +3,8 @@
         'trang-chu'=>'modules/users/home.php',
         'xu-li-xoa-san-pham'=>'modules/admin/delete-product.php',
         'tat-ca-san-pham'=>'modules/users/list-all-product.php',
-        'doanh-so-ban-hang'=>'modules/admin/turnover.php'
+        'doanh-so-ban-hang'=>'modules/admin/turnover.php',
+        'danh-sach-san-pham'=>'modules/admin/list-product.php',
+        'danh-sach-don-hang'=>'modules/admin/orders.php',
     )
 ?>

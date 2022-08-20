@@ -1,7 +1,7 @@
 <?php
-    include './heading-ad.php';
-    include '../handle/function.php';
-    include '../handle/connect-database.php';
+    include './modules/admin/heading-ad.php';
+    include_once './modules/handle/function.php';
+    include './modules/handle/connect-database.php';
 
 ?>
     <div class="orders-wrap">
@@ -146,6 +146,6 @@
             ?>
         </div>
     </div>
-<script src="./js/admin.js"></script>
+<script src="./modules/admin/js/admin.js"></script>
 </body>
 </html>
