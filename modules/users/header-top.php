@@ -9,7 +9,7 @@
               <span><a href="">Help & FQAs</a></span>
             </div>
             <div class="top-nav__item f-c-c">
-              <span><a href="./modules/users/login-form.php">My Account</a></span>
+              <span><a href="dang-nhap">My Account</a></span>
             </div>
             <div class="top-nav__item f-c-c">
               <span><a href="">EN</a></span>

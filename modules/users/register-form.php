@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Đăng ký</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/base.css" />
-    <link rel="stylesheet" href="../../includes/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="./modules/users/css/style.css" />
+    <link rel="stylesheet" href="./modules/users/css/base.css" />
+    <link rel="stylesheet" href="./includes/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
   </head>
   <body>
     <div class="login-form">
@@ -61,14 +61,14 @@
         </form>
         <div class="login-form-bottom">
           Bạn đã có tài khoản ?
-          <a href="./login-form.php">Đăng nhập </a>
+          <a href="dang-nhap">Đăng nhập </a>
         </div>
       </div>
     </div>
     <!-- <div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đăng ký tài khoản thành công</div><a href="./login-form.php">Đăng nhập</a></div></div> -->
     <?php
-        include '../handle/connect-database.php';
-        include '../handle/function.php';
+        include_once './modules/handle/connect-database.php';
+        include_once './modules/handle/function.php';
       if(isset($_POST['user-sign-up-name']) && trim($_POST['user-sign-up-name'])!='' && isset($_POST['user-sign-up-email']) && trim($_POST['user-sign-up-email'])!='' && isset($_POST['user-sign-up-password']) && trim($_POST['user-sign-up-password'])!='' && $flagEmail){
         $name=$_POST['user-sign-up-name'];
         $email=$_POST['user-sign-up-email'];
@@ -101,9 +101,9 @@
             // $sql="insert into user(username,email,password,cartid,admin) values('".$name."','".$email."','".$password."','".$cartid."','admin')";
             $sql2="insert into cart(id,product) values ('".$cartid."','')";
             if(mysqli_query($connect,$sql2) && mysqli_query($connect,$sql)){
-              echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đăng ký tài khoản thành công</div><a href="./login-form.php">Đăng nhập</a></div></div>';
+              echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đăng ký tài khoản thành công</div><a href="dang-nhap">Đăng nhập</a></div></div>';
             }else{
-              echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Có lỗi xảy ra</div><a href="./register-form.php">Thử lại</a></div></div>';
+              echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Có lỗi xảy ra</div><a href="dang-ky">Thử lại</a></div></div>';
             }
           }
         }

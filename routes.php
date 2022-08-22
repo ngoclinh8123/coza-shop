@@ -6,5 +6,7 @@
         'doanh-so-ban-hang'=>'modules/admin/turnover.php',
         'danh-sach-san-pham'=>'modules/admin/list-product.php',
         'danh-sach-don-hang'=>'modules/admin/orders.php',
+        'dang-nhap'=>'modules/users/login-form.php',
+        'dang-ky'=>'modules/users/register-form.php',
     )
 ?>

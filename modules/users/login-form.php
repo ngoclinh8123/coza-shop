@@ -8,8 +8,8 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./modules/users/css/style.css" />
+    <link rel="stylesheet" href="./modules/users/css/base.css" />
   </head>
   <body>
     <div class="login-form">
@@ -54,7 +54,7 @@ session_start();
         </form>
         <?php
           $data=array();
-          include '../handle/connect-database.php';
+          include_once './modules/handle/connect-database.php';
           if(isset($_POST['user-sign-up-email'])&& trim($_POST['user-sign-up-email'])!='' && isset($_POST['user-sign-up-password']) && trim($_POST['user-sign-up-password'])!='') {
             $email = $_POST['user-sign-up-email'];
             $password = $_POST['user-sign-up-password'];
@@ -69,11 +69,11 @@ session_start();
                 $data=$data[0];
                 // echo '<pre>';print_r($data);echo '</pre>';
                 if($data['admin']=='admin'){
-                  echo '<a href="./modules/admin/turnover.php" class="id"></a>';
+                  echo '<a href="doanh-so-ban-hang" class="id"></a>';
                 }else{
                   $data=$data['id'];
                   $_SESSION['id']=$data;
-                  echo '<a class="id" href="./index.php"/>';
+                  echo '<a class="id" href="trang-chu"/>';
                 }
                 // echo '<a class="id" href="../handle/login.php?id='.$data.'"/>';
               }else {
@@ -84,7 +84,7 @@ session_start();
         ?>
         <div class="login-form-bottom">
           Bạn chưa có tài khoản ?
-          <a href="./register-form.php">Đăng ký </a>
+          <a href="dang-ky">Đăng ký </a>
         </div>
       </div>
     </div>
