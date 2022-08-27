@@ -2,7 +2,7 @@
     $server="localhost";
     $username="root";
     $password="Ngoclinh08012003";
-    $dbname="cozastore";
+    $dbname="cozastore2";
     $connect=mysqli_connect($server,$username,$password,$dbname);
 
 ?>

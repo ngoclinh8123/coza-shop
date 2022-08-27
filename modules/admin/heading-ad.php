@@ -21,31 +21,38 @@
             <!-- navigation -->
             <div class="ad-nav">
                 <div class="ad-nav-wrap">
-                <div class="ad-nav-heading">Kênh Người Bán</div>
-                <div class="ad-nav-item">
-                    <span class="ad-nav-item-title">Thống kê</span>
-                    <div class="ad-subnav-list">
-                        <div class="ad-subnav-item"><a href="./turnover.php">Doanh số bán hàng</a></div>
+                    <div class="ad-nav-logo-wrap">
+                        <a href="trang-chu">
+                            <div class="ad-nav-img">
+                                <img src="./includes/images/logo-coza-store.png" alt="">
+                            </div>
+                        </a>
                     </div>
-                </div>
-                <div class="ad-nav-item">
-                    <span class="ad-nav-item-title">Sản Phẩm</span>
-                    <div class="ad-subnav-list">
-                        <div class="ad-subnav-item"><a href="./list-product.php">Tất Cả Sản Phẩm</a></div>
-                        <div class="ad-subnav-item"><a href="./add-product.php">Thêm Sản Phẩm</a></div>
+                    <!-- <div class="ad-nav-heading">Kênh Người Bán</div> -->
+                    <div class="ad-nav-item">
+                        <span class="ad-nav-item-title">Thống kê</span>
+                        <div class="ad-subnav-list">
+                            <div class="ad-subnav-item"><a href="./turnover.php">Doanh số bán hàng</a></div>
+                        </div>
                     </div>
-                </div>
-                <div class="ad-nav-item">
-                    <span class="ad-nav-item-title">Đơn hàng</span>
-                    <div class="ad-subnav-list">
-                        <div class="ad-subnav-item"><a href="./orders.php">Đơn Đặt Hàng</a></div>
+                    <div class="ad-nav-item">
+                        <span class="ad-nav-item-title">Sản Phẩm</span>
+                        <div class="ad-subnav-list">
+                            <div class="ad-subnav-item"><a href="./list-product.php">Tất Cả Sản Phẩm</a></div>
+                            <div class="ad-subnav-item"><a href="./add-product.php">Thêm Sản Phẩm</a></div>
+                        </div>
                     </div>
-                </div>
-                <div class="ad-nav-item">
-                    <span class="ad-nav-item-title">Khách Hàng</span>
-                    <div class="ad-subnav-list">
-                        <div class="ad-subnav-item"><a href="">Danh Sách Khách Hàng</a></div>
+                    <div class="ad-nav-item">
+                        <span class="ad-nav-item-title">Đơn hàng</span>
+                        <div class="ad-subnav-list">
+                            <div class="ad-subnav-item"><a href="./orders.php">Đơn Đặt Hàng</a></div>
+                        </div>
                     </div>
-                </div>
+                    <div class="ad-nav-item">
+                        <span class="ad-nav-item-title">Khách Hàng</span>
+                        <div class="ad-subnav-list">
+                            <div class="ad-subnav-item"><a href="">Danh Sách Khách Hàng</a></div>
+                        </div>
+                    </div>
                 </div>
             </div>

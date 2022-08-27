@@ -1,7 +1,7 @@
 
       <!-- heading -->
       <?php
-          include './modules/handle/get-user-info.php';
+          include_once './modules/handle/get-user-info.php';
           // get all product from database
           $allProduct=array();
           if($connect){
@@ -10,6 +10,7 @@
             while($row=mysqli_fetch_array($result)){
               array_push($allProduct,$row);
             }
+            // echo '<pre>';print_r($allProduct);
           }
       ?>
       <div class="heading">
@@ -105,14 +106,15 @@
         <?php 
         if($connect){
           $dataCart=array();
-          $sql='select product from  cart where id= (select cartid from user where id='.$userid.')';
+          $sql="select * from cart where userId= (select id from user where email='".$useremail."')";
           $result=mysqli_query($connect,$sql);
           while ($row=mysqli_fetch_array($result)){
             array_push($dataCart,$row);
           }
+
           // ngan cach cac id san pham bang '|'
-          $dataCart=explode("|",$dataCart[0]['product']);
-          // echo '<pre>';print_r($dataCart);echo '</pre>';
+          // $dataCart=explode("|",$dataCart[0]['product']);
+          echo '<pre>';print_r($dataCart);echo '</pre>';
         }
          ?>
         <div class="home-cart">

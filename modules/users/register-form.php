@@ -78,38 +78,84 @@
         if($connect){
           $flag=false;
           $flagAdmin=false;
-          $sql='select * from user';
+          $sql="select * from user where email='".$email."'";
           $userList=array();
           $result=mysqli_query($connect,$sql);
           while($row=mysqli_fetch_array($result)){
             array_push($userList,$row);
           }
-          
+          $sql="select * from adminlogin where email='".$email."'";
+          $adminList=array();
+          $result=mysqli_query($connect,$sql);
+          while($row=mysqli_fetch_array($result)){
+            array_push($adminList,$row);
+          }
           // echo '<pre>';print_r($userList);
-          foreach($userList as $key=>$value){
-            if( $value['password']==$password && $value['email']==$email){
-                $flag=true;       
-                break;
-            }
+          // echo '<pre>';print_r($adminList);
+          if(count($userList)>0 || count($adminList)>0){
+            $flag=true;
           }
           if($flag){
             echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Tài khoản đã tồn tại</div></div></div>';
           }else{
-            $cartid=randomString(15);
-            // $cartid='1';
-            $sql="insert into user(username,email,password,cartid) values('".$name."','".$email."','".$password."','".$cartid."')";
-            // $sql="insert into user(username,email,password,cartid,admin) values('".$name."','".$email."','".$password."','".$cartid."','admin')";
-            $sql2="insert into cart(id,product) values ('".$cartid."','')";
-            if(mysqli_query($connect,$sql2) && mysqli_query($connect,$sql)){
-              echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đăng ký tài khoản thành công</div><a href="dang-nhap">Đăng nhập</a></div></div>';
-            }else{
-              echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Có lỗi xảy ra</div><a href="dang-ky">Thử lại</a></div></div>';
+            // $cartid=randomString(15);
+            // // $cartid='1';
+            $sql="insert into user(name,email,avatar) values ('".$name."','".$email."','')";
+            if(mysqli_query($connect,$sql)){
+              $sql='select max(id) from user';
+              $result=mysqli_query($connect,$sql);
+              $arrTemp=array();
+              while($row=mysqli_fetch_array($result)){
+                array_push($arrTemp,$row);
+              }
+              $userId=$arrTemp[0][0];
+              // echo $userId;
+              $sql="insert into userlogin(userId,email,password) values(".$userId.",'".$email."','".$password."')";
+              if(mysqli_query($connect,$sql)){
+                echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đăng ký tài khoản thành công</div><a href="dang-nhap">Đăng nhập</a></div></div>';
+              }
             }
+
+            // // $sql="insert into user(username,email,password,cartid,admin) values('".$name."','".$email."','".$password."','".$cartid."','admin')";
+            // $sql2="insert into cart(id,product) values ('".$cartid."','')";
+            // if(mysqli_query($connect,$sql2) && mysqli_query($connect,$sql)){
+            //   echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đăng ký tài khoản thành công</div><a href="dang-nhap">Đăng nhập</a></div></div>';
+            // }else{
+            //   echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Có lỗi xảy ra</div><a href="dang-ky">Thử lại</a></div></div>';
+            // }
           }
+          // foreach($userList as $key=>$value){
+          //   if( $value['password']==$password && $value['email']==$email){
+          //       $flag=true;       
+          //       break;
+          //   }
+          // }
+          // if($flag){
+          //   echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Tài khoản đã tồn tại</div></div></div>';
+          // }else{
+            // $cartid=randomString(15);
+            // // $cartid='1';
+            // $sql="insert into user(username,email,password,cartid) values('".$name."','".$email."','".$password."','".$cartid."')";
+            // // $sql="insert into user(username,email,password,cartid,admin) values('".$name."','".$email."','".$password."','".$cartid."','admin')";
+            // $sql2="insert into cart(id,product) values ('".$cartid."','')";
+            // if(mysqli_query($connect,$sql2) && mysqli_query($connect,$sql)){
+              // echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đăng ký tài khoản thành công</div><a href="dang-nhap">Đăng nhập</a></div></div>';
+            // }else{
+              // echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Có lỗi xảy ra</div><a href="dang-ky">Thử lại</a></div></div>';
+            // }
+          // }
+        }else{
+              echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Có lỗi xảy ra</div><a href="dang-ky">Thử lại</a></div></div>';
         }
 
       }
     ?>
-    <script src="./js/register-form.js"></script>
+    <script>
+      const modalSuccess = document.querySelector(".register-success-form");
+      const exitModalSuccess = document.querySelector(".register-success-form i");
+      exitModalSuccess.onclick = function () {
+        modalSuccess.style.display = "none";
+      };
+    </script>
   </body>
 </html>

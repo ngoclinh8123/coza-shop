@@ -29,6 +29,19 @@ html {
   background-color: rgb(250, 245, 234);
   box-shadow: 1px -1px 4px rgba(0, 0, 0, 0.5);
 }
+
+.ad-nav-img {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.ad-nav-img img {
+  width: 70%;
+}
 .ad-nav-heading {
   font-size: 1.6rem;
   text-align: center;
