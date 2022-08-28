@@ -123,7 +123,7 @@
             <div class="home-cart-wrap f-c-c">
               <div class="home-cart-title"><span>YOUR CART</span></div>
               <?php
-                // for($i=1;$i<count($dataCart);$i++){
+                for($i=1;$i<count($dataCart);$i++){
                 //   $item=explode("-",$dataCart[$i]);
                 //   foreach($allProduct as $key=>$value){
                 //     if($item[0]==$value['id']){
@@ -158,7 +158,7 @@
               <?php
                 //     }
                 //   }
-                // }
+                }
               ?>
               <div class="home-cart-total">
                 Total : <span class="home-cart-total-price">0</span>

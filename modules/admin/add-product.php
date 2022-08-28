@@ -1,7 +1,7 @@
 
             <!-- add product -->
             <?php
-                include './heading-ad.php';
+                include_once './modules/admin/heading-ad.php';
                 ini_set('display_errors','off');
             ?>
             <div class="ap-block">
@@ -12,16 +12,16 @@
         
                         <!-- product name -->
                         <div class="form-row">
-                        <div class="form-title">Tên <span>(Bắt buộc)</span></div>
-                        <?php 
-                            if(isset($_POST['add-name']) && trim($_POST['add-name'])!=""){
-                                echo '<input type="text" name="add-name" value="'.$_POST['add-name'].'">';
-                            }else{
-                                echo '<input type="text" name="add-name" value="" class="input-error">';
-                                echo '<div class="form-error">Trường này không được để trống</div>';
-                            }
-                        ?>
-                    </div>
+                            <div class="form-title">Tên <span>(Bắt buộc)</span></div>
+                            <?php 
+                                if(isset($_POST['add-name']) && trim($_POST['add-name'])!=""){
+                                    echo '<input type="text" name="add-name" value="'.$_POST['add-name'].'">';
+                                }else{
+                                    echo '<input type="text" name="add-name" value="" class="input-error">';
+                                    echo '<div class="form-error">Trường này không được để trống</div>';
+                                }
+                            ?>
+                        </div>
         
                         <!-- product description -->
                         <div class="form-row">
@@ -79,9 +79,20 @@
                     
                     </div>
                         <div class="form-big-col">
-                            <div class="form-row">
+                            <!-- <div class="form-row">
                                 <div class="form-title" placeholder="trắng|nâu|...">Màu sắc</div>
                                 <input type="text" name="add-color">
+                            </div> -->
+                            <div class="form-row">
+                                <div class="form-title">Màu sắc<span>(Bắt buộc)</span></div>
+                                <?php 
+                                    if(isset($_POST['add-color']) && trim($_POST['add-color'])!=""){
+                                        echo '<input type="text" name="add-color" value="'.$_POST['add-color'].'">';
+                                    }else{
+                                        echo '<input type="text" name="add-color" value="" class="input-error" placeholder="xanh,đen,xám,...">';
+                                        echo '<div class="form-error">Trường này không được để trống</div>';
+                                    }
+                                ?>
                             </div>
                             <div class="form-row">
                                 <div class="form-title">Chất liệu</div>
@@ -103,6 +114,7 @@
                                 <span class="form-add-size"><span>40</span><input type="checkbox" name="add-size[]" value="40"></span>
                                 <span class="form-add-size"><span>41</span><input type="checkbox" name="add-size[]" value="41"></span>
                                 <span class="form-add-size"><span>42</span><input type="checkbox" name="add-size[]" value="42"></span>
+                                <span class="form-add-size"><span>freesize</span><input type="checkbox" name="add-size[]" value="freesize"></span>
                             </div>
                             <div class="form-row">
                                 <div class="form-title">Kích thước</div>

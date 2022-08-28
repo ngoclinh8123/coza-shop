@@ -13,7 +13,7 @@
     // foreach ($routers as $key=>$value){
     //     if($key==$url) $path=$value;
     // }
-    echo 'current file:'.$_SERVER['SCRIPT_FILENAME'].'</br>';
+    // echo 'current file:'.$_SERVER['SCRIPT_FILENAME'].'</br>';
     // echo 'path:'.$path;
     // include $path;
 ?>
