@@ -123,16 +123,16 @@
             <div class="home-cart-wrap f-c-c">
               <div class="home-cart-title"><span>YOUR CART</span></div>
               <?php
-                for($i=1;$i<count($dataCart);$i++){
-                  $item=explode("-",$dataCart[$i]);
-                  foreach($allProduct as $key=>$value){
-                    if($item[0]==$value['id']){
-                      $image=explode("|",$value['productimage'])[0];
-                      $name=$value['productname'];
-                      $size=$item[1];
-                      $color=$item[2];
-                      $amount=$item[3];
-                      $price=$value['productprice'];
+                // for($i=1;$i<count($dataCart);$i++){
+                //   $item=explode("-",$dataCart[$i]);
+                //   foreach($allProduct as $key=>$value){
+                //     if($item[0]==$value['id']){
+                //       $image=explode("|",$value['productimage'])[0];
+                //       $name=$value['productname'];
+                //       $size=$item[1];
+                //       $color=$item[2];
+                //       $amount=$item[3];
+                //       $price=$value['productprice'];
                 
               ?>
                 <div class="home-cart-item">
@@ -156,9 +156,9 @@
                   </div>
                 </div>
               <?php
-                    }
-                  }
-                }
+                //     }
+                //   }
+                // }
               ?>
               <div class="home-cart-total">
                 Total : <span class="home-cart-total-price">0</span>

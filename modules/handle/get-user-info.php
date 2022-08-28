@@ -22,8 +22,8 @@ if(isset($_SESSION['user-name']) && isset($_SESSION['user-email']) && isset($_SE
       // } else  $email="";
 
   }else{
-    $username="";
-    $useremail="";
+    $username="GUEST";
+    $useremail="guest@gmail.com";
     $useravatar="";
   }
 ?>
