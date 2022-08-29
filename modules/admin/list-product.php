@@ -1,9 +1,9 @@
         <?php
-            include './modules/admin/heading-ad.php';
+            include_once './modules/admin/heading-ad.php';
         ?>
         <!-- product list -->
         <?php
-          include './modules/handle/connect-database.php';
+          include_once './modules/handle/connect-database.php';
 
           $data=array();
           if($connect){
@@ -52,26 +52,26 @@
               <div class="pl-col--2">
                 <div class="pl-item-img">
                   <img src="<?php 
-                  $img=explode('|',$value['productimage']); 
+                  $img=explode('|',$value['image']); 
                   echo './includes/images/'.$img[0];
                   ?>" alt="" />
                 </div>
                 <div class="pl-item-info">
-                  <div class="pl-item-name"><?php echo $value['productname']; ?></div>
-                  <div class="pl-item-desc"><?php echo $value['productdescription']; ?></div>
+                  <div class="pl-item-name"><?php echo $value['name']; ?></div>
+                  <div class="pl-item-desc"><?php echo $value['description']; ?></div>
                 </div>
               </div>
-              <div class="pl-col--3"><span><?php echo $value['productprice']; ?></span><span>VND</span></div>
+              <div class="pl-col--3"><span><?php echo $value['price']; ?></span><span>VND</span></div>
               <div class="pl-col--4">
-                <span><?php echo implode(', ',explode('|',$value['productzise'])); ?></span>
+                <span><?php echo implode(', ',explode('|',$value['size'])); ?></span>
               </div>
               <div class="pl-col--5">
-                <span><?php echo implode(', ',explode('|',$value['productcolor'])); ?></span>
+                <span><?php echo implode(', ',explode('|',$value['color'])); ?></span>
               </div>
               <div class="pl-col--6">
                 <span class="pl-edit-btn"><a href="./modules/handle/edit-product.php?id=<?php echo $value['id']; ?>">Sửa</a></span>
                 <span>|</span>
-                <span class="pl-delete-btn"><a href="./delete-product.php?id=<?php echo $value['id']; ?>">Xóa</a></span>
+                <span class="pl-delete-btn"><a href="xoa-san-pham?id=<?php echo $value['id']; ?>">Xóa</a></span>
               </div>
             </div>
             <?php

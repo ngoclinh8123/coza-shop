@@ -38,8 +38,8 @@
                     <div class="ad-nav-item">
                         <span class="ad-nav-item-title">Sản Phẩm</span>
                         <div class="ad-subnav-list">
-                            <div class="ad-subnav-item"><a href="./list-product.php">Tất Cả Sản Phẩm</a></div>
-                            <div class="ad-subnav-item"><a href="./add-product.php">Thêm Sản Phẩm</a></div>
+                            <div class="ad-subnav-item"><a href="danh-sach-san-pham">Tất Cả Sản Phẩm</a></div>
+                            <div class="ad-subnav-item"><a href="them-san-pham">Thêm Sản Phẩm</a></div>
                         </div>
                     </div>
                     <div class="ad-nav-item">

@@ -9,5 +9,6 @@
         'doanh-so-ban-hang'=>'modules/admin/turnover.php',
         'xu-li-xoa-san-pham'=>'modules/admin/delete-product.php',
         'them-san-pham'=>'modules/admin/add-product.php',
+        'xoa-san-pham'=>'modules/admin/delete-product.php',
     )
 ?>

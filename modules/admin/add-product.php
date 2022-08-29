@@ -2,13 +2,58 @@
             <!-- add product -->
             <?php
                 include_once './modules/admin/heading-ad.php';
+                include_once './modules/handle/function.php';
+                include_once './modules/handle/connect-database.php';
                 ini_set('display_errors','off');
+                $dataClass=array();
+                if($connect){
+                    $sql='select * from class';
+                    $result= mysqli_query($connect,$sql);
+                    while($row=mysqli_fetch_array($result)){
+                        array_push($dataClass,$row);
+                    }
+                }
+
+                $dataSize=array();
+
+                if($connect){
+                    $sql='select * from size';
+                    $result= mysqli_query($connect,$sql);
+                    while($row=mysqli_fetch_array($result)){
+                        array_push($dataSize,$row);
+                    }
+                }
+
+                $idArray = array();
+                $sql='select max(id) from product';
+                $result=mysqli_query($connect,$sql);
+                while ($row=mysqli_fetch_array($result)){
+                    array_push($idArray,$row);
+                }
+                // echo '<pre>';print_r($idArray);echo '</pre>';
+                
+                // echo '<pre>';print_r($dataClass);echo '</pre>';
+
+                
             ?>
             <div class="ap-block">
                 <form action="" method="POST" enctype="multipart/form-data">
                     <div class="form-title-heading">Thêm sản phẩm</div>
                     <div class="form-big-row">
                         <div class="form-big-col">
+
+                        <!-- product class -->
+                        <div class="form-row">
+                            <div class="form-title">Phân loại<span>(Bắt buộc)</span></div>
+                            <select name="add-class" id="">
+                                <?php
+                                    foreach($dataClass as $key => $value){
+                                        echo '<option value="'.$value['code'].'">'.$value['name'].'</option>';
+                                    }
+                                ?>
+                                
+                            </select>
+                        </div>
         
                         <!-- product name -->
                         <div class="form-row">
@@ -37,33 +82,7 @@
                             
                         </div>
         
-                        <!-- product image -->
-                        <div class="form-row">
-                            <div class="form-title">Hình ảnh(1) <span>(Bắt buộc)</span></div>
-                            <?php
-                                $path="../../includes/images/";
-                                if($_FILES["add-image-1"]['error']===UPLOAD_ERR_OK){
-                                    echo '<img src="'.$path.$_FILES["add-image-1"]["name"].'">';
-                                }
-                            ?>
-                            <input type="file" name="add-image-1" >
-                            <div class="form-title">Hình ảnh(2) <span>(Bắt buộc)</span></div>
-                            <?php
-                                $path="../../includes/images/";
-                                if($_FILES["add-image-2"]['error']===UPLOAD_ERR_OK){
-                                    echo '<img src="'.$path.$_FILES["add-image-2"]["name"].'">';
-                                }
-                            ?>
-                            <input type="file" name="add-image-2">
-                            <div class="form-title">Hình ảnh(3) <span>(Bắt buộc)</span></div>
-                            <?php
-                                $path="../../includes/images/";
-                                if($_FILES["add-image-3"]['error']===UPLOAD_ERR_OK){
-                                    echo '<img src="'.$path.$_FILES["add-image-3"]["name"].'">';
-                                }
-                            ?>
-                            <input type="file" name="add-image-3">
-                        </div>
+
                         <div class="form-row">
                             <div class="form-title">Giá tiền(VNĐ) <span>(Bắt buộc)</span></div>
                             
@@ -83,13 +102,40 @@
                                 <div class="form-title" placeholder="trắng|nâu|...">Màu sắc</div>
                                 <input type="text" name="add-color">
                             </div> -->
+                        <!-- product image -->
+                            <div class="form-row">
+                                <div class="form-title">Hình ảnh(1) <span>(Bắt buộc)</span></div>
+                                <?php
+                                    $path="../../includes/images/";
+                                    if($_FILES["add-image-1"]['error']===UPLOAD_ERR_OK){
+                                        echo '<img src="'.$path.$_FILES["add-image-1"]["name"].'">';
+                                    }
+                                ?>
+                                <input type="file" name="add-image-1" >
+                                <div class="form-title">Hình ảnh(2) <span>(Bắt buộc)</span></div>
+                                <?php
+                                    $path="../../includes/images/";
+                                    if($_FILES["add-image-2"]['error']===UPLOAD_ERR_OK){
+                                        echo '<img src="'.$path.$_FILES["add-image-2"]["name"].'">';
+                                    }
+                                ?>
+                                <input type="file" name="add-image-2">
+                                <div class="form-title">Hình ảnh(3) <span>(Bắt buộc)</span></div>
+                                <?php
+                                    $path="../../includes/images/";
+                                    if($_FILES["add-image-3"]['error']===UPLOAD_ERR_OK){
+                                        echo '<img src="'.$path.$_FILES["add-image-3"]["name"].'">';
+                                    }
+                                ?>
+                                <input type="file" name="add-image-3">
+                            </div>
                             <div class="form-row">
                                 <div class="form-title">Màu sắc<span>(Bắt buộc)</span></div>
                                 <?php 
                                     if(isset($_POST['add-color']) && trim($_POST['add-color'])!=""){
                                         echo '<input type="text" name="add-color" value="'.$_POST['add-color'].'">';
                                     }else{
-                                        echo '<input type="text" name="add-color" value="" class="input-error" placeholder="xanh,đen,xám,...">';
+                                        echo '<input type="text" name="add-color" value="" class="input-error" placeholder="xanh|đen|trắng...">';
                                         echo '<div class="form-error">Trường này không được để trống</div>';
                                     }
                                 ?>
@@ -104,17 +150,13 @@
                             </div>
                             <div class="form-row-size">
                                 <div class="form-title">Size </div>
-                                <span class="form-add-size"><span>S</span><input type="checkbox" name="add-size[]" value="S"></span>
-                                <span class="form-add-size"><span>M</span><input type="checkbox" name="add-size[]" value="M"></span>
-                                <span class="form-add-size"><span>L</span><input type="checkbox" name="add-size[]" value="L"></span>
-                                <span class="form-add-size"><span>XL</span><input type="checkbox" name="add-size[]" value="XL"></span>
-                                <span class="form-add-size"><span>37</span><input type="checkbox" name="add-size[]" value="37"></span>
-                                <span class="form-add-size"><span>38</span><input type="checkbox" name="add-size[]" value="38"></span>
-                                <span class="form-add-size"><span>39</span><input type="checkbox" name="add-size[]" value="39"></span>
-                                <span class="form-add-size"><span>40</span><input type="checkbox" name="add-size[]" value="40"></span>
-                                <span class="form-add-size"><span>41</span><input type="checkbox" name="add-size[]" value="41"></span>
-                                <span class="form-add-size"><span>42</span><input type="checkbox" name="add-size[]" value="42"></span>
-                                <span class="form-add-size"><span>freesize</span><input type="checkbox" name="add-size[]" value="freesize"></span>
+                                <?php 
+                                    foreach ($dataSize as $key => $value){
+                                        echo '<span class="form-add-size"><span>'.$value['size'].'</span><input type="checkbox" name="add-size[]" value="'.$value['size'].'"></span>';
+                                    }
+                                ?>
+                                
+          
                             </div>
                             <div class="form-row">
                                 <div class="form-title">Kích thước</div>
@@ -130,13 +172,15 @@
                 </form>
             </div>
             <?php
-                include '../handle/function.php';
-                include '../handle/connect-database.php';
+
                 
                 // echo '<pre>';
                 // print_r($_POST);
                 // print_r($_FILES);
                 // echo '</pre>';
+
+                $class=$_POST['add-class'];
+                // echo $class;
 
                 $name=$_POST['add-name'];
                 $desc=$_POST['add-desc'];
@@ -149,10 +193,12 @@
                     $size=implode("|",$_POST['add-size']);
                 }      
                 $dimension=$_POST['add-dimension'];
+
+                
                 
                 if( trim($_POST['add-name'])!="" && trim($_POST['add-desc'])!="" && trim($_POST['add-price'])!="" && trim($_FILES['add-image-1']['tmp_name'])!="" && trim($_FILES['add-image-2']['tmp_name'])!=""  && trim($_FILES['add-image-3']['tmp_name'])!=""){
 
-                    $path='../../includes/images/';
+                    $path='./includes/images/';
                     $image=array();
 
                     $image1Name=createImageName($_FILES['add-image-1']);
@@ -173,14 +219,29 @@
                     $image=implode('|',$image);
 
                     
-                    $sql="insert into product(productname,productdescription,productimage,productprice,productdimension,productcolor,productzise,productweight,productmaterial) values('".$name."','".$desc."','".$image."','".$price."','".$dimension."','".$color."','".$size."','".$weight."','".$material."');";
+                    
+                    // $sql="insert into product(productname,productdescription,productimage,productprice,productdimension,productcolor,productzise,productweight,productmaterial) values('".$name."','".$desc."','".$image."','".$price."','".$dimension."','".$color."','".$size."','".$weight."','".$material."');";
+                    $sql="insert into product(class,name,description,image,price,color,size,weight,dimension,material) values('".$class."','".$name."','".$desc."','".$image."','".$price."','".$color."','".$size."','".$weight."','".$dimension."','".$material."')";
                     if($connect){
                         if(mysqli_query($connect,$sql)){
-                            echo "<h1 style='color:red;'>Them du lieu thanh cong </h1>";
-                            echo '<div class="add-success-model"><div class="add-success-title"><span class="add-sucess-message">Thêm dữ liệu thành công</span><span class="add-sucess-button"><a href="">OK</a></span></div></div>';
+                            $idArray = array();
+                            $sql='select max(id) from product';
+                            $result=mysqli_query($connect,$sql);
+                            while ($row=mysqli_fetch_array($result)){
+                                array_push($idArray,$row);
+                            }
+                            // echo '<pre>';print_r($idArray);echo '</pre>';
+                            $id=$idArray[0]['max(id)'];
+                            $id=str_pad($id,4,"0",STR_PAD_LEFT);
+                            $code=$class.$id;
+                            $sql="update product set code='".$code."' where id=".$id;
+                            if(mysqli_query($connect,$sql)){
+                                                            // echo "<h1 style='color:red;'>Them du lieu thanh cong </h1>";
+                                echo '<div class="add-success-model"><div class="add-success-title"><span class="add-sucess-message">Thêm dữ liệu thành công</span><span class="add-sucess-button"><a href="">OK</a></span></div></div>';
+                            }
                             
                         }else{
-                            echo "<h1 style='color:red;'>Co loi xay ra!!</h1>";
+                            // echo "<h1 style='color:red;'>Co loi xay ra!!</h1>";
                             echo '<div class="add-success-model"><div class="add-success-title"><span class="add-sucess-message">Có lỗi xảy ra</span><span class="add-sucess-button"><a href="">OK</a></span></div></div>';
                         } 
                     }
@@ -189,5 +250,5 @@
                 }
             ?>
         <?php
-            include './foot-ad.php';
+            include './modules/admin/foot-ad.php';
         ?>

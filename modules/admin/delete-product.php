@@ -1,5 +1,5 @@
 <?php
-    include '../handle/connect-database.php';
+    include './modules/handle/connect-database.php';
     // echo 'xoa san pham';
     // echo $_GET['id'];
     if($connect){
@@ -11,8 +11,8 @@
             array_push($data,$row);
         }
         $data=$data[0];
-        $image=explode("|",$data['productimage']);
-        $path='../../includes/images/';
+        $image=explode("|",$data['image']);
+        $path='./includes/images/';
         foreach($image as $key=>$value){
             unlink($path.$value);
         }
@@ -25,7 +25,7 @@
         mysqli_query($connect,$sql);
     }
 ?>
-    <a href="./list-product.php"></a>
+    <a href="danh-sach-san-pham"></a>
     <script>
         const btn=document.querySelector("a");
         btn.click();

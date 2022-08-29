@@ -119,7 +119,7 @@ html {
 }
 
 .form-add-size {
-  margin-right: 34px;
+  margin-right: 21px;
 }
 
 .form-row-size input {
@@ -291,6 +291,11 @@ html {
   overflow: hidden;
 }
 
+.pl-htable .pl-col--5 span {
+  position: relative;
+  top: -6px;
+}
+
 .pl-item-img img {
   width: 80px;
   position: relative;
@@ -350,7 +355,7 @@ html {
 
 .pl-col--5 span:first-child {
   line-height: 1.4rem;
-  height: 1.4rem;
+  height: 1.6rem;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
