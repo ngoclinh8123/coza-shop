@@ -284,7 +284,7 @@ html {
 /* .pl-htable  */
 
 .pl-col--2 {
-  flex-basis: 50%;
+  flex-basis: 42%;
   display: flex;
   align-items: center;
   font-size: 1.4rem;
@@ -345,13 +345,18 @@ html {
   justify-content: center;
 }
 
+.pl-col--7,
 .pl-col--5 {
-  flex-basis: 10%;
+  flex-basis: 8%;
   display: flex;
   align-items: center;
   font-size: 1.4rem;
-  justify-content: center;
+  justify-content: start;
 }
+
+/* .pl-htable .pl-col--7 {
+  justify-content: start;
+} */
 
 .pl-col--5 span:first-child {
   line-height: 1.4rem;

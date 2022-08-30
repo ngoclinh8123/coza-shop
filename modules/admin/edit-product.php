@@ -1,8 +1,8 @@
             <!-- edit product -->
             <?php
-                ini_set('display_errors',0);
-                include './heading-ad.php';
-                include '../handle/connect-database.php';
+                // ini_set('display_errors',0);
+                include_once './modules/admin/heading-ad.php';
+                include_once './modules/handle/connect-database.php';
                 if($connect){
                     $sql='select * from product where id = '.$_GET['id'];
                     $result=mysqli_query($connect,$sql);
@@ -197,8 +197,8 @@
                 </form>
             </div>
             <?php
-                include '../handle/function.php';
-                include '../handle/connect-database.php';
+                include './modules/handle/function.php';
+                include './modules/handle/connect-database.php';
 
                 $id=$_GET["id"];
 
@@ -216,6 +216,8 @@
                 if( trim($_POST['add-name'])!="" && trim($_POST['add-desc'])!="" && trim($_POST['add-price'])!="" && trim($_FILES['add-image-1']['tmp_name'])!="" && trim($_FILES['add-image-2']['tmp_name'])!=""  && trim($_FILES['add-image-3']['tmp_name'])!=""){
                     // sau khi cap nhat thi xoa anh cu di
                     foreach($image as $key=>$value){
+                        $path='./includes/images/';
+                        $value=$path.$value;
                         unlink($value);
                     }
                     $path='./includes/images/';
@@ -253,6 +255,6 @@
                 }
             ?>
         <?php
-            include './foot-ad.php';
+            include './modules/admin/foot-ad.php';
         ?>
         

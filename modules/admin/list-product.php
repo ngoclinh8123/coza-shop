@@ -26,6 +26,9 @@
               <div class="pl-col--1 j-c-c">
                 <input type="checkbox" name="pl-all" value="1" />
               </div>
+              <div class="pl-col--7">
+                <span>ID</span>
+              </div>
               <div class="pl-col--2">
                 <span>Sản Phẩm</span>
               </div>
@@ -49,6 +52,9 @@
               <div class="pl-col--1">
                 <input type="checkbox" name="pl-item[]" value="<?php echo $value['id']; ?>" />
               </div>
+              <div class="pl-col--7">
+                <span><?php echo $value['code']; ?></span>
+              </div>
               <div class="pl-col--2">
                 <div class="pl-item-img">
                   <img src="<?php 
@@ -69,7 +75,7 @@
                 <span><?php echo implode(', ',explode('|',$value['color'])); ?></span>
               </div>
               <div class="pl-col--6">
-                <span class="pl-edit-btn"><a href="./modules/handle/edit-product.php?id=<?php echo $value['id']; ?>">Sửa</a></span>
+                <span class="pl-edit-btn"><a href="sua-san-pham?id=<?php echo $value['id']; ?>">Sửa</a></span>
                 <span>|</span>
                 <span class="pl-delete-btn"><a href="xoa-san-pham?id=<?php echo $value['id']; ?>">Xóa</a></span>
               </div>

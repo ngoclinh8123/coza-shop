@@ -10,5 +10,6 @@
         'xu-li-xoa-san-pham'=>'modules/admin/delete-product.php',
         'them-san-pham'=>'modules/admin/add-product.php',
         'xoa-san-pham'=>'modules/admin/delete-product.php',
+        'sua-san-pham'=>'modules/admin/edit-product.php',
     )
 ?>
