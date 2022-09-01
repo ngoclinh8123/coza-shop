@@ -24,7 +24,7 @@
             >
             <div class="footer-social">
               <span
-                ><a href=""><i class="fab fa-facebook-f"></i></a
+                ><a href="https://www.facebook.com/profile.php?id=100079974984638"  target="_blank"><i class="fab fa-facebook-f"></i></a
               ></span>
               <span
                 ><a href=""><i class="fab fa-linkedin-in"></i></a

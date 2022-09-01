@@ -153,10 +153,10 @@
               <span>Store Overview</span>
             </div>
             <div class="store-ovv-nav">
-              <span class="store-ovv-nav-item active">Best Seller</span>
-              <span class="store-ovv-nav-item">Featured</span>
-              <span class="store-ovv-nav-item">Sale</span>
-              <span class="store-ovv-nav-item">Top Rate</span>
+              <span class="store-ovv-nav-item active">Men</span>
+              <span class="store-ovv-nav-item">Women</span>
+              <span class="store-ovv-nav-item">Shoes</span>
+              <span class="store-ovv-nav-item">Watches</span>
             </div>
             <div class="store-ovv-block-product show best-seller">
               <div class="store-ovv-product">
@@ -170,8 +170,8 @@
                       array_push($dataBestSeller,$row);
                     }
                   }
-                  echo '<pre>';
-                  print_r($dataBestSeller[0]);
+                  // echo '<pre>';
+                  // print_r($dataBestSeller[0]);
                   foreach($dataBestSeller as $key=>$value){
                 ?>
 
@@ -180,26 +180,27 @@
                       <div class="store-ovv__item-img">
                         <img src="
                         <?php 
-                          $image=explode("|",$value['productimage']);
-                          echo $image[0];
+                          $image=explode("|",$value['image']);
+                          $path='./includes/images/';
+                          echo $path.$image[0];
                          ?>
                          " alt="" />
                         <div class="store-ovv__detail">
-                          <a href=".modules/users/product-detail.php?id=<?php echo $value['id']; ?>"
+                          <a href="san-pham?id=<?php echo $value['id']; ?>"
                             ><span class="store-ovv__detail-content"
-                              >DETAIL</span
+                              >Chi Tiết</span
                             ></a
                           >
                         </div>
                       </div>
                       <div class="store-ovv--content">
                         <div class="store-ovv--name">
-                          <span><?php  echo $value['productname'] ?></span>
+                          <span><?php  echo $value['name'] ?></span>
                         </div>
                       </div>
                       <div class="store-ovv--bot">
                         <div class="store-ovv--price">
-                          <span><?php echo $value['productprice'].' VND' ?></span>
+                          <span><?php echo $value['price'].' VND' ?></span>
                         </div>
                         <div class="store-ovv--like">
                           <i class="fas fa-heart active"></i>
@@ -884,7 +885,7 @@
     ></script>
     <script
       type="text/javascript"
-      src="../../includes/libraries/slick-1.8.1/slick/slick.min.js"
+      src="./includes/libraries/slick-1.8.1/slick/slick.min.js"
     ></script>
     <script src="./modules/users/js/home-user.js"></script>
 <?php

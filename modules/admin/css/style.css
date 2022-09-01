@@ -155,7 +155,8 @@ html {
 }
 
 .add-btn input {
-  width: 76px;
+  width: 90px;
+  text-align: center;
   height: 32px;
   background-color: rgb(190, 15, 15);
   color: white;
@@ -226,20 +227,67 @@ html {
 }
 
 /* list product */
+.modal-change-status {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.modal-status-content {
+  background-color: white;
+  padding: 36px 13px 0;
+  font-size: 1.4rem;
+  position: relative;
+}
+
+.modal-status-exit {
+  position: absolute;
+  top: 3px;
+  right: 6px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: red;
+  transition: all linear 0.3s;
+}
+
+.modal-status-exit:hover {
+  color: black;
+}
+
 .pl-block {
   flex: 1;
   margin: 0 24px 60px;
 }
 
 .pl-block-heading {
-  font-size: 2rem;
   margin: 23px 0;
 }
 
-.pl-block-heading span {
-  border-left: 2px solid blue;
-  margin-left: 48px;
-  padding-left: 12px;
+.pl-nav-item {
+  margin-right: 13px;
+  background-color: rgb(211, 211, 17);
+  padding: 4px 12px;
+  font-size: 1.4rem;
+  color: white;
+  cursor: pointer;
+  transition: all linear 0.3s;
+  font-weight: 600;
+}
+
+.pl-nav-item:hover {
+  background-color: rgba(217, 181, 36, 0.5);
+}
+
+.pl-nav {
+  width: 100%;
+  display: flex;
 }
 
 .pl-htable {
@@ -312,7 +360,7 @@ html {
   font-weight: 600;
   margin: 8px 0;
   line-height: 1.6rem;
-  height: 1.6rem;
+  height: 1.8rem;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;

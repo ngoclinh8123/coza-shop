@@ -15,7 +15,6 @@
                 }
 
                 $dataSize=array();
-
                 if($connect){
                     $sql='select * from size';
                     $result= mysqli_query($connect,$sql);

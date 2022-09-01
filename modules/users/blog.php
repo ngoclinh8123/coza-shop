@@ -1,8 +1,8 @@
 <?php
     session_start();
-    include '../handle/connect-database.php';
-    include './header-html-tag.php';
-    include './header.php';
+    include_once './modules/handle/connect-database.php';
+    include_once './modules/users/header-html-tag.php';
+    include_once './modules/users/header.php';
     $content=file_get_contents("https://vnexpress.net/giai-tri/thoi-trang");
     $partern='#<article class="item-news item-news-common">(.*)</article>#simU'; 
     preg_match_all($partern,$content,$matches);
@@ -102,6 +102,6 @@
         </div>
     </div>
 <?php
-    include './footer.php';
-    include './footer-html-tag.php';
+    include './modules/users/footer.php';
+    include './modules/users/footer-html-tag.php';
 ?>

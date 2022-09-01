@@ -11,5 +11,7 @@
         'them-san-pham'=>'modules/admin/add-product.php',
         'xoa-san-pham'=>'modules/admin/delete-product.php',
         'sua-san-pham'=>'modules/admin/edit-product.php',
+        'san-pham'=>'modules/users/product-detail.php',
+        'tin-tuc'=>'modules/users/blog.php',
     )
 ?>

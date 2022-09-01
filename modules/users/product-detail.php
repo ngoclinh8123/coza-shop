@@ -1,8 +1,8 @@
 <?php
     session_start();
-    include './header-html-tag.php';
-    include '../handle/connect-database.php';
-    include './header.php';
+    include_once './modules/users/header-html-tag.php';
+    include_once './modules/handle/connect-database.php';
+    include_once './modules/users/header.php';
 
     $data=array();
     if(isset($_GET['id'])){
@@ -17,15 +17,16 @@
     }
     $data=$data[0];
 
-    $image=explode("|",$data['productimage']);
-    $name=$data['productname'];
-    $desc=$data['productdescription'];
-    $price=$data['productprice'];
-    $color=$data['productcolor'];
-    $size=$data['productzise'];
-    $weight=$data['productweight'];
-    $dimension=$data['productdimension'];
-    $material=$data['productmaterial'];
+    $code=$data['code'];
+    $image=explode("|",$data['image']);
+    $name=$data['name'];
+    $desc=$data['description'];
+    $price=$data['price'];
+    $color=$data['color'];
+    $size=$data['size'];
+    $weight=$data['weight'];
+    $dimension=$data['dimension'];
+    $material=$data['material'];
 
 
     $sizes = explode('|',$size);
@@ -34,32 +35,33 @@
     $size=implode(', ',explode('|',$size));
     $color=implode(', ',explode('|',$color));
 
+    $path='./includes/images/';
 ?>
     <div class="product-detail-user">
       
 
       <!-- path -->
       <div class="prd-path">
-        <span>Home</span>
+        <span>Coza Store</span>
         <i class="fas fa-angle-right"></i>
-        <span>Men</span>
+        <span>Sản phẩm</span>
         <i class="fas fa-angle-right"></i>
-        <span>Lightweight Jacket</span>
+        <span><?php echo $code; ?></span>
       </div>
 
       <!-- item -->
       <div class="prd-wrap">
         <div class="prd-wrap-row">
           <div class="prd-col--1">
-            <img class="active" src="<?php echo $image[0] ?>" alt="" />
-            <img class="" src="<?php echo $image[1] ?>" alt="" />
-            <img class="" src="<?php echo $image[2] ?>" alt="" />
+            <img class="active" src="<?php echo $path.$image[0] ?>" alt="" />
+            <img class="" src="<?php echo $path.$image[1] ?>" alt="" />
+            <img class="" src="<?php echo $path.$image[2] ?>" alt="" />
           </div>
           <div class="prd-col--2">
             <div class="prd-col--2-border">
-              <img class="active" src="<?php echo $image[0] ?>" alt="" />
-              <img class="" src="<?php echo $image[1] ?>" alt="" />
-              <img class="" src="<?php echo $image[2] ?>" alt="" />
+              <img class="active" src="<?php echo $path.$image[0] ?>" alt="" />
+              <img class="" src="<?php echo $path.$image[1] ?>" alt="" />
+              <img class="" src="<?php echo $path.$image[2] ?>" alt="" />
             </div>
           </div>
           <div class="prd-col--3">
@@ -208,9 +210,9 @@
       }
     ?>
 
-    <script src="./js/product-detail.js"></script>
+    <script src="./modules/users/js/product-detail.js"></script>
 
 <?php
-    include './footer.php';
-    include './footer-html-tag.php';
+    include './modules/users/footer.php';
+    include './modules/users/footer-html-tag.php';
 ?>

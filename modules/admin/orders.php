@@ -1,7 +1,7 @@
 <?php
-    include './modules/admin/heading-ad.php';
+    include_once './modules/admin/heading-ad.php';
     include_once './modules/handle/function.php';
-    include './modules/handle/connect-database.php';
+    include_once './modules/handle/connect-database.php';
 
 ?>
     <div class="orders-wrap">
@@ -42,7 +42,7 @@
                         <!-- <i class="fas fa-times"></i> -->
                         <i class="fas fa-times-circle"></i>
                     </div>
-                    <form action="../handle/change-title-order.php" method="post" name="change-title-order">
+                    <form action="./modules/handle/change-title-order.php" method="post" name="change-title-order">
                         <div class="o-modal-title">
                             <span>Đổi trạng thái đơn hàng</span>
                         </div>

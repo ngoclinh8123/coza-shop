@@ -52,7 +52,7 @@
                 <a href="">Features</a>
               </li>
               <li class="nav-item">
-                <a href="./modules/users/blog.php">Blog</a>
+                <a href="tin-tuc">Blog</a>
               </li>
               <li class="nav-item">
                 <a href="">About</a>
@@ -114,7 +114,7 @@
 
           // ngan cach cac id san pham bang '|'
           // $dataCart=explode("|",$dataCart[0]['product']);
-          echo '<pre>';print_r($dataCart);echo '</pre>';
+          // echo '<pre>';print_r($dataCart);echo '</pre>';
         }
          ?>
         <div class="home-cart">

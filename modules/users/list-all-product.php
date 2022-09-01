@@ -1,8 +1,8 @@
 <?php
     session_start();
-    include './modules/users/header-html-tag.php';
-    include './modules/users/header-top.php';
-    include './modules/handle/connect-database.php';
+    include_once './modules/users/header-html-tag.php';
+    include_once './modules/users/header-top.php';
+    include_once './modules/handle/connect-database.php';
     include_once './modules/users/header.php';
     include_once './modules/handle/function.php';
     $data=array();
@@ -13,8 +13,9 @@
             array_push($data,$row);
         }
     }
-    $amoutItemInPage=4;
+    $amoutItemInPage=8;
     $amountPage=createPagination($data,$amoutItemInPage);
+    // echo 'dayyyyyyyy:'.$amountPage;
 ?>
 
        <div class="lap-container">
@@ -30,17 +31,17 @@
 
                         foreach($data as $key => $product){
                             if($key> $start && $key<=$end){
-                                $imgs=explode("|",$product['productimage']);
+                                $imgs=explode("|",$product['image']);
                                 $image='./includes/images/'.$imgs[0];
                                 $id=$product['id'];
-                                $name=$product['productname'];
-                                $price=$product['productprice'];
+                                $name=$product['name'];
+                                $price=$product['price'];
                                 
                                 
                     ?>
                         <div class="col c-3">
                             <div class="lap-item">
-                                <a href="./product-detail.php?id=<?php echo $id ?>">
+                                <a href="san-pham?id=<?php echo $id ?>">
                                     <div class="lap-item-img">
                                         <img src="<?php echo $image ?>" alt="">
                                     </div>
@@ -66,8 +67,8 @@
                     
                     <?php
                         if($page==1){
-                            echo '<div class="lap-pag-item--1 choose"><a href="./list-all-product.php?page=1"><span>1</span></a></div>';
-                        }else echo '<div class="lap-pag-item--1"><a href="./list-all-product.php?page=1"><span>1</span></a></div>';
+                            echo '<div class="lap-pag-item--1 choose"><a href="tat-ca-san-pham?page=1"><span>1</span></a></div>';
+                        }else echo '<div class="lap-pag-item--1"><a href="tat-ca-san-pham?page=1"><span>1</span></a></div>';
                         // so page > 5 thi moi can ...
                         if($amountPage>5){
                             echo '<div class="lap-pag-item"><span class="lap-pag-dot">...</span></div>';
@@ -75,11 +76,13 @@
                         if($amountPage>1){
                             for($i=2;$i<=$amountPage;$i++){
                                 if($i==$page){
-                                    echo '<div class="lap-pag-item choose"><a href="./list-all-product.php?page='.$i.'"><span>'.$i.'</span></a></div>';
+                                    echo '<div class="lap-pag-item choose"><a href="tat-ca-san-pham?page='.$i.'"><span>'.$i.'</span></a></div>';
                                 }else{
-                                    echo '<div class="lap-pag-item"><a href="./list-all-product.php?page='.$i.'"><span>'.$i.'</span></a></div>';
+                                    echo '<div class="lap-pag-item"><a href="tat-ca-san-pham?page='.$i.'"><span>'.$i.'</span></a></div>';
+                                    // echo 'okkkkkkkk';
                                 }
                             }
+                            // echo 'long hown 2';
                         }
                         if($amountPage>5){
                             echo '<div class="lap-pag-item"><span class="lap-pag-dot">...</span></div>';
@@ -92,7 +95,7 @@
             </div>
        </div>
 
-    <script src="./js/shop-all.js"></script>
+    <script src="./modules/users/js/shop-all.js"></script>
 <?php
     include './modules/users/footer.php';
     include './modules/users/footer-html-tag.php';
