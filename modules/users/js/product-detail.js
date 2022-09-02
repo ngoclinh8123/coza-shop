@@ -97,8 +97,7 @@ function checkInputSelect() {
     let color = colorTag.value;
     let amount = amountTag.innerText;
     let id = idTag.value;
-    let path =
-      "./bill.php?item=" + id + "-" + amount + "-" + size + "-" + color;
+    let path = "hoa-don?item=" + id + "-" + amount + "-" + size + "-" + color;
     buyNowBtn.setAttribute("href", path);
     buynowFake.style.display = "none";
     buyNowBtn.style.display = "block";

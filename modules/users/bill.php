@@ -1,8 +1,9 @@
 <?php
     session_start();
-    include './header-html-tag.php';
-    include '../handle/connect-database.php';
-    include '../handle/get-user-info.php';
+    if(isset($_SESSION['user-email'])){
+    include_once './modules/users/header-html-tag.php';
+    include_once './modules/handle/connect-database.php';
+    include_once './modules/handle/get-user-info.php';
 ?> 
 <div class="bill-wrap">
     <?php
@@ -16,8 +17,9 @@
             }
             $itemBuyString=implode(',',$itemBuyNewArray);
         }else if(isset($_GET['item'])){
-            $itemBuy=$_GET['item'];
-            $itemBuyString=explode('-',$itemBuy)[0];
+            $itemBuyString=$_GET['item'];
+            $itemBuyString=explode('-',$itemBuyString)[0];
+            // echo $itemBuyString;
         }
         // echo '<pre>';print_r($itemBuy);echo '</pre>';
         // echo '<pre>';print_r($userdata);echo '</pre>';
@@ -38,7 +40,7 @@
         $address="";
         $dataAddress=array(); 
         if($connect){
-            $sql='select * from address where userId ='.$userdata['id'];
+            $sql="select * from orderaddress where userId =(select id from user where email='".$_SESSION['user-email']."')";
             $result=mysqli_query($connect,$sql);
             while($row=mysqli_fetch_array($result)){
                 array_push($dataAddress,$row);
@@ -52,15 +54,15 @@
     ?>
     <div class="bill-head">
         <div class="bill-head-img">
-            <a href="./home.php">
-                <img src="../../includes/images/logo-coza-store.png" alt="" />
+            <a href="trang-chu">
+                <img src="./includes/images/logo-coza-store.png" alt="" />
             </a>
         </div>
         <div class="bill-head-title">
             <span>Thanh Toán</span>
         </div>
     </div>
-    <form action="./order-handle.php" method="post" class="bill-body">
+    <form action="xu-ly-dat-hang" method="post" class="bill-body">
         <div class="bill-row">
             <div class="row row-address-title">
                 <div class="bill-row-title col c-8">
@@ -68,7 +70,7 @@
                     <span>Địa Chỉ Nhận Hàng</span>
                 </div>
                 <div class="bill-row-edit-address">
-                    <a href="./add-address.php">Thiết lập địa chỉ</a>
+                    <a href="dia-chi-nhan-hang">Thiết lập địa chỉ</a>
                 </div>
             </div>
 
@@ -76,8 +78,8 @@
 
                 <div class="row bill-address-default">
                     <div class="col c-3">
-                        <div class="bill-user bill-user-default"><?php echo $dataAddress[0]['username'] ?></div>
-                        <input type="text" name="bill-user" hidden class="bill-user-input" value="<?php echo $dataAddress[0]['username'] ?>">
+                        <div class="bill-user bill-user-default"><?php echo $dataAddress[0]['name'] ?></div>
+                        <input type="text" name="bill-user" hidden class="bill-user-input" value="<?php echo $dataAddress[0]['id'] ?>">
                         <div class="bill-phone bill-phone-default"><?php echo $dataAddress[0]['phone'] ?></div>
                         <input type="text" name="bill-phone" hidden class="bill-phone-input" value="<?php echo $dataAddress[0]['phone'] ?>">
                     </div>
@@ -105,7 +107,7 @@
                             }
                         ?>
                         <label for="bill-aa-address--<?php echo $dataAddress[$i]['id'] ?>" class="">
-                            <span class="bill-user"><?php echo $dataAddress[$i]['username']; ?></span>
+                            <span class="bill-user"><?php echo $dataAddress[$i]['name']; ?></span>
                             <span class="bill-span">(</span><span class="bill-phone"><?php echo $dataAddress[$i]['phone']; ?></span><span class="bill-span">) - </span>
                             <span class="bill-address"><?php echo $dataAddress[$i]['address']; ?></span>
                         </label>
@@ -141,9 +143,11 @@
                     $color=explode("-",$value)[3];
                     foreach($dataProduct as $key2=>$value2){
                         if($idProduct==$value2['id']){
-                            $image=explode("|",$value2['productimage'])[0];
-                            $name=$value2['productname'];
-                            $price=$value2['productprice'];
+                            $image=explode("|",$value2['image'])[0];
+                            $path='./includes/images/';
+                            $image=$path.$image;
+                            $name=$value2['name'];
+                            $price=$value2['price'];
 
         ?>
                                 <div class="bill-row">
@@ -197,9 +201,13 @@
 
             }else if(isset($_GET['item'])){
                 $dataProduct=$dataProduct[0];
-                $image=explode("|",$dataProduct['productimage'])[0];
-                $name=$dataProduct['productname'];
-                $price=$dataProduct['productprice'];
+
+                $image=explode("|",$dataProduct['image'])[0];
+                $path='./includes/images/';
+                $image=$path.$image;
+
+                $name=$dataProduct['name'];
+                $price=$dataProduct['price'];
                 $amount=explode("-",$_GET['item'])[1];
                 $size=explode("-",$_GET['item'])[2];
                 $color=explode("-",$_GET['item'])[3];
@@ -288,7 +296,7 @@
                 <div class="col c-3">
                     
                         <input type="text" value="" name="confirm" hidden>
-                        <input type="submit" value="Đặt hàng" />
+                        <input type="submit" value="Đặt hàng" class="buy-button"/>
                 
 
                     <!-- insert into orders(userId,product,price,address,phone,username,timeorder) values(1,"12-sizeS-do|14-size39-den","358000","ngoc hoi, dong da, ha noi","0242334","ngoc anh","13:12:30-24/12/2022") -->
@@ -297,7 +305,8 @@
         </div>
     </form>
 </div>
-<script src="./js/bill.js"></script>
+<script src="./modules/users/js/bill.js"></script>
 <?php
-    include './footer-html-tag.php';
+    include './modules/users/footer-html-tag.php';
+    }
 ?>

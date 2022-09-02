@@ -1,5 +1,5 @@
 <?php
-  // session_start();
+  session_start();
   include './modules/handle/connect-database.php';
   
   include './modules/users/header-html-tag.php';
@@ -155,27 +155,25 @@
             <div class="store-ovv-nav">
               <span class="store-ovv-nav-item active">Men</span>
               <span class="store-ovv-nav-item">Women</span>
-              <span class="store-ovv-nav-item">Shoes</span>
-              <span class="store-ovv-nav-item">Watches</span>
+              <span class="store-ovv-nav-item">Handbag</span>
+              <span class="store-ovv-nav-item">Wristwatch</span>
             </div>
             <div class="store-ovv-block-product show best-seller">
               <div class="store-ovv-product">
                 
                 <?php
-                  $dataBestSeller=array();
-                  $sql='select * from product';
+                  $dataMen=array();
+                  $sql="select * from product where class='AA' or class ='QA'";
                   if($connect){
                     $result=mysqli_query($connect,$sql);
                     while($row=mysqli_fetch_array($result)){
-                      array_push($dataBestSeller,$row);
+                      array_push($dataMen,$row);
                     }
                   }
                   // echo '<pre>';
                   // print_r($dataBestSeller[0]);
-                  foreach($dataBestSeller as $key=>$value){
+                  foreach($dataMen as $key=>$value){
                 ?>
-
-                
                     <div class="store-ovv__item">
                       <div class="store-ovv__item-img">
                         <img src="
@@ -210,567 +208,159 @@
                     </div>
 
                 <?php } ?>
-
-                  
-                <!-- <div class="store-ovv__item">
-           
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href="./product-detail.php"
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-            
-                </div> -->
-                
               </div>
             </div>
             <div class="store-ovv-block-product featured">
               <div class="store-ovv-product">
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
+                <?php
+                    $dataWomen=array();
+                    $sql="select * from product where class='AN' or class ='QN'";
+                    if($connect){
+                      $result=mysqli_query($connect,$sql);
+                      while($row=mysqli_fetch_array($result)){
+                        array_push($dataWomen,$row);
+                      }
+                    }
+                    // echo '<pre>';
+                    // print_r($dataBestSeller[0]);
+                    foreach($dataWomen as $key=>$value){
+                  ?>
+                    <div class="store-ovv__item">
+                      <div class="store-ovv__item-img">
+                        <img src="
+                        <?php 
+                          $image=explode("|",$value['image']);
+                          $path='./includes/images/';
+                          echo $path.$image[0];
+                         ?>
+                         " alt="" />
+                        <div class="store-ovv__detail">
+                          <a href="san-pham?id=<?php echo $value['id']; ?>"
+                            ><span class="store-ovv__detail-content"
+                              >Chi Tiết</span
+                            ></a
+                          >
+                        </div>
+                      </div>
+                      <div class="store-ovv--content">
+                        <div class="store-ovv--name">
+                          <span><?php  echo $value['name'] ?></span>
+                        </div>
+                      </div>
+                      <div class="store-ovv--bot">
+                        <div class="store-ovv--price">
+                          <span><?php echo $value['price'].' VND' ?></span>
+                        </div>
+                        <div class="store-ovv--like">
+                          <i class="fas fa-heart active"></i>
+                          <i class="far fa-heart"></i>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
+
+                <?php } ?>
               </div>
             </div>
             <div class="store-ovv-block-product sale">
               <div class="store-ovv-product">
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
+              <?php
+                  $dataBag=array();
+                  $sql="select * from product where class='TX'";
+                  if($connect){
+                    $result=mysqli_query($connect,$sql);
+                    while($row=mysqli_fetch_array($result)){
+                      array_push($dataBag,$row);
+                    }
+                  }
+                  // echo '<pre>';
+                  // print_r($dataBestSeller[0]);
+                  foreach($dataBag as $key=>$value){
+                ?>
+                    <div class="store-ovv__item">
+                      <div class="store-ovv__item-img">
+                        <img src="
+                        <?php 
+                          $image=explode("|",$value['image']);
+                          $path='./includes/images/';
+                          echo $path.$image[0];
+                         ?>
+                         " alt="" />
+                        <div class="store-ovv__detail">
+                          <a href="san-pham?id=<?php echo $value['id']; ?>"
+                            ><span class="store-ovv__detail-content"
+                              >Chi Tiết</span
+                            ></a
+                          >
+                        </div>
+                      </div>
+                      <div class="store-ovv--content">
+                        <div class="store-ovv--name">
+                          <span><?php  echo $value['name'] ?></span>
+                        </div>
+                      </div>
+                      <div class="store-ovv--bot">
+                        <div class="store-ovv--price">
+                          <span><?php echo $value['price'].' VND' ?></span>
+                        </div>
+                        <div class="store-ovv--like">
+                          <i class="fas fa-heart active"></i>
+                          <i class="far fa-heart"></i>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
+
+                <?php } ?>
               </div>
             </div>
             <div class="store-ovv-block-product top-rate">
               <div class="store-ovv-product">
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
+              <?php
+                  $dataWatch=array();
+                  $sql="select * from product where class='DH'";
+                  if($connect){
+                    $result=mysqli_query($connect,$sql);
+                    while($row=mysqli_fetch_array($result)){
+                      array_push($dataWatch,$row);
+                    }
+                  }
+                  // echo '<pre>';
+                  // print_r($dataBestSeller[0]);
+                  foreach($dataWatch as $key=>$value){
+                ?>
+                    <div class="store-ovv__item">
+                      <div class="store-ovv__item-img">
+                        <img src="
+                        <?php 
+                          $image=explode("|",$value['image']);
+                          $path='./includes/images/';
+                          echo $path.$image[0];
+                         ?>
+                         " alt="" />
+                        <div class="store-ovv__detail">
+                          <a href="san-pham?id=<?php echo $value['id']; ?>"
+                            ><span class="store-ovv__detail-content"
+                              >Chi Tiết</span
+                            ></a
+                          >
+                        </div>
+                      </div>
+                      <div class="store-ovv--content">
+                        <div class="store-ovv--name">
+                          <span><?php  echo $value['name'] ?></span>
+                        </div>
+                      </div>
+                      <div class="store-ovv--bot">
+                        <div class="store-ovv--price">
+                          <span><?php echo $value['price'].' VND' ?></span>
+                        </div>
+                        <div class="store-ovv--like">
+                          <i class="fas fa-heart active"></i>
+                          <i class="far fa-heart"></i>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
-                <div class="store-ovv__item">
-                  <!-- <a href=""> -->
-                  <div class="store-ovv__item-img">
-                    <img src="./includes/images/product-01.jpg" alt="" />
-                    <div class="store-ovv__detail">
-                      <a href=""
-                        ><span class="store-ovv__detail-content"
-                          >DETAIL</span
-                        ></a
-                      >
-                    </div>
-                  </div>
-                  <div class="store-ovv--content">
-                    <div class="store-ovv--name">
-                      <span>Esprit Ruffle Shift</span>
-                    </div>
-                    <div class="store-ovv--like">
-                      <i class="fas fa-heart active"></i>
-                      <i class="far fa-heart"></i>
-                    </div>
-                  </div>
-                  <div class="store-ovv--price">
-                    <span>$16.64</span>
-                  </div>
-                  <!-- </a> -->
-                </div>
+
+                <?php } ?>
               </div>
             </div>
             <!-- button -->

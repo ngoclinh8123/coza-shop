@@ -76,3 +76,5 @@ function renderTotalPrice() {
 }
 
 renderTotalPrice();
+
+// khi co dia chi thi moi cho dat hang

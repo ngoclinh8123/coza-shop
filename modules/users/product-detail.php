@@ -99,7 +99,7 @@
               ?>
       
               <div class="prd-form-row color">
-                <span>Color</span>
+                <span>Màu sắc</span>
                 <select name="color" id="">
                   <option value="">Choose an option</option>
                   <?php
@@ -190,22 +190,27 @@
         $size=$_POST['size'];
         $color=$_POST['color'];
         $amountItem=$_POST['amount-item'];
-        $userId=$_SESSION['id'];
-        $newItem=$id."-".$size."-".$color."-".$amountItem;
-        $allItem=array();
+        // $userId=$_SESSION['id'];
+        // $newItem=$id."-".$size."-".$color."-".$amountItem;
+        // $allItem=array();
         if($connect){
-          $sql='select product from cart where id= (select cartid from user where id='.$userId.')';
-          $result=mysqli_query($connect,$sql);
-          while($row=mysqli_fetch_array($result)){
-            array_push($allItem,$row);
-          }
-          $allItem=explode('|',$allItem[0]['product']);
-          array_push($allItem,$newItem);
-          $newData=implode("|",$allItem);
-          $sql="update cart set product='".$newData."' where id=(select cartid from user where id=".$userId.")";
-          if(mysqli_query($connect,$sql)){
-            echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đã thêm sản phẩm vào giỏ hàng</div><a href="./list-all-product.php?page=1">Tiếp tục</a></div></div>';
-          }else echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Có lỗi xảy ra khi thêm vào giỏ hàng</div><a href="./list-all-product.php?page=1">Thử lại</a></div></div>';
+          // $sql='select product from cart where id= (select cartid from user where id='.$userId.')';
+          // $result=mysqli_query($connect,$sql);
+          // while($row=mysqli_fetch_array($result)){
+          //   array_push($allItem,$row);
+          // }
+          // $allItem=explode('|',$allItem[0]['product']);
+          // array_push($allItem,$newItem);
+          // $newData=implode("|",$allItem);
+          // $sql="update cart set product='".$newData."' where id=(select cartid from user where id=".$userId.")";
+            if($keyUserLogin){
+              $sql="insert into cart(userId,productId,amount,color,size) values (".$userId.",".$id.",'".$amountItem."','".$color."','".$size."')";
+              if(mysqli_query($connect,$sql)){
+                echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đã thêm sản phẩm vào giỏ hàng</div><a href="tat-ca-san-pham?page=1">Tiếp tục</a></div></div>';
+              }else echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Có lỗi xảy ra khi thêm vào giỏ hàng</div><a href="tat-ca-san-pham?page=1">Thử lại</a></div></div>';
+            }else{
+              echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Vui lòng đăng nhập để sử dụng tính năng này</div><a href="dang-nhap">Đăng nhập</a></div></div>';
+            }
         }
       }
     ?>

@@ -1,14 +1,15 @@
 <?php
     session_start();
-    include './header-html-tag.php';
+    if(isset($_SESSION['user-email'])){
+    include_once './modules/users/header-html-tag.php';
 ?>
     <div class="cart-detail">
        <?php
-            include './header-top.php';
-            include '../handle/connect-database.php';
+            include_once './modules/users/header-top.php';
+            include_once './modules/handle/connect-database.php';
 
                 // get all product from database
-                $userid=$_SESSION['id'];
+                
                 $allProduct=array();
                 $dataCart=array();
                 if($connect){
@@ -17,13 +18,14 @@
                     while($row=mysqli_fetch_array($result)){
                         array_push($allProduct,$row);
                     }
-                    $sql='select product from  cart where id= (select cartid from user where id='.$userid.')';
+                    // $sql='select product from  cart where id= (select cartid from user where id='.$userid.')';
+                    $sql="select * from cart where userId=(select id from user where email='".$_SESSION['user-email']."')";
                     $result=mysqli_query($connect,$sql);
                     while ($row=mysqli_fetch_array($result)){
                         array_push($dataCart,$row);
                     }
                     // ngan cach cac id san pham bang '|'
-                    $dataCart=explode("|",$dataCart[0]['product']);
+                    // $dataCart=explode("|",$dataCart[0]['product']);
                 }
                 // echo '<pre>';print_r($allProduct);
                 // echo '<pre>';print_r($dataCart);
@@ -33,15 +35,15 @@
       <!-- cart heading -->
       <div class="cart-heading">
           <div class="cart-heading-logo">
-            <a href="./index.html">
-                <img src="../../includes/images/logo-coza-store.png" alt="">
+            <a href="trang-chu">
+                <img src="./includes/images/logo-coza-store.png" alt="">
             </a>
           </div>
           <div class="cart-heading-title">Giỏ Hàng</div>
       </div>
 
       <!-- cart table head-->
-      <form action="./bill.php" method="POST">
+      <form action="hoa-don" method="POST">
         <div class="cart-row-head">
             <div class="cart-col--1">
                 <input type="checkbox" name="" value="">
@@ -67,16 +69,18 @@
         </div>
 
         <?php
-            for($i=1;$i<count($dataCart);$i++){
-                $item=explode("-",$dataCart[$i]);
+            for($i=0;$i<count($dataCart);$i++){
+                // $item=explode("-",$dataCart[$i]);
                 foreach($allProduct as $key=>$value){
-                if($item[0]==$value['id']){
-                    $image=explode("|",$value['productimage'])[0];
-                    $name=$value['productname'];
-                    $size=$item[1];
-                    $color=$item[2];
-                    $desc=$value['productdescription'];
-                    $amount=$item[3];
+                if($dataCart[$i]['productId']==$value['id']){
+                    $image=explode("|",$value['image'])[0];
+                    $path='./includes/images/';
+                    $image=$path.$image;
+                    $name=$value['name'];
+                    $size=$dataCart[$i]['size'];
+                    $color=$dataCart[$i]['color'];
+                    $desc=$value['description'];
+                    $amount=$dataCart[$i]['amount'];
         ?>
             <div class="cart-row">
                 <div class="cart-col--1">
@@ -84,20 +88,23 @@
                 </div>
                 <div class="cart-col--2">
                     <div class="cart-item-img">
-                        <a href="./product-detail.php?id=<?php echo $value['id']; ?>">
+                        <a href="san-pham?id=<?php echo $value['id']; ?>">
                             <img src="<?php echo $image; ?>" alt="">
                         </a>
                     </div>
-                    <div class="cart-item-desc">
-                        <a href="./product-detail.php?id=<?php echo $value['id']; ?>"><?php echo $desc; ?></a>
+                    <div class="">
+                        <div class="cart-item-desc">
+                            <a href="san-pham?id=<?php echo $value['id']; ?>"><?php echo $desc; ?></a>
+                        </div>
+                        <div class="cart-item-code"><span><?php echo $value['code'] ?></span></div>
                     </div>
                 </div>
                 <div class="cart-col--6">
                     <span>Size</span>
-                    <span><?php echo $item[1]; ?></span>
+                    <span><?php echo $size; ?></span>
                 </div>
                 <div class="cart-col--7">
-                    <span><?php echo $item[2]; ?></span>
+                    <span><?php echo $color; ?></span>
                 </div>
                 <div class="cart-col--3">
                     <div class="cart-item-dec cart-item-button">
@@ -111,11 +118,11 @@
                     </div>
                 </div>
                 <div class="cart-col--4">
-                    <span class="cart-item-price"><?php echo $value['productprice']; ?></span>
+                    <span class="cart-item-price"><?php echo $value['price']; ?></span>
                     <span> VNĐ</span>
                 </div>
                 <div class="cart-col--5">
-                    <a href="../handle/delete-product-cart.php?index=<?php echo $i?>">Xóa</a>
+                    <a href="./handle/delete-product-cart.php?index=<?php echo $i?>">Xóa</a>
                 </div>
             </div>
 
@@ -145,7 +152,8 @@
 
       </form>
     </div>
-    <script src="./js/cart-detail.js"></script>
+    <script src="./modules/users/js/cart-detail.js"></script>
 <?php
-    include './footer-html-tag.php';
+    include './modules/users/footer-html-tag.php';
+    }
 ?>

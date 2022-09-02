@@ -1,10 +1,10 @@
 <?php
-    include '../handle/connect-database.php';
+    include_once './modules/handle/connect-database.php';
     $id=$_GET['id'];
     if($connect){
-        $sql='delete from address where id='.$id;
+        $sql='delete from orderaddress where id='.$id;
         if(mysqli_query($connect,$sql)){
-            echo '<a href="../users/add-address.php"></a>';
+            echo '<a href="dia-chi-nhan-hang"></a>';
         }
 
     }

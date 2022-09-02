@@ -1,14 +1,15 @@
 <?php
     session_start();
-    include './header-html-tag.php';
-    include '../handle/connect-database.php';
-    include '../handle/get-user-info.php';
+    if(isset($_SESSION['user-email'])){
+    include_once './modules/users/header-html-tag.php';
+    include_once './modules/handle/connect-database.php';
+    include_once './modules/handle/get-user-info.php';
     $name="";
     $phone="";
     $address="";
     $dataAddress=array(); 
     if($connect){
-        $sql='select * from address where userId ='.$userdata['id'];
+        $sql="select * from orderaddress where userId =".$userId;
         $result=mysqli_query($connect,$sql);
         while($row=mysqli_fetch_array($result)){
             array_push($dataAddress,$row);
@@ -36,17 +37,17 @@
             <div class="aa-row">
                 <i class="fas fa-map-marker-alt"></i>
                 <label for="" class="">
-                    <span class="bill-user"><?php echo $dataAddress[$i]['username']; ?></span>
+                    <span class="bill-user"><?php echo $dataAddress[$i]['name']; ?></span>
                     <span class="bill-phone">( <?php echo $dataAddress[$i]['phone']; ?> ) - </span>
                     <span class="bill-address"><?php echo $dataAddress[$i]['address']; ?></span>
                 </label>
-                <a href="../handle/delete-address.php?id=<?php echo $dataAddress[$i]['id']; ?>">Xóa</a>
+                <a href="xu-ly-xoa-dia-chi?id=<?php echo $dataAddress[$i]['id']; ?>">Xóa</a>
             </div>
         <?php
             }
         ?>
         <div class="aa-modal">
-            <form action="../handle/add-address.php?id=<?php echo $userdata['id']; ?>" class="aa-content" method="post">
+            <form action="xu-ly-them-dia-chi?id=<?php echo $userId; ?>" class="aa-content" method="post">
                 <div class="aa-content-title">Địa chỉ mới</div>
                 <div class="row aa-content-row">
                     <div class="col c-6">
@@ -70,11 +71,12 @@
         </div>
 
         <div class="aa-row">
-            <a href="./bill.php" class="aa-link-back">Trở lại</a>
+            <a href="gio-hang" class="aa-link-back">Trở lại</a>
         </div>
     </div>
 </div>
-<script src="./js/add-address.js"></script>
+<script src="./modules/users/js/add-address.js"></script>
 <?php
-    include './footer-html-tag.php';
+    include './modules/users/footer-html-tag.php';
+    }
 ?>

@@ -122,29 +122,33 @@
           <div class="home-cart-block">
             <div class="home-cart-wrap f-c-c">
               <div class="home-cart-title"><span>YOUR CART</span></div>
+              <div class="home-cart-empty"><span>Bạn chưa có sản phẩm nào trong giỏ</span></div>
               <?php
-                for($i=1;$i<count($dataCart);$i++){
+                for($i=0;$i<count($dataCart);$i++){
+                  // echo '<pre>';print_r($dataCart[$i]);
                 //   $item=explode("-",$dataCart[$i]);
-                //   foreach($allProduct as $key=>$value){
-                //     if($item[0]==$value['id']){
-                //       $image=explode("|",$value['productimage'])[0];
-                //       $name=$value['productname'];
-                //       $size=$item[1];
-                //       $color=$item[2];
-                //       $amount=$item[3];
-                //       $price=$value['productprice'];
+                  foreach($allProduct as $key=>$value){
+                    if($dataCart[$i]['productId']==$value['id']){
+                      $image=explode("|",$value['image'])[0];
+                      $path='./includes/images/';
+                      $image=$path.$image;
+                      $name=$value['name'];
+                      $size=$dataCart[$i]['size'];
+                      $color=$dataCart[$i]['color'];
+                      $amount=$dataCart[$i]['amount'];
+                      $price=$value['price'];
                 
               ?>
                 <div class="home-cart-item">
                   <div class="home-cart-item--img">
-                    <a href="./product-detail.php?id=<?php echo $item[0]; ?>">
+                    <a href="san-pham?id=<?php echo $dataCart[$i]['productId']; ?>">
                       <img src="<?php echo $image; ?>" alt="" />
                       <span class=""><i class="fas fa-times"></i></span>
                     </a>
                   </div>
                   <div class="home-cart-item--info">
                     <div class="home-cart-item--name">
-                      <a href="./product-detail.php?id=<?php echo $item[0]; ?>"><?php echo $name; ?></a>
+                      <a href="san-pham?id=<?php echo $dataCart[$i]['productId']; ?>"><?php echo $name; ?></a>
                     </div>
                     <div class="home-cart-size-color">
                       <span><?php echo $size; ?></span> - <span><?php echo $color; ?></span>
@@ -156,15 +160,15 @@
                   </div>
                 </div>
               <?php
-                //     }
-                //   }
+                    }
+                  }
                 }
               ?>
               <div class="home-cart-total">
-                Total : <span class="home-cart-total-price">0</span>
+                Tổng cộng : <span class="home-cart-total-price">0</span>
                 <span>VNĐ</span>
               </div>
-              <a href="./cart.php" class="home-cart-view">
+              <a href="gio-hang" class="home-cart-view">
                 <div class="home-cart-btn-view">Chi tiết</div>
               </a>
               <div class="home-cart-exit">

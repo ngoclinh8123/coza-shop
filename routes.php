@@ -13,5 +13,11 @@
         'sua-san-pham'=>'modules/admin/edit-product.php',
         'san-pham'=>'modules/users/product-detail.php',
         'tin-tuc'=>'modules/users/blog.php',
+        'gio-hang'=>'modules/users/cart.php',
+        'hoa-don'=>'modules/users/bill.php',
+        'dia-chi-nhan-hang'=>'modules/users/add-address.php',
+        'xu-ly-dat-hang'=>'modules/users/order-handle.php',
+        'xu-ly-them-dia-chi'=>'modules/handle/add-address.php',
+        'xu-ly-xoa-dia-chi'=>'modules/handle/delete-address.php',
     )
 ?>

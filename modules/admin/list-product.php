@@ -40,7 +40,7 @@
                 <span>ID</span>
               </div>
               <div class="pl-col--2">
-                <span>Sản Phẩm</span>
+                <span>Sản Phẩm</span><span>(<?php echo count($data); ?>)</span>
               </div>
               <div class="pl-col--3 j-c-c">
                 <span>Giá Tiền</span>

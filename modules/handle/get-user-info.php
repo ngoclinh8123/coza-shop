@@ -1,9 +1,22 @@
 <?php
+$keyUserLogin=false;
 if(isset($_SESSION['user-name']) && isset($_SESSION['user-email']) && isset($_SESSION['user-avatar'])){
     // get user infomation
+      $keyUserLogin=true;//xac nhan nguoi dung da dang nhap
       $username= $_SESSION['user-name'];
       $useremail= $_SESSION['user-email'];
       $useravatar= $_SESSION['user-avatar'];
+      $userId=array();
+      if($connect){
+        $sql="select id from user where name='".$username."' and email='".$useremail."'";
+        $result=mysqli_query($connect,$sql);
+        while($row=mysqli_fetch_array($result)){
+          array_push($userId,$row);
+        }
+      }
+      // echo 'dayyyyyyyyyy';
+      // echo '<pre>';print_r($userId);
+      $userId=$userId[0]['id'];
 
       // $userdata=array();
       // if($connect){

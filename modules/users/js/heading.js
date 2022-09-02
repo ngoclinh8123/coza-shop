@@ -57,6 +57,21 @@ cartModal.onclick = function (e) {
 const cartItems = Array.from(document.querySelectorAll(".home-cart-item"));
 const cartItemAmount = document.querySelector(".heading-ac-status");
 cartItemAmount.innerText = cartItems.length;
+console.log(cartItems);
+
+const detailCartBtn = document.querySelector(".home-cart-view");
+const totalPriceBlock = document.querySelector(".home-cart-total");
+const cartEmptyText = document.querySelector(".home-cart-empty");
+
+if (cartItems.length > 0) {
+  detailCartBtn.style.display = "block";
+  totalPriceBlock.style.display = "block";
+  cartEmptyText.style.display = "none";
+} else {
+  detailCartBtn.style.display = "none";
+  totalPriceBlock.style.display = "none";
+  cartEmptyText.style.display = "block";
+}
 
 // home acccount
 const homeAcountImg = document.querySelector(".heading-ac-avatar img");
