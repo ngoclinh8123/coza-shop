@@ -20,13 +20,13 @@
           <img src="./includes/images/slide-01.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
-              <span>Women Collection 2018</span>
+              <span>Women Collection 2022</span>
             </div>
             <div class="slide__title--mid">
               <span>NEW SEASON</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="">SHOP NOW</a></span>
+              <span><a href="thoi-trang-nu?page=1">SHOP NOW</a></span>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
               <span>JACKETS & COATS</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="">SHOP NOW</a></span>
+              <span><a href="thoi-trang-nam?page=1">SHOP NOW</a></span>
             </div>
           </div>
         </div>
@@ -48,13 +48,13 @@
           <img src="./includes/images/slide-03.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
-              <span>Men Collection 2018</span>
+              <span>Men Collection 2022</span>
             </div>
             <div class="slide__title--mid">
               <span>NEW ARRIVALS</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="">SHOP NOW</a></span>
+              <span><a href="dong-ho?page=1">SHOP NOW</a></span>
             </div>
           </div>
         </div>
@@ -80,13 +80,13 @@
                     <p>Women</p>
                   </div>
                   <div class="banner-content--bot">
-                    <p>Spring 2018</p>
+                    <p>Spring 2022</p>
                   </div>
                 </div>
                 <div class="banner-modal">
                   <div class="banner-action">
                     <span>
-                      <a href="">
+                      <a href="thoi-trang-nu?page=1">
                         <div class="banner-title">SHOP NOW</div>
                         <span class="banner-line"></span>
                       </a>
@@ -103,13 +103,13 @@
                     <p>Men</p>
                   </div>
                   <div class="banner-content--bot">
-                    <p>Spring 2018</p>
+                    <p>Spring 2022</p>
                   </div>
                 </div>
                 <div class="banner-modal">
                   <div class="banner-action">
                     <span>
-                      <a href="">
+                      <a href="thoi-trang-nam?page=1">
                         <div class="banner-title">SHOP NOW</div>
                         <span class="banner-line"></span>
                       </a>
@@ -120,7 +120,7 @@
             </div>
             <div class="col l-4">
               <div class="banner-item">
-                <img src="./includes/images/banner-01.jpg" alt="" />
+                <img src="./includes/images/banner-03.jpg" alt="" />
                 <div class="banner-content">
                   <div class="banner-content--top">
                     <p>Accessories</p>
@@ -132,7 +132,7 @@
                 <div class="banner-modal">
                   <div class="banner-action">
                     <span>
-                      <a href="">
+                      <a href="tat-ca-san-pham?page=1">
                         <div class="banner-title">SHOP NOW</div>
                         <span class="banner-line"></span>
                       </a>
@@ -433,7 +433,7 @@
               <div class="col l-4 c-12 m-4">
                 <div class="h-blog__item-img">
                   <a href="">
-                    <img src="./includes/images/blog-01.jpg" alt="" />
+                    <img src="./includes/images/blog-03.jpg" alt="" />
                   </a>
                 </div>
                 <div class="h-blog__item-info">

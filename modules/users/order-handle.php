@@ -42,21 +42,10 @@
 
 
 
-        $sql="insert into orders(addressId,product,price,day,month,year,time) value(".$addressId.",'".$product."','".$price."','".$day."','".$month."','".$year."','".$timedetail."')";
-        if(mysqli_query($connect,$sql)){
-            $orderId=array();
-            $sql='select max(id) from orders';
-            $result=mysqli_query($connect,$sql);
-            while ($row=mysqli_fetch_array($result)){
-                array_push($orderId,$row);
-            }
-            $orderId=$orderId[0]['max(id)'];
-            // echo $orderId;
-
-            $sql="insert into statusorder(orderId,status) values(".$orderId.",'dang-lay-hang')";
+        $sql="insert into orders(addressId,product,price,day,month,year,time,status) value(".$addressId.",'".$product."','".$price."','".$day."','".$month."','".$year."','".$timedetail."','dang-lay-hang')";
             if(mysqli_query($connect,$sql)){
                 echo '<div class="order-sucess-wrap"><div class="order-sucess-content"><div class="order-sucess-title"><span>Đơn hàng của bạn đã được gửi cho người bán</span></div><a href="trang-chu">Quay lại</a></div></div>';
-            }
+            
         }else {
             echo '<div class="order-sucess-wrap"><div class="order-sucess-content"><div class="order-sucess-title"><span>Có lỗi xảy ra khi gửi đơn hàng của bạn :(</span></div><a href="trang-chu">Quay lại</a></div></div>';
         }
@@ -69,7 +58,7 @@
 
 <?php
     include './modules/users/footer-html-tag.php';
-    }
+}
 ?>
 
 <script>

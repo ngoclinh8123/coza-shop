@@ -16,49 +16,49 @@
       <div class="heading">
         <div class="wrap f-c-c">
           <div class="logo">
-            <a href="./index.php"
+            <a href="trang-chu"
               ><img src="./includes/images/logo-coza-store.png"
             /></a>
           </div>
           <div class="heading-nav">
             <ul class="nav">
               <li class="nav-item">
-                <a href="trang-chu">Home</a>
+                <a href="trang-chu">Trang chủ</a>
               </li>
               <li class="nav-item">
-                <a href="">Shop</a>
+                <a href="">Cửa hàng</a>
                 <ul class="sub-nav">
                   <li class="sub-nav-item">
-                    <a href="tat-ca-san-pham?page=1">All Products</a>
+                    <a href="tat-ca-san-pham?page=1">Tất cả sản phẩm</a>
                   </li>
                   <li class="sub-nav-item">
-                    <a href="">Women</a>
+                    <a href="thoi-trang-nu?page=1">Thời trang nữ</a>
                   </li>
                   <li class="sub-nav-item">
-                    <a href="">Men</a>
+                    <a href="thoi-trang-nam?page=1">Thời trang nam</a>
                   </li>
                   <li class="sub-nav-item">
-                    <a href="">Bag</a>
+                    <a href="tui-xach?page=1">Túi xách</a>
                   </li>
                   <li class="sub-nav-item">
-                    <a href="">Shoes</a>
+                    <a href="giay-dep?page=1">Giầy dép</a>
                   </li>
                   <li class="sub-nav-item">
-                    <a href="">Watches</a>
+                    <a href="dong-ho?page=1">Đồng hồ</a>
                   </li>
                 </ul>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="">Features</a>
-              </li>
+              </li> -->
               <li class="nav-item">
-                <a href="tin-tuc">Blog</a>
+                <a href="tin-tuc">Bài viết</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="">About</a>
-              </li>
+              </li> -->
               <li class="nav-item">
-                <a href="">Contact</a>
+                <a href="">Liên hệ</a>
               </li>
             </ul>
           </div>
@@ -184,9 +184,16 @@
           <div class="home-account-block">
             <div class="home-account-wrap f-c-c">
               <div class="home-account-title"><span>YOUR ACOUNT</span></div>
-                <h1><?php echo $username ?></h1>
+              <div class="home-account-img">
+                <img src="./includes/images/GUESS.jpg" alt="">
+              </div>
+              <h1><?php echo $username ?></h1>
+              <h2><?php echo $useremail ?></h2>
               <div class="home-account-exit">
                 <i class="fas fa-times"></i>
+              </div>
+              <div class="home-account-logout">
+                <a href="dang-nhap">Đăng xuất</a>
               </div>
             </div>
           </div>

@@ -4,17 +4,17 @@
         <div class="row footer-nav">
           <div class="col l-3 m-6 c-12 footer-nav-col">
             <div class="footer-nav-col--title">CATEGORIES</div>
-            <span class="footer-nav-col--item"><a href="">Women</a></span>
-            <span class="footer-nav-col--item"><a href="">Men</a></span>
-            <span class="footer-nav-col--item"><a href="">Shoes</a></span>
-            <span class="footer-nav-col--item"><a href="">Watches</a></span>
+            <span class="footer-nav-col--item"><a href="thoi-trang-nu?page=1">Women</a></span>
+            <span class="footer-nav-col--item"><a href="thoi-trang-nam?page=1">Men</a></span>
+            <span class="footer-nav-col--item"><a href="tui-xach?page=1">Bags</a></span>
+            <span class="footer-nav-col--item"><a href="dong-ho?page=1">Watches</a></span>
           </div>
           <div class="col l-3 m-6 c-12 footer-nav-col">
             <div class="footer-nav-col--title">HELP</div>
             <span class="footer-nav-col--item"><a href="">Track Order</a></span>
             <span class="footer-nav-col--item"><a href="">Returns</a></span>
             <span class="footer-nav-col--item"><a href="">Shipping</a></span>
-            <span class="footer-nav-col--item"><a href="">FAQs</a></span>
+            <span class="footer-nav-col--item"><a href="">Trợ giúp</a></span>
           </div>
           <div class="col l-3 m-6 c-12 footer-nav-col">
             <div class="footer-nav-col--title">GET IN TOUCH</div>

@@ -2268,3 +2268,38 @@
   font-size: 1.4rem;
   margin: 0 23px;
 }
+
+/* user account */
+
+.home-account-img {
+  width: 100px;
+}
+
+.home-account-img img {
+  width: 100%;
+  border-radius: 50%;
+  margin: 0 0 13px;
+}
+
+.home-account-wrap h1 {
+  margin: 8px 0;
+}
+
+.home-account-logout {
+  margin-top: 54px;
+}
+
+.home-account-logout a {
+  padding: 6px 13px;
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: all linear 0.3s;
+}
+
+.home-account-logout a:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}

@@ -32,7 +32,7 @@
                     <div class="ad-nav-item">
                         <span class="ad-nav-item-title">Thống kê</span>
                         <div class="ad-subnav-list">
-                            <div class="ad-subnav-item"><a href="./turnover.php">Doanh số bán hàng</a></div>
+                            <div class="ad-subnav-item"><a href="doanh-so-ban-hang">Doanh số bán hàng</a></div>
                         </div>
                     </div>
                     <div class="ad-nav-item">

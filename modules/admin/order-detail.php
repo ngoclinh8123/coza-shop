@@ -1,7 +1,7 @@
 <?php
-        include './heading-ad.php';
-        include '../handle/function.php';
-        include '../handle/connect-database.php';
+        include_once './modules/admin/heading-ad.php';
+        include_once './modules/handle/function.php';
+        include_once './modules/handle/connect-database.php';
         $idOrder=$_GET['id'];
         $dataOrder=array();
 
@@ -11,10 +11,17 @@
             while($row=mysqli_fetch_array($result)){
                 array_push($dataOrder,$row);
             }
-            
+            $dataOrder=$dataOrder[0];
+            // echo '<pre>';print_r($dataOrder);
+            $dataAddress=array();
+            $sql='select * from orderaddress where id='.$dataOrder['addressId'];
+            $result=mysqli_query($connect,$sql);
+            while($row=mysqli_fetch_array($result)){
+                array_push($dataAddress,$row);
+            }
         }
-        $dataOrder=$dataOrder[0];
-        // echo '<pre>';print_r($dataOrder);
+        // echo '<pre>';print_r($dataAddress);
+        $dataAddress=$dataAddress[0];
         $product=$dataOrder['product'];
         $product=explode('|',$product);
 
@@ -33,23 +40,23 @@
             </div>
             <div class="od-address--row">
                 <span>Người nhận :</span>
-                <span><?php echo $dataOrder['username']; ?></span>
+                <span><?php echo $dataAddress['name']; ?></span>
             </div>
             <div class="od-address--row">
                 <span>Số điện thoại :</span>
-                <span><?php echo $dataOrder['phone']; ?></span>
+                <span><?php echo $dataAddress['phone']; ?></span>
             </div>
             <div class="od-address--row">
                 <span>Địa chỉ :</span>
-                <span><?php echo $dataOrder['address']; ?></span>
+                <span><?php echo $dataAddress['address']; ?></span>
             </div>
             <div class="od-address--row">
                 <span>Thời gian đặt :</span>
-                <span><?php echo $dataOrder['day']."-".$dataOrder['month']."-".$dataOrder['year']." ".$dataOrder['timeorder']; ?></span>
+                <span><?php echo $dataOrder['day']."-".$dataOrder['month']."-".$dataOrder['year']." ".$dataOrder['time']; ?></span>
             </div>
             <div class="od-address--row">
                 <span>Trạng thái : </span>
-                <span><?php echo $dataOrder['title']; ?></span>
+                <span><?php echo $dataOrder['status']; ?></span>
             </div>
         </div>
         <div class="od-product">
@@ -75,7 +82,9 @@
                         array_push($dataProduct,$row);
                     }
                     $dataProduct=$dataProduct[0];
-                    $image=explode("|",$dataProduct['productimage'])[0];
+                    $image=explode("|",$dataProduct['image'])[0];
+                    $path='./includes/images/';
+                    $image=$path.$image;
 
 
                     // echo '<pre>';print_r($dataProduct);echo '</pre>';
@@ -98,7 +107,7 @@
                                             <img src="<?php echo $image ?>" alt="">
                                         </div>
                                         <div class="od-product-name">
-                                            <span><?php echo $dataProduct['productname'] ?></span>
+                                            <span><?php echo $dataProduct['name'] ?></span>
                                         </div>
                                     </div>
                                     <div class="col c-2 m-2 l-1">
@@ -123,6 +132,6 @@
         </div>
     </div>
 
-<script src="./js/admin.js"></script>
+<script src="./modules/admin/js/admin.js"></script>
 </body>
 </html>

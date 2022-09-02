@@ -215,7 +215,7 @@
         ?>
                     <div class="bill-row">
                         <div class="row bill-row-product">
-                            <input type="text" name="item-buy[]" value="<?php echo $value ?>" hidden>
+                            <input type="text" name="item-buy[]" value="<?php echo $_GET['item'] ?>" hidden>
                             <div class="col c-1">
                                 <div class="bill-product-img">
                                     <img src="<?php echo $image ?>" alt="" />

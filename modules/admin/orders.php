@@ -36,13 +36,15 @@
                     </span>
                 </div>
             </div>
+
+            <!-- doi trang thai don hang -->
             <div class="modal-change-title">
                 <div class="o-modal-content">
                     <div class="o-modal-exit">
                         <!-- <i class="fas fa-times"></i> -->
                         <i class="fas fa-times-circle"></i>
                     </div>
-                    <form action="./modules/handle/change-title-order.php" method="post" name="change-title-order">
+                    <form action="xu-ly-doi-trang-thai-don-hang" method="post" name="change-title-order">
                         <div class="o-modal-title">
                             <span>Đổi trạng thái đơn hàng</span>
                         </div>
@@ -92,7 +94,7 @@
             <?php
                 $dataOrders=array();
                 if($connect){
-                    $sql='select * from orders order by id desc';
+                    $sql='select * from orders, orderaddress group by orders.id order by orders.id desc';
                     $result=mysqli_query($connect,$sql);
                     while($row=mysqli_fetch_array($result)){
                         array_push($dataOrders,$row);
@@ -105,19 +107,19 @@
             <div class="o-row">
                 <div class="row">
                     <div class="col c-1 o-col-input o-col-input-item">
-                        <input type="checkbox" name="select-orders[]" value="<?php echo $value['id']; ?>">
+                        <input type="checkbox" name="select-orders[]" value="<?php echo $value[0]; ?>">
                     </div>
                     <div class="col c-1">
-                        <a href="./order-detail.php?id=<?php echo $value['id'];?>" class="o-id"><?php echo 'DH'.str_pad($value['id'],4,'0',STR_PAD_LEFT); ?></a>
+                        <a href="don-hang?id=<?php echo $value[0];?>" class="o-id"><?php echo 'DH'.str_pad($value[0],4,'0',STR_PAD_LEFT); ?></a>
                     </div>
                     <div class="col c-2">
-                        <span class="o-time"><?php echo $value['day'].'/'.$value['month'].'/'.$value['year'].' '.$value['timeorder'] ?></span>
+                        <span class="o-time"><?php echo $value['day'].'/'.$value['month'].'/'.$value['year'].' '.$value['time'] ?></span>
                     </div>
                     <div class="col c-3 o-customer">
-                        <span class="o-name"><?php echo $value['username']; ?></span><span>-</span><span class="o-phone"><?php echo $value['phone']; ?></span>
+                        <span class="o-name"><?php echo $value['name']; ?></span><span>-</span><span class="o-phone"><?php echo $value['phone']; ?></span>
                     </div>
                     <div class="col c-2">
-                        <span class="o-title <?php echo $value['title']; ?>"><?php echo $value['title']; ?></span>
+                        <span class="o-title <?php echo $value['status']; ?>"><?php echo $value['status']; ?></span>
                     </div>
                     <div class="col c-2">
                         <span class="o-ship">Giao hang tiet kiem</span>
@@ -126,15 +128,15 @@
                         <i class="fas fa-ellipsis-v"></i>
                         <div class="o-action-list">
                             <div class="o-action-item">
-                                <a class="o-action-detail" href="./order-detail.php?id=<?php echo $value['id']; ?>">Chi tiết</a>
+                                <a class="o-action-detail" href="don-hang?id=<?php echo $value[0]; ?>">Chi tiết</a>
                             </div>
                             <div class="o-action-item">
                                 <span>Hủy đơn</span>
                             </div>
-                            <label for="o-detete--<?php echo $value['id'] ?>" class="o-action-item">Xóa đơn</label>
-                                <form action="../handle/delete-order.php" method="POST">
-                                    <input type="text" value="<?php echo $value['id'] ?>" name="id-product-delete" hidden>
-                                    <input type="submit" value="Xóa đơn" id="o-detete--<?php echo $value['id'] ?>" hidden>
+                            <label for="o-detete--<?php echo $value[0] ?>" class="o-action-item">Xóa đơn</label>
+                                <form action="xu-ly-xoa-don-hang" method="POST">
+                                    <input type="text" value="<?php echo $value[0] ?>" name="id-product-delete" hidden>
+                                    <input type="submit" value="Xóa đơn" id="o-detete--<?php echo $value[0] ?>" hidden>
                                 </form>
                         </div>
                     </div>

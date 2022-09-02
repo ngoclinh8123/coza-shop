@@ -51,13 +51,18 @@ function handleUrl(&$module=null,&$action=null){
 
     // echo 'url cu:'.$url.'</br>';
     global $routers;
+    // $flag=false;
     foreach($routers as $key=>$value){
         $pattern='#^'.$key.'$#';
         if(preg_match($pattern,$url)){
             $url=preg_replace($pattern,$value,$url);
             break;
+            // $flag=false;
         }
     }
+    // if($flag){
+    //     $url='modules/users/404.php';
+    // }
     $urlArr=explode('/',$url);
     // echo '<pre>';print_r($urlArr);
 
