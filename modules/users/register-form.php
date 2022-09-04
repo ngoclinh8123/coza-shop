@@ -65,6 +65,8 @@
         </div>
       </div>
     </div>
+
+    
     <!-- <div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đăng ký tài khoản thành công</div><a href="./login-form.php">Đăng nhập</a></div></div> -->
     <?php
         include_once './modules/handle/connect-database.php';
@@ -100,7 +102,15 @@
           }else{
             // $cartid=randomString(15);
             // // $cartid='1';
+            // $to = $email;
+            
+
+            // modal xac minh password
+            // echo '<div class="modal-email"><div class="modal-email-content"><form action="xac-minh-mat-khau" method="post"><div class="modal-email-title"><span>Hãy nhập mã xác minh được gửi tới email <span>'.$email.'</span></span></div><div class="modal-email-input"><input type="text" name="email-confirm"></div><span class="modal-email-submit--fake">Xác minh</span><input type="submit" value="Xác minh" class="modal-email-submit"></form></div></div>';
+
+
             $sql="insert into user(name,email,avatar) values ('".$name."','".$email."','')";
+
             if(mysqli_query($connect,$sql)){
               $sql='select max(id) from user';
               $result=mysqli_query($connect,$sql);

@@ -88,13 +88,13 @@
         <!-- search modal -->
         <div class="search-modal f-c-c">
           <div class="search-wrap">
-            <form action="" method="post">
+            <form action="tim-kiem" method="post">
               <input
                 type="text"
                 name="search"
                 placeholder="Search..."
                 autofocus
-              /><input type="submit" value="Search" />
+              /><input type="submit" value="Search" name="search-submit"/>
             </form>
             <div class="exit-btn">
               <i class="fas fa-times"></i>
