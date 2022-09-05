@@ -29,6 +29,7 @@ const searchModal = document.querySelector(".search-modal");
 const exitSearchBtn = document.querySelector(".exit-btn");
 searchBtn.onclick = function () {
   searchModal.style.display = "flex";
+  document.querySelector(".search-input").focus();
 };
 
 exitSearchBtn.onclick = function () {
