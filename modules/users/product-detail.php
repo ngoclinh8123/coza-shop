@@ -5,17 +5,28 @@
     include_once './modules/users/header.php';
 
     $data=array();
+    $dataClass=array();
     if(isset($_GET['id'])){
       if($connect){
         $id=$_GET['id'];
         $sql='select * from product where id='.$id;
         $result=mysqli_query($connect, $sql);
-          while($row=mysqli_fetch_array($result)){
-            array_push($data,$row);
-          }
+        while($row=mysqli_fetch_array($result)){
+          array_push($data,$row);
+        }
       }
     }
     $data=$data[0];
+    if($connect){
+      $sql="select name from class where code = '".$data['class']."'";
+      $result=mysqli_query($connect, $sql);
+      while($row=mysqli_fetch_array($result)){
+        array_push($dataClass,$row);
+      }
+    }
+    $dataClass=$dataClass[0]['name'];
+
+    // echo $dataClass;
 
     $code=$data['code'];
     $image=explode("|",$data['image']);
@@ -44,12 +55,13 @@
       <div class="prd-path">
         <span>Coza Store</span>
         <i class="fas fa-angle-right"></i>
-        <span>Sản phẩm</span>
+        <span><?php echo $dataClass; ?></span>
         <i class="fas fa-angle-right"></i>
         <span><?php echo $code; ?></span>
       </div>
 
       <!-- item -->
+      
       <div class="prd-wrap">
         <div class="prd-wrap-row">
           <div class="prd-col--1">

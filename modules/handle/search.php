@@ -12,7 +12,7 @@
         
         $dataProduct=array();
         if($connect){
-            $sql='select id,code,name,description from product';
+            $sql='select product.id,product.code,product.name,product.description,class.name from product inner join class on product.class = class.code';
             $result=mysqli_query($connect,$sql);
             while($row=mysqli_fetch_array($result)){
                 array_push($dataProduct,$row);
