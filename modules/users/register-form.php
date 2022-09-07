@@ -75,6 +75,7 @@
         $name=$_POST['user-sign-up-name'];
         $email=$_POST['user-sign-up-email'];
         $password=$_POST['user-sign-up-password'];
+        $password=password_hash($password,PASSWORD_BCRYPT);
         
 
         if($connect){
