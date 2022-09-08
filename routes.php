@@ -28,5 +28,6 @@
         'xu-ly-doi-trang-thai-don-hang'=>'modules/handle/change-title-order.php',
         'don-hang'=>'modules/admin/order-detail.php',
         'tim-kiem'=>'modules/handle/search.php',
+        'them-nguoi-ban'=>'modules/admin/add-admin.php',
     )
 ?>

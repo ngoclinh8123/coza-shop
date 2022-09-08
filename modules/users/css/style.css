@@ -700,6 +700,17 @@
   text-align: justify;
 }
 
+.bl-error-block {
+  /* height: 100px; */
+}
+
+.bl-error-content {
+  color: red;
+  margin: 100px 0 24px 48px;
+  font-style: italic;
+  font-size: 1.4rem;
+}
+
 /* footer */
 #footer {
   /* margin-top: 130px; */

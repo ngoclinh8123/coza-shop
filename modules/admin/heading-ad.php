@@ -54,5 +54,11 @@
                             <div class="ad-subnav-item"><a href="">Danh Sách Khách Hàng</a></div>
                         </div>
                     </div>
+                    <div class="ad-nav-item">
+                        <span class="ad-nav-item-title">Thiết lập</span>
+                        <div class="ad-subnav-list">
+                            <div class="ad-subnav-item"><a href="them-nguoi-ban">Thêm người bán</a></div>
+                        </div>
+                    </div>
                 </div>
             </div>

@@ -53,50 +53,98 @@ session_start();
           </div>
         </form>
         <?php
+
+
           $data=array();
+          $dataUser=array();
           $dataAdmin=array();
           include_once './modules/handle/connect-database.php';
           if(isset($_POST['user-sign-up-email'])&& trim($_POST['user-sign-up-email'])!='' && isset($_POST['user-sign-up-password']) && trim($_POST['user-sign-up-password'])!='') {
             $email = $_POST['user-sign-up-email'];
             $password = $_POST['user-sign-up-password'];
-
             if($connect){
-              $sql="select * from user where id=(select userId from userlogin where email='".$email."' and password='".$password."')";
+              $sql="select password from userlogin where email='".$email."'";
               $result = mysqli_query($connect,$sql);
               while($row = mysqli_fetch_array($result)){
                   array_push($data,$row);
               }
-              $sql="select * from adminlogin where email='".$email."' and password='".$password."'";
+              // echo '<pre>';print_r($data);
+
+              $sql="select * from adminlogin where email='".$email."'";
               $result = mysqli_query($connect,$sql);
               while($row = mysqli_fetch_array($result)){
                   array_push($dataAdmin,$row);
               }
-              if(!empty($dataAdmin)){
-                $dataAdmin=$dataAdmin[0];
-                // echo '<pre>';print_r($dataAdmin);echo '</pre>';
+              // echo '<pre>';print_r($dataAdmin);
+              // $dataAdmin=$dataAdmin[0];
+              // echo $dataAdmin['name'];
+              // echo $dataAdmin['email'];
+              
+              if(count($data)>0){
+                $pass=$data[0]['password'];
+                if(password_verify($password,$pass)){
+                  // echo 'password is valid';
+                  $sql="select * from user where id = (select userId from userlogin where email='".$email."')";
+                  $result = mysqli_query($connect,$sql);
+                  while($row = mysqli_fetch_array($result)){
+                      array_push($dataUser,$row);
+                      
+                  }
+                  // echo '<pre>';print_r($dataUser);echo '</pre>';
+                  $dataUser=$dataUser[0];
+                  $_SESSION['user-name']=$dataUser['name'];
+                  $_SESSION['user-email']=$dataUser['email'];
+                  $_SESSION['user-avatar']=$dataUser['avatar'];
+                  echo '<a class="id" href="trang-chu"/>';
+                }
+              }else if(count($dataAdmin)>0){
+                if(isset($_SESSION['user-email'])) session_destroy();
                 echo '<a href="doanh-so-ban-hang" class="id"></a>';
-              }else if(!empty($data)){
-                $data=$data[0];
-                // echo '<pre>';print_r($data);echo '</pre>';
-                $_SESSION['user-name']=$data['name'];
-                $_SESSION['user-email']=$data['email'];
-                $_SESSION['user-avatar']=$data['avatar'];
-                echo '<a class="id" href="trang-chu"/>';
-
-                // if($data['admin']=='admin'){
-                //   echo '<a href="doanh-so-ban-hang" class="id"></a>';
-                // }else{
-                //   $data=$data['id'];
-                //   $_SESSION['id']=$data;
-                //   echo '<a class="id" href="trang-chu"/>';
-                // }
-                // echo '<a class="id" href="../handle/login.php?id='.$data.'"/>';
-              }else {
+              }else{
                 echo '<div class="error-login-form3">Email hoặc mật khẩu không chính xác</div>';
               }
+              // echo $pass;
             }
           }
+
+          //   if($connect){
+          //     $sql="select * from user where id=(select userId from userlogin where email='".$email."' and password='".$password."')";
+          //     $result = mysqli_query($connect,$sql);
+          //     while($row = mysqli_fetch_array($result)){
+          //         array_push($data,$row);
+          //     }
+          //     $sql="select * from adminlogin where email='".$email."' and password='".$password."'";
+          //     $result = mysqli_query($connect,$sql);
+          //     while($row = mysqli_fetch_array($result)){
+          //         array_push($dataAdmin,$row);
+          //     }
+          //     if(!empty($dataAdmin)){
+          //       $dataAdmin=$dataAdmin[0];
+          //       // echo '<pre>';print_r($dataAdmin);echo '</pre>';
+          //       echo '<a href="doanh-so-ban-hang" class="id"></a>';
+          //     }else if(!empty($data)){
+          //       $data=$data[0];
+          //       // echo '<pre>';print_r($data);echo '</pre>';
+          //       $_SESSION['user-name']=$data['name'];
+          //       $_SESSION['user-email']=$data['email'];
+          //       $_SESSION['user-avatar']=$data['avatar'];
+          //       echo '<a class="id" href="trang-chu"/>';
+
+          //       // if($data['admin']=='admin'){
+          //       //   echo '<a href="doanh-so-ban-hang" class="id"></a>';
+          //       // }else{
+          //       //   $data=$data['id'];
+          //       //   $_SESSION['id']=$data;
+          //       //   echo '<a class="id" href="trang-chu"/>';
+          //       // }
+          //       // echo '<a class="id" href="../handle/login.php?id='.$data.'"/>';
+          //     }else {
+          //       echo '<div class="error-login-form3">Email hoặc mật khẩu không chính xác</div>';
+          //     }
+          //   }
+          // }
         ?>
+        
         <div class="login-form-bottom">
           Bạn chưa có tài khoản ?
           <a href="dang-ky">Đăng ký </a>

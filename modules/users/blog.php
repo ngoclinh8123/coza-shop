@@ -1,9 +1,11 @@
 <?php
+    ini_set('display_errors', 0);
     session_start();
     include_once './modules/handle/connect-database.php';
     include_once './modules/users/header-html-tag.php';
     include_once './modules/users/header.php';
     $content=file_get_contents("https://vnexpress.net/giai-tri/thoi-trang");
+    if($content){
     $partern='#<article class="item-news item-news-common">(.*)</article>#simU'; 
     preg_match_all($partern,$content,$matches);
     // echo '<pre>';print_r($matches);
@@ -102,6 +104,17 @@
         </div>
     </div>
 <?php
+    }
+    else{
+        // echo '<h1>Có lỗi xảy ra @@</h1>';
+?>
+    <div class="bl-error-block">
+        <div class="bl-error-content">
+            <span>* Tính năng tạm thời bị khóa</span>
+        </div>
+    </div>
+<?php     
+    }
     include './modules/users/footer.php';
     include './modules/users/footer-html-tag.php';
 ?>
