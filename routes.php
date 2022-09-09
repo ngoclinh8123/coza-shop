@@ -2,15 +2,8 @@
     $routers=array(
         'trang-chu'=>'modules/users/home.php',
         'tat-ca-san-pham'=>'modules/users/list-all-product.php',
-        'danh-sach-san-pham'=>'modules/admin/list-product.php',
-        'danh-sach-don-hang'=>'modules/admin/orders.php',
         'dang-nhap'=>'modules/users/login-form.php',
         'dang-ky'=>'modules/users/register-form.php',
-        'doanh-so-ban-hang'=>'modules/admin/turnover.php',
-        'xu-li-xoa-san-pham'=>'modules/admin/delete-product.php',
-        'them-san-pham'=>'modules/admin/add-product.php',
-        'xoa-san-pham'=>'modules/admin/delete-product.php',
-        'sua-san-pham'=>'modules/admin/edit-product.php',
         'san-pham'=>'modules/users/product-detail.php',
         'tin-tuc'=>'modules/users/blog.php',
         'gio-hang'=>'modules/users/cart.php',
@@ -26,8 +19,20 @@
         'dong-ho'=>'modules/users/list-watch-product.php',
         'xu-ly-xoa-don-hang'=>'modules/handle/delete-order.php',
         'xu-ly-doi-trang-thai-don-hang'=>'modules/handle/change-title-order.php',
-        'don-hang'=>'modules/admin/order-detail.php',
+
+
+    );
+
+    $routerAdmin=array(
+        'danh-sach-san-pham'=>'modules/admin/list-product.php',
+        'danh-sach-don-hang'=>'modules/admin/orders.php',
+        'doanh-so-ban-hang'=>'modules/admin/turnover.php',
+        'xu-li-xoa-san-pham'=>'modules/admin/delete-product.php',
+        'them-san-pham'=>'modules/admin/add-product.php',
+        'xoa-san-pham'=>'modules/admin/delete-product.php',
+        'sua-san-pham'=>'modules/admin/edit-product.php',
         'tim-kiem'=>'modules/handle/search.php',
         'them-nguoi-ban'=>'modules/admin/add-admin.php',
-    )
+        'don-hang'=>'modules/admin/order-detail.php',
+    );
 ?>

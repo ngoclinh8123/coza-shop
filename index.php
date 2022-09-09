@@ -1,4 +1,5 @@
 <?php
+    // session_start();
     include './routes.php';
     include './modules/handle/function.php';
     $module='module';

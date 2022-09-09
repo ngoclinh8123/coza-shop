@@ -1,4 +1,5 @@
 <?php
+    // session_start();
     function countDay($month,$year){
         $day=0;
         if($month==1||$month==3||$month==5||$month==7||$month==8||$month==10||$month==12) $day=31;
@@ -46,11 +47,18 @@
     }
 
 function handleUrl(&$module=null,&$action=null){
+    // echo $_SESSION['email'];
     if(isset($_GET['url'])) $url=$_GET['url'];
     else $url='trang-chu';
 
     // echo 'url cu:'.$url.'</br>';
     global $routers;
+    if(1){
+        global $routerAdmin;
+        $routers=array_merge($routers,$routerAdmin);
+
+    }
+    echo '<pre>';print_r($routers);
     // $flag=false;
     foreach($routers as $key=>$value){
         $pattern='#^'.$key.'$#';

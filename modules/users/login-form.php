@@ -83,6 +83,7 @@ session_start();
               if(count($data)>0){
                 $pass=$data[0]['password'];
                 if(password_verify($password,$pass)){
+                  session_destroy();
                   // echo 'password is valid';
                   $sql="select * from user where id = (select userId from userlogin where email='".$email."')";
                   $result = mysqli_query($connect,$sql);
@@ -99,6 +100,7 @@ session_start();
                 }
               }else if(count($dataAdmin)>0){
                 if(isset($_SESSION['user-email'])) session_destroy();
+                $_SESSION['email']=$email;
                 echo '<a href="doanh-so-ban-hang" class="id"></a>';
               }else{
                 echo '<div class="error-login-form3">Email hoặc mật khẩu không chính xác</div>';
