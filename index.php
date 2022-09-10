@@ -1,10 +1,16 @@
 <?php
-    // session_start();
-    include './routes.php';
-    include './modules/handle/function.php';
+    session_start();
+    ini_set('display_errors', 0);
+    include_once './routes.php';
+    include_once './modules/handle/function.php';
     $module='module';
     $action='users';
-    $path=handleUrl($module,$action);
+
+    $keyAdmin=false;
+    if(isset($_SESSION['admin-email'])) $keyAdmin=true;
+
+
+    $path=handleUrl($module,$action,$keyAdmin);
     // echo $module.'</br>';
     // echo $action.'</br>';
     // echo '<pre>';print_r($path);

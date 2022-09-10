@@ -46,19 +46,20 @@
         return $max;
     }
 
-function handleUrl(&$module=null,&$action=null){
+function handleUrl(&$module=null,&$action=null,$key=false){
     // echo $_SESSION['email'];
     if(isset($_GET['url'])) $url=$_GET['url'];
     else $url='trang-chu';
 
     // echo 'url cu:'.$url.'</br>';
     global $routers;
-    if(1){
+    if($key){
         global $routerAdmin;
+        // echo '<pre>';print_r($routerAdmin);
         $routers=array_merge($routers,$routerAdmin);
 
     }
-    echo '<pre>';print_r($routers);
+    // echo '<pre>';print_r($routers);
     // $flag=false;
     foreach($routers as $key=>$value){
         $pattern='#^'.$key.'$#';

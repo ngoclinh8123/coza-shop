@@ -19,7 +19,7 @@
         'dong-ho'=>'modules/users/list-watch-product.php',
         'xu-ly-xoa-don-hang'=>'modules/handle/delete-order.php',
         'xu-ly-doi-trang-thai-don-hang'=>'modules/handle/change-title-order.php',
-
+        'tim-kiem'=>'modules/handle/search.php',
 
     );
 
@@ -31,7 +31,7 @@
         'them-san-pham'=>'modules/admin/add-product.php',
         'xoa-san-pham'=>'modules/admin/delete-product.php',
         'sua-san-pham'=>'modules/admin/edit-product.php',
-        'tim-kiem'=>'modules/handle/search.php',
+    
         'them-nguoi-ban'=>'modules/admin/add-admin.php',
         'don-hang'=>'modules/admin/order-detail.php',
     );

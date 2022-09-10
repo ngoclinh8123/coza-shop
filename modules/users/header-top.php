@@ -5,6 +5,15 @@
             <span>Miễn phí ship cho đơn hàng trên 200.000 VNĐ </span>
           </div>
           <div class="top-nav f-c-c">
+            <?php
+              if($keyAdmin){
+            ?>
+              <div class="top-nav__item f-c-c">
+              <span><a href="doanh-so-ban-hang">Kênh người bán</a></span>
+            </div>
+            <?php
+              }
+            ?>
             <div class="top-nav__item f-c-c">
               <span><a href="">Trợ giúp</a></span>
             </div>

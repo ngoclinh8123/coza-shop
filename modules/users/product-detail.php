@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    // session_start();
     include_once './modules/users/header-html-tag.php';
     include_once './modules/handle/connect-database.php';
     include_once './modules/users/header.php';
@@ -146,7 +146,7 @@
               </div>
               <div class="prd-form-row">
                 <div class="prd-form-btn">
-                  <input type="submit" value=" Thêm vào giỏ hàng " /><a href="" class="prd-buy-now">Mua ngay</a><span class="prd-buy-now-fake">Mua ngay</span>
+                  <input type="submit" value=" Thêm vào giỏ hàng " /><?php if($keyUserLogin) echo '<a href="" class="prd-buy-now">Mua ngay</a>'; ?><span class="prd-buy-now-fake">Mua ngay</span>
                 </div>
               </div>
             </form>

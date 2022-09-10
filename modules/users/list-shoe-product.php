@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    // session_start();
     include_once './modules/users/header-html-tag.php';
     include_once './modules/users/header-top.php';
     include_once './modules/handle/connect-database.php';
@@ -20,7 +20,7 @@
 
        <div class="lap-container">
         <div class="lap-wrap">
-                <div class="lap-title"><span>Tất cả sản phẩm</span></div>
+                <div class="lap-title"><span>Giầy dép</span></div>
                 <div class="row">
                     <?php
                         $page=$_GET['page'];

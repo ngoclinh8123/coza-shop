@@ -1,8 +1,8 @@
 <?php
-  session_start();
-  include './modules/handle/connect-database.php';
+  // session_start();
+  include_once './modules/handle/connect-database.php';
   
-  include './modules/users/header-html-tag.php';
+  include_once './modules/users/header-html-tag.php';
 
 
   // get product infomation

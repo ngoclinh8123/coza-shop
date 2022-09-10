@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    // session_start();
     include_once './modules/users/header-html-tag.php';
     include_once './modules/users/header-top.php';
     include_once './modules/handle/connect-database.php';

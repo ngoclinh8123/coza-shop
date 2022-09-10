@@ -1,5 +1,5 @@
 <?php 
-session_start();
+// session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,8 +83,8 @@ session_start();
               if(count($data)>0){
                 $pass=$data[0]['password'];
                 if(password_verify($password,$pass)){
-                  session_destroy();
                   // echo 'password is valid';
+                  session_unset();
                   $sql="select * from user where id = (select userId from userlogin where email='".$email."')";
                   $result = mysqli_query($connect,$sql);
                   while($row = mysqli_fetch_array($result)){
@@ -99,8 +99,10 @@ session_start();
                   echo '<a class="id" href="trang-chu"/>';
                 }
               }else if(count($dataAdmin)>0){
-                if(isset($_SESSION['user-email'])) session_destroy();
-                $_SESSION['email']=$email;
+                // if(isset($_SESSION['user-email']))
+                session_unset();
+
+                $_SESSION['admin-email']=$email;
                 echo '<a href="doanh-so-ban-hang" class="id"></a>';
               }else{
                 echo '<div class="error-login-form3">Email hoặc mật khẩu không chính xác</div>';

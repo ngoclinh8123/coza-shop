@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    // session_start();
     if(isset($_SESSION['user-email'])){
     include_once './modules/users/header-html-tag.php';
     include_once './modules/handle/connect-database.php';

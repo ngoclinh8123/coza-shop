@@ -1,6 +1,6 @@
 <?php
     ini_set('display_errors', 0);
-    session_start();
+    // session_start();
     include_once './modules/handle/connect-database.php';
     include_once './modules/users/header-html-tag.php';
     include_once './modules/users/header.php';

@@ -76,22 +76,3 @@ storeOvvNav.forEach(function (navItem, index) {
     navItem.classList.add("active");
   };
 });
-
-// handle total price in cart
-const totalPriceCartTag = document.querySelector(".home-cart-total-price");
-const amountTags = Array.from(
-  document.querySelectorAll(".home-cart-item--amount")
-);
-const priceTags = Array.from(
-  document.querySelectorAll(".home-cart-item--price")
-);
-function renderTotalPrice() {
-  let totalPrice = 0;
-  amountTags.forEach(function (amount, index) {
-    let amountItem = parseInt(amount.innerText);
-    let price = parseInt(priceTags[index].innerText);
-    totalPrice += amountItem * price;
-    totalPriceCartTag.innerText = totalPrice;
-  });
-}
-renderTotalPrice();
