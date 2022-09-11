@@ -4,6 +4,7 @@
           include_once './modules/handle/get-user-info.php';
           // get all product from database
           $allProduct=array();
+          $dataClass=array();
           if($connect){
             $sql2='select * from product';
             $result=mysqli_query($connect,$sql2);
@@ -11,7 +12,15 @@
               array_push($allProduct,$row);
             }
             // echo '<pre>';print_r($allProduct);
+
+            $sql='select * from class';
+            $result=mysqli_query($connect,$sql);
+            while($row=mysqli_fetch_array($result)){
+              array_push($dataClass,$row);
+            }
           }
+
+          // echo '<pre>';print_r($dataClass);
       ?>
       <div class="heading">
         <div class="wrap f-c-c">
@@ -28,24 +37,17 @@
               <li class="nav-item">
                 <a href="">Cửa hàng</a>
                 <ul class="sub-nav">
-                  <li class="sub-nav-item">
-                    <a href="tat-ca-san-pham?page=1">Tất cả sản phẩm</a>
-                  </li>
-                  <li class="sub-nav-item">
-                    <a href="thoi-trang-nu?page=1">Thời trang nữ</a>
-                  </li>
-                  <li class="sub-nav-item">
-                    <a href="thoi-trang-nam?page=1">Thời trang nam</a>
-                  </li>
-                  <li class="sub-nav-item">
-                    <a href="tui-xach?page=1">Túi xách</a>
-                  </li>
-                  <li class="sub-nav-item">
-                    <a href="giay-dep?page=1">Giầy dép</a>
-                  </li>
-                  <li class="sub-nav-item">
-                    <a href="dong-ho?page=1">Đồng hồ</a>
-                  </li>
+                  <?php
+                    foreach ($dataClass as $key => $value){
+                  ?>
+
+                    <li class="sub-nav-item">
+                      <a href="cua-hang?request=<?php echo $value['router'] ?>&page=1"><?php echo $value['name'] ?></a>
+                    </li>
+
+                  <?php
+                    }
+                  ?>
                 </ul>
               </li>
               <!-- <li class="nav-item">

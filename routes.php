@@ -20,6 +20,7 @@
         'xu-ly-xoa-don-hang'=>'modules/handle/delete-order.php',
         'xu-ly-doi-trang-thai-don-hang'=>'modules/handle/change-title-order.php',
         'tim-kiem'=>'modules/handle/search.php',
+        'cua-hang'=>'modules/users/shop.php',
 
     );
 
