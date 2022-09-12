@@ -218,7 +218,7 @@
             if($keyUserLogin){
               $sql="insert into cart(userId,productId,amount,color,size) values (".$userId.",".$id.",'".$amountItem."','".$color."','".$size."')";
               if(mysqli_query($connect,$sql)){
-                echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đã thêm sản phẩm vào giỏ hàng</div><a href="tat-ca-san-pham?page=1">Tiếp tục</a></div></div>';
+                echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đã thêm sản phẩm vào giỏ hàng</div><a href="san-pham?id='.$_GET['id'].'">Tiếp tục</a></div></div>';
               }else echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Có lỗi xảy ra khi thêm vào giỏ hàng</div><a href="tat-ca-san-pham?page=1">Thử lại</a></div></div>';
             }else{
               echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Vui lòng đăng nhập để sử dụng tính năng này</div><a href="dang-nhap">Đăng nhập</a></div></div>';

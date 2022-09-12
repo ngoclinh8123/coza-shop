@@ -6,13 +6,53 @@
     include_once './modules/users/header.php';
     include_once './modules/handle/function.php';
     $data=array();
+    $dataClass=array();
+    $className="";
+    $request="";
+    $sql="";
+    if(isset($_GET['request'])){
+        $request=$_GET['request'];
+    }else{
+        $request='tat-ca-san-pham';
+        // echo 'tat ca';
+    }
     if($connect){
-        $sql='select * from product';
+        if($request!='tat-ca-san-pham'){
+            $sql="select * from class where router='".$request."'";
+            $result=mysqli_query($connect,$sql);
+            while($row=mysqli_fetch_array($result)){
+                array_push($dataClass,$row);
+            }
+            if(count($dataClass)>0){
+                $className=$dataClass[0]['name'];
+                $classCode=$dataClass[0]['code'];
+            }else{
+                $className="Tất cả sản phẩm";
+            }
+            $sql="select * from product where class='".$classCode."'";
+        }else{
+            $sql="select * from product";
+            // echo 'ok';
+            $className="Tất cả sản phẩm";
+        }
+        // echo $className;
+
         $result=mysqli_query($connect,$sql);
         while($row=mysqli_fetch_array($result)){
             array_push($data,$row);
         }
+
+        
     }
+    if(isset($_GET['page'])){
+        $page=$_GET['page'];
+    }else{
+        $page=1;
+    }
+
+
+    // echo '<pre>';print_r($data);echo '</pre>';
+
     $amoutItemInPage=8;
     $amountPage=createPagination($data,$amoutItemInPage);
     // echo 'dayyyyyyyy:'.$amountPage;
@@ -20,11 +60,9 @@
 
        <div class="lap-container">
         <div class="lap-wrap">
-                <div class="lap-title"><span>Tất cả sản phẩm</span></div>
+                <div class="lap-title"><span><?php echo $className; ?></span></div>
                 <div class="row">
                     <?php
-                        $page=$_GET['page'];
-
                         // tru di 1 vi trong vong lap dung index bat dau tu 0
                         $start=($page-1)*$amoutItemInPage-1;
                         $end=$page*$amoutItemInPage-1;
@@ -67,8 +105,8 @@
                     
                     <?php
                         if($page==1){
-                            echo '<div class="lap-pag-item--1 choose"><a href="tat-ca-san-pham?page=1"><span>1</span></a></div>';
-                        }else echo '<div class="lap-pag-item--1"><a href="tat-ca-san-pham?page=1"><span>1</span></a></div>';
+                            echo '<div class="lap-pag-item--1 choose"><a href="cua-hang?page=1"><span>1</span></a></div>';
+                        }else echo '<div class="lap-pag-item--1"><a href="cua-hang?page=1"><span>1</span></a></div>';
                         // so page > 5 thi moi can ...
                         if($amountPage>5){
                             echo '<div class="lap-pag-item"><span class="lap-pag-dot">...</span></div>';
@@ -76,9 +114,9 @@
                         if($amountPage>1){
                             for($i=2;$i<=$amountPage;$i++){
                                 if($i==$page){
-                                    echo '<div class="lap-pag-item choose"><a href="tat-ca-san-pham?page='.$i.'"><span>'.$i.'</span></a></div>';
+                                    echo '<div class="lap-pag-item choose"><a href="cua-hang?page='.$i.'"><span>'.$i.'</span></a></div>';
                                 }else{
-                                    echo '<div class="lap-pag-item"><a href="tat-ca-san-pham?page='.$i.'"><span>'.$i.'</span></a></div>';
+                                    echo '<div class="lap-pag-item"><a href="cua-hang?page='.$i.'"><span>'.$i.'</span></a></div>';
                                     // echo 'okkkkkkkk';
                                 }
                             }

@@ -58,7 +58,7 @@ cartModal.onclick = function (e) {
 const cartItems = Array.from(document.querySelectorAll(".home-cart-item"));
 const cartItemAmount = document.querySelector(".heading-ac-status");
 cartItemAmount.innerText = cartItems.length;
-console.log(cartItems);
+// console.log(cartItems);
 
 const detailCartBtn = document.querySelector(".home-cart-view");
 const totalPriceBlock = document.querySelector(".home-cart-total");

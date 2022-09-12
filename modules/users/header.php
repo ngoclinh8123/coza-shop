@@ -37,6 +37,9 @@
               <li class="nav-item">
                 <a href="">Cửa hàng</a>
                 <ul class="sub-nav">
+                    <li class="sub-nav-item">
+                      <a href="cua-hang">Tất cả sản phẩm</a>
+                    </li>
                   <?php
                     foreach ($dataClass as $key => $value){
                   ?>
@@ -194,6 +197,14 @@
               <div class="home-account-exit">
                 <i class="fas fa-times"></i>
               </div>
+
+              <div class="home-account-item">
+                <a href="">
+                  <i class="fas fa-exit"></i>
+                  <span>Địa chỉ nhận hàng</span>
+                </a>
+              </div>
+
               <div class="home-account-logout">
                 <a href="dang-nhap">Đăng xuất</a>
               </div>

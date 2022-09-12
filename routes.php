@@ -7,20 +7,21 @@
         'san-pham'=>'modules/users/product-detail.php',
         'tin-tuc'=>'modules/users/blog.php',
         'gio-hang'=>'modules/users/cart.php',
-        'hoa-don'=>'modules/users/bill.php',
         'dia-chi-nhan-hang'=>'modules/users/add-address.php',
-        'xu-ly-dat-hang'=>'modules/users/order-handle.php',
-        'xu-ly-them-dia-chi'=>'modules/handle/add-address.php',
-        'xu-ly-xoa-dia-chi'=>'modules/handle/delete-address.php',
         'thoi-trang-nam'=>'modules/users/list-men-product.php',
         'thoi-trang-nu'=>'modules/users/list-women-product.php',
         'giay-dep'=>'modules/users/list-shoe-product.php',
         'tui-xach'=>'modules/users/list-bag-product.php',
+        'cua-hang'=>'modules/users/shop.php',
         'dong-ho'=>'modules/users/list-watch-product.php',
+        
+        'xu-ly-dat-hang'=>'modules/users/order-handle.php',
+        'hoa-don'=>'modules/users/bill.php',
         'xu-ly-xoa-don-hang'=>'modules/handle/delete-order.php',
         'xu-ly-doi-trang-thai-don-hang'=>'modules/handle/change-title-order.php',
+        'xu-ly-them-dia-chi'=>'modules/handle/add-address.php',
+        'xu-ly-xoa-dia-chi'=>'modules/handle/delete-address.php',
         'tim-kiem'=>'modules/handle/search.php',
-        'cua-hang'=>'modules/users/shop.php',
 
     );
 
