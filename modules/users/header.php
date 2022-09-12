@@ -25,14 +25,14 @@
       <div class="heading">
         <div class="wrap f-c-c">
           <div class="logo">
-            <a href="trang-chu"
+            <a href="."
               ><img src="./includes/images/logo-coza-store.png"
             /></a>
           </div>
           <div class="heading-nav">
             <ul class="nav">
               <li class="nav-item">
-                <a href="trang-chu">Trang chủ</a>
+                <a href=".">Trang chủ</a>
               </li>
               <li class="nav-item">
                 <a href="">Cửa hàng</a>
@@ -197,17 +197,29 @@
               <div class="home-account-exit">
                 <i class="fas fa-times"></i>
               </div>
-
-              <div class="home-account-item">
-                <a href="">
-                  <i class="fas fa-exit"></i>
-                  <span>Địa chỉ nhận hàng</span>
-                </a>
-              </div>
-
-              <div class="home-account-logout">
-                <a href="dang-nhap">Đăng xuất</a>
-              </div>
+              
+              <?php
+                if($keyUserLogin){
+              ?>
+                <div class="home-account-list">
+                  <div class="home-account-item">
+                    <a href="">
+                      <i class="fas fa-exit"></i>
+                      <span>Địa chỉ nhận hàng</span>
+                    </a>
+                  </div>
+                </div>
+              <?php
+                }
+              ?>
+              <?php
+                if($keyUserLogin){
+                  echo '<div class="home-account-logout"><a href="dang-nhap">Đăng xuất</a></div>';
+                }else{
+                  echo '<div class="home-account-logout"><a href="dang-nhap">Đăng nhập</a></div>';
+                }
+              ?>
+              
             </div>
           </div>
         </div>

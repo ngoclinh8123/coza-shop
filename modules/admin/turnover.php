@@ -1,6 +1,6 @@
 <?php
-    include './modules/admin/heading-ad.php';
-    include './modules/handle/connect-database.php';
+    include_once './modules/admin/heading-ad.php';
+    include_once './modules/handle/connect-database.php';
     include_once './modules/handle/function.php';
 ?>
     <div class="chart">

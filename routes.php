@@ -14,7 +14,7 @@
         'tui-xach'=>'modules/users/list-bag-product.php',
         'cua-hang'=>'modules/users/shop.php',
         'dong-ho'=>'modules/users/list-watch-product.php',
-        
+
         'xu-ly-dat-hang'=>'modules/users/order-handle.php',
         'hoa-don'=>'modules/users/bill.php',
         'xu-ly-xoa-don-hang'=>'modules/handle/delete-order.php',
@@ -33,6 +33,7 @@
         'them-san-pham'=>'modules/admin/add-product.php',
         'xoa-san-pham'=>'modules/admin/delete-product.php',
         'sua-san-pham'=>'modules/admin/edit-product.php',
+        'them-phan-loai'=>'modules/admin/add-class.php',
     
         'them-nguoi-ban'=>'modules/admin/add-admin.php',
         'don-hang'=>'modules/admin/order-detail.php',

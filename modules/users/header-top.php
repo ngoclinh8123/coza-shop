@@ -17,9 +17,19 @@
             <div class="top-nav__item f-c-c">
               <span><a href="">Trợ giúp</a></span>
             </div>
-            <div class="top-nav__item f-c-c">
-              <span><a href="dang-nhap">Tài khoản</a></span>
-            </div>
+
+            <?php
+              if(isset($_SESSION['user-email'])){
+                echo '<div class="top-nav__item f-c-c"><span><a href="dang-nhap">Đăng xuất</a></span></div>';
+              }else{
+                echo '<div class="top-nav__item f-c-c"><span><a href="dang-nhap">Đăng nhập</a></span></div>';
+
+              }
+            ?>
+            
+            
+
+
             <div class="top-nav__item f-c-c">
               <span><a href="">Ngôn ngữ</a></span>
             </div>

@@ -12,13 +12,15 @@ navItemTitles.forEach(function (navItemTitle, index) {
 
     if (!navItems[index].classList.contains("active")) {
       navItems[index].classList.add("active");
-      let len = Array.from(
-        subnavLists[index].querySelectorAll(".ad-subnav-item")
-      ).length;
-      subnavLists[index].style.height = 34 * len + "px";
+      subnavLists[index].classList.toggle("open");
+      // let len = Array.from(
+      //   subnavLists[index].querySelectorAll(".ad-subnav-item")
+      // ).length;
+      // subnavLists[index].style.height = 34 * len + "px";
     } else if (navItems[index].classList.contains("active")) {
       navItems[index].classList.remove("active");
-      subnavLists[index].style.height = 0;
+      // subnavLists[index].style.height = 0;
+      subnavLists[index].classList.toggle("open");
     }
   };
 });
@@ -33,7 +35,7 @@ actionBtns.forEach(function (btn, index) {
   };
 });
 
-// select all orderket
+// select all order
 let selectAllBtn = document.querySelector(".o-select-all");
 let orderItems = document.querySelectorAll(".o-col-input-item input");
 const changeTitleBtn = document.querySelector(".o-change-title");

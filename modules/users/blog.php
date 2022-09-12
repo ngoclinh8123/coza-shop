@@ -3,6 +3,7 @@
     // session_start();
     include_once './modules/handle/connect-database.php';
     include_once './modules/users/header-html-tag.php';
+    include_once './modules/users/header-top.php';
     include_once './modules/users/header.php';
     include_once './modules/handle/function.php';
 
@@ -193,7 +194,7 @@
 ?>
     <div class="bl-error-block">
         <div class="bl-error-content">
-            <span>* Tính năng tạm thời bị khóa</span>
+            <span>* Tính năng tạm thời bị phong ấn :((</span>
         </div>
     </div>
 

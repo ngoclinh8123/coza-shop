@@ -4,7 +4,7 @@
                 include_once './modules/admin/heading-ad.php';
                 include_once './modules/handle/function.php';
                 include_once './modules/handle/connect-database.php';
-                ini_set('display_errors','off');
+                
                 $dataClass=array();
                 if($connect){
                     $sql='select * from class';

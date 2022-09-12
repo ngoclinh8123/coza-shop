@@ -75,11 +75,21 @@ html {
 }
 
 .ad-subnav-list {
-  transform-origin: top;
+  /* transform-origin: top;
   transition: all linear 0.3s;
   height: 0;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; */
+  display: none;
+}
+
+.ad-subnav-list.open {
+  display: block;
+}
+
+.ad-nav-item-title:hover,
+.ad-subnav-item:hover {
+  background-color: aquamarine;
 }
 
 .ap-block {
