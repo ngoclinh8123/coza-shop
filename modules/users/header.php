@@ -26,7 +26,7 @@
         <div class="wrap f-c-c">
           <div class="logo">
             <a href="."
-              ><img src="./includes/images/logo-coza-store.png"
+              ><img src="./includes/images/logo-sheeta-shop.png"
             /></a>
           </div>
           <div class="heading-nav">

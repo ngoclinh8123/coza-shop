@@ -26,7 +26,7 @@
               <span>NEW SEASON</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="shop?request=ao-nu&page=1">SHOP NOW</a></span>
+              <span><a href="cua-hang?request=ao-nu&page=1">SHOP NOW</a></span>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
               <span>JACKETS & COATS</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="shop?request=ao-nam&page=1">SHOP NOW</a></span>
+              <span><a href="cua-hang?request=ao-nam&page=1">SHOP NOW</a></span>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@
               <span>NEW ARRIVALS</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="shop?request=dong-ho&page=1">SHOP NOW</a></span>
+              <span><a href="cua-hang?request=dong-ho&page=1">SHOP NOW</a></span>
             </div>
           </div>
         </div>
@@ -86,7 +86,7 @@
                 <div class="banner-modal">
                   <div class="banner-action">
                     <span>
-                      <a href="shop?request=ao-nu&page=1">
+                      <a href="cua-hang?request=ao-nu&page=1">
                         <div class="banner-title">SHOP NOW</div>
                         <span class="banner-line"></span>
                       </a>
@@ -109,7 +109,7 @@
                 <div class="banner-modal">
                   <div class="banner-action">
                     <span>
-                      <a href="shop?request=ao-nam&page=1">
+                      <a href="cua-hang?request=ao-nam&page=1">
                         <div class="banner-title">SHOP NOW</div>
                         <span class="banner-line"></span>
                       </a>
@@ -132,7 +132,7 @@
                 <div class="banner-modal">
                   <div class="banner-action">
                     <span>
-                      <a href="shop?page=1">
+                      <a href="cua-hang?page=1">
                         <div class="banner-title">SHOP NOW</div>
                         <span class="banner-line"></span>
                       </a>

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kênh người bán</title>
-    <link rel="icon" href="./includes/images/logo-icon-cat.png" type="image/x-icon" />
+    <link rel="icon" href="./includes/images/logo-icon-bird.png" type="image/x-icon" />
 
     <link rel="stylesheet" href="./includes/fonts/poppins/Poppins-Regular.ttf">
     <link rel="stylesheet" href="./includes/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
@@ -26,7 +26,7 @@
                     <div class="ad-nav-logo-wrap">
                         <a href=".">
                             <div class="ad-nav-img">
-                                <img src="./includes/images/logo-coza-store.png" alt="">
+                                <img src="./includes/images/logo-sheeta-shop.png" alt="">
                             </div>
                         </a>
                     </div>

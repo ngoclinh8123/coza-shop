@@ -1,4 +1,5 @@
 <?php
+  if(isset($_GET['id'])){
     // session_start();
     include_once './modules/users/header-html-tag.php';
     include_once './modules/handle/connect-database.php';
@@ -6,7 +7,7 @@
 
     $data=array();
     $dataClass=array();
-    if(isset($_GET['id'])){
+
       if($connect){
         $id=$_GET['id'];
         $sql='select * from product where id='.$id;
@@ -15,7 +16,8 @@
           array_push($data,$row);
         }
       }
-    }
+      if(count($data)>0){
+
     $data=$data[0];
     if($connect){
       $sql="select name from class where code = '".$data['class']."'";
@@ -230,6 +232,19 @@
     <script src="./modules/users/js/product-detail.js"></script>
 
 <?php
+      }else{
+      
+?>
+    <div class="bl-error-block">
+        <div class="bl-error-content">
+            <span>* Không sản phẩm nào được tìm thấy :((</span>
+        </div>
+    </div>
+<?php
+      }
     include './modules/users/footer.php';
     include './modules/users/footer-html-tag.php';
+  }else{
+    include './modules/users/home.php';
+  }
 ?>
