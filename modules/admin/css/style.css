@@ -952,3 +952,111 @@ html {
 .od-price-unit {
   font-size: 1.7rem;
 }
+
+/* add-class */
+.class-block {
+  width: 55%;
+  margin: 0 23px;
+}
+
+.cb-head-row {
+  display: flex;
+}
+
+.cb-head-item {
+  margin: 13px 24px 8px 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 8px 13px;
+  cursor: pointer;
+}
+
+.cb-head-item i {
+  margin-right: 4px;
+}
+
+.cb-head-add {
+  border: 1px solid blue;
+  color: blue;
+}
+
+.cb-add-class-block {
+  margin: 13px 0;
+  width: 100%;
+  border: 1px solid red;
+  font-size: 1.4rem;
+  background-color: bisque;
+  display: none;
+}
+
+.cb-add-class-block.open {
+  display: block;
+}
+
+.cb-add-class-row {
+  margin: 4px 0;
+  padding: 8px 13px;
+}
+
+.cb-add-class-row span {
+}
+
+.cb-add-class-row input {
+  margin-left: 13px;
+  width: 60%;
+}
+
+.cb-add-class-submit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0 13px;
+}
+
+.cb-add-class-submit input {
+  padding: 6px 23px;
+  outline: none;
+  border: none;
+  background-color: red;
+  color: white;
+  transition: all linear 0.3s;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.cb-add-class-submit input:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.cb-item {
+  width: calc(100% - 26px);
+  display: flex;
+  margin: 13px 0;
+  padding: 8px 0;
+  font-size: 1.4rem;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.6);
+  padding: 8px 13px;
+  cursor: pointer;
+  /* transition: all 0.3s linear; */
+}
+
+.cb-item:hover {
+  background-color: rgba(0, 191, 255, 0.4);
+}
+
+.cb-item-head {
+  background-color: lightskyblue;
+}
+
+.cb-item-col-1 {
+  flex-basis: 40%;
+}
+
+.cb-item-col-2 {
+  flex-basis: 20%;
+}
+
+.cb-item-col-3 {
+  flex-basis: 40%;
+}

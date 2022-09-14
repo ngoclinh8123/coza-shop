@@ -129,7 +129,7 @@
 
             const changeStatusBtn=document.querySelector(".pl-nav-change-status");
             changeStatusBtn.onclick=function() {
-              alert("ok")
+              alert("Tính năng tạm thời bị khóa")
             }
 
         </script>

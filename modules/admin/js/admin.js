@@ -88,22 +88,24 @@ function insertOrderIntoInput() {
   orderChooseInput.value = getIdOrderChoosed();
 }
 
-selectAllBtn.onclick = function () {
-  if (selectAllBtn.checked) {
-    selectAllOrder();
-  } else {
-    clickAllOrder();
-  }
+if (selectAllBtn) {
+  selectAllBtn.onclick = function () {
+    if (selectAllBtn.checked) {
+      selectAllOrder();
+    } else {
+      clickAllOrder();
+    }
 
-  if (checkInput()) {
-    changeTitleBtn.style.display = "block";
-    changeTitleFakeBtn.style.display = "none";
-    insertOrderIntoInput();
-  } else {
-    changeTitleBtn.style.display = "none";
-    changeTitleFakeBtn.style.display = "block";
-  }
-};
+    if (checkInput()) {
+      changeTitleBtn.style.display = "block";
+      changeTitleFakeBtn.style.display = "none";
+      insertOrderIntoInput();
+    } else {
+      changeTitleBtn.style.display = "none";
+      changeTitleFakeBtn.style.display = "block";
+    }
+  };
+}
 
 orderItems.forEach(function (item, index) {
   item.onclick = function () {
@@ -121,17 +123,23 @@ orderItems.forEach(function (item, index) {
 // change handle
 const changeHandleBtn = document.querySelector(".o-handle");
 const listHandleBtn = document.querySelector(".o-suv-nav-list-handle");
-changeHandleBtn.onclick = function () {
-  listHandleBtn.classList.toggle("action");
-};
+if (changeHandleBtn) {
+  changeHandleBtn.onclick = function () {
+    listHandleBtn.classList.toggle("action");
+  };
+}
 
 // modal change title
 const modalChangTitle = document.querySelector(".modal-change-title");
 const exitmodalChangeTitle = document.querySelector(".o-modal-exit i");
-changeTitleBtn.onclick = function () {
-  modalChangTitle.style.display = "flex";
-};
+if (changeTitleBtn) {
+  changeTitleBtn.onclick = function () {
+    modalChangTitle.style.display = "flex";
+  };
+}
 
-exitmodalChangeTitle.onclick = function () {
-  modalChangTitle.style.display = "none";
-};
+if (exitmodalChangeTitle) {
+  exitmodalChangeTitle.onclick = function () {
+    modalChangTitle.style.display = "none";
+  };
+}

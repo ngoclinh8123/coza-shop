@@ -94,12 +94,13 @@
             <?php
                 $dataOrders=array();
                 if($connect){
-                    $sql='select * from orders, orderaddress group by orders.id order by orders.id desc';
+                    $sql='select o.id,o.product,o.year,o.month,o.day,o.time,o.price,o.status,a.userId,a.name,a.phone,a.address  from orders as o inner join orderaddress as a on o.addressId=a.id';
                     $result=mysqli_query($connect,$sql);
                     while($row=mysqli_fetch_array($result)){
                         array_push($dataOrders,$row);
                     }
                 }
+
                 // echo '<pre>';print_r($dataOrders);
                 foreach($dataOrders as $key=>$value){   
             ?>
