@@ -124,6 +124,23 @@
                 <div class="o-submit"><input type="submit" value="Lưu" ></div>
             </form>
         </div> -->
+
+        <!-- sub nav block -->
+        <div class="pl-sub-nav-block">
+                <div class="pls-row pls-row-head">
+                  <span>
+                    <i class="fas fa-filter"></i>
+                    <span>Phân loại</span>
+                  </span>
+                </div>
+                <div class="pls-row">
+                  <input type="checkbox" name="" id="1" value="1"><label for="1">Áo Nam</label>
+                </div>
+                <div class="pls-row">
+                  <input type="checkbox" name="" id="1" value="1"><label for="1">Áo Nam</label>
+                </div>
+        </div>
+
         </div>
         <script>
 

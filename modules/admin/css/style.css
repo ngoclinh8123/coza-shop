@@ -272,7 +272,7 @@ html {
 }
 
 .pl-block {
-  flex: 1;
+  flex-basis: 65%;
   margin: 0 24px 60px;
 }
 
@@ -472,6 +472,35 @@ html {
 
 .ep-img img {
   width: 100px;
+}
+
+/* product list sub nav */
+.pl-sub-nav-block {
+  /* flex: 1; */
+  font-size: 1.4rem;
+  border-left: 1px solid red;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+}
+
+.pls-row-head {
+  padding: 24px 0 8px;
+  color: red;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.pls-row {
+  margin: 8px 0 8px 13px;
+  /* color: red; */
+}
+
+.pls-row label {
+  margin-left: 8px;
+  cursor: pointer;
 }
 
 /* chart */
@@ -959,6 +988,10 @@ html {
   margin: 0 23px;
 }
 
+.add-class-block {
+  display: none;
+}
+
 .cb-head-row {
   display: flex;
 }
@@ -1059,4 +1092,71 @@ html {
 
 .cb-item-col-3 {
   flex-basis: 40%;
+}
+
+/* sub nav add class block */
+.ac-subnav-block {
+  flex: 1;
+  height: 100vh;
+  border-left: 1px solid blue;
+  font-size: 1.4rem;
+}
+
+.as-row-head {
+  display: flex;
+}
+
+.as-head-item {
+  flex-basis: 50%;
+  display: block;
+  text-align: center;
+  font-weight: 700;
+  border: 1px solid blue;
+  cursor: pointer;
+  padding: 8px 0;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.as-head-item.action {
+  background-color: blue;
+  color: white;
+}
+
+/* add size block */
+.add-size-block {
+  font-size: 1.4rem;
+}
+
+.add-size-btn {
+  /* background-color: rgba(0, 0, 255, 0.8); */
+  border: 1.5px solid blue;
+  color: blue;
+  margin: 24px 0 8px 24px;
+  /* transition: all linear 0.3s; */
+}
+
+.add-size-btn:hover {
+  background-color: blue;
+  color: white;
+}
+
+.asb-row-head {
+  font-weight: 600;
+  color: red;
+}
+
+.asb-row {
+  display: flex;
+  margin: 8px 24px;
+  padding: 6px;
+  border-bottom: 1px solid blue;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+}
+
+.asb-col--1 {
+  flex-basis: 50%;
+}
+
+.asb-col--2 {
+  flex-basis: 50%;
 }
