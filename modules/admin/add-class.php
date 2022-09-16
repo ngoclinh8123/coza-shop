@@ -4,22 +4,34 @@
     include_once './modules/handle/connect-database.php';
 
     $dataClass=array();
+    $dataSize=array();
     if($connect){
         $sql="select * from class";
         $result=mysqli_query($connect,$sql);
         while($row=mysqli_fetch_array($result)){
             array_push($dataClass,$row);
         }
+        $sql="select * from size";
+        $result=mysqli_query($connect,$sql);
+        while($row=mysqli_fetch_array($result)){
+            array_push($dataSize,$row);
+        }
     }
 
+    $category="";
+    if(isset($_GET['category'])){
+        $category=$_GET['category'];
+    }else $category="class";
+
     // echo '<pre>';print_r($dataClass);echo '</pre>';
+    // echo '<pre>';print_r($dataSize);echo '</pre>';
 
 ?>
 
 <!-- cac class trong database -->
 <div class="class-block">
     <!-- add class -->
-    <div class="add-class-block">
+    <div class="add-class-block <?php if($category =="class") echo "open"; else echo ""?>">
         <div class="cb-head-row">
             <div class="cb-head-item cb-head-add">
                 <span>
@@ -68,7 +80,7 @@
     </div>
 
     <!-- add size -->
-    <div class="add-size-block">
+    <div class="add-size-block <?php if($category =="size") echo "open"; else echo ""?>">
         <div class="cb-head-row">
             <div class="cb-head-item add-size-btn">
                 <span>
@@ -77,7 +89,7 @@
                 </span>
             </div>
         </div>
-        <form action="xu-ly-them-phan-loai" method="post" class="cb-add-size-block open" name="add-class">
+        <form action="xu-ly-them-size" method="post" class="cb-add-size-block" name="add-class">
             <div class="cb-add-class-row">
                 <span>Size :</span><input type="text" name="add-size">
             </div>
@@ -94,14 +106,22 @@
                 <span>Thao tác</span>
             </div>
         </div>
+
+        <?php
+            foreach ($dataSize as $key => $value){
+        ?>
         <div class="asb-row">
             <div class="asb-col--1">
-                <span>S</span>
+                <span><?php echo $value['size'] ?></span>
             </div>
             <div class="asb-col--2">
-                <a href="" class="asb--delete-btn">Xóa</a>
+                <a href="xu-ly-xoa-size?id=<?php echo $value['id'] ?>" class="asb--delete-btn">Xóa</a>
             </div>
         </div>
+        <?php
+            }
+        ?>
+
     </div>
 </div>
 
@@ -109,10 +129,10 @@
 <!-- cac san pham tu class -->
 <div class="ac-subnav-block">
         <div class="as-row-head">
-            <div class="as-head-item as-head-item--add-class">
+            <div class="as-head-item as-head-item--add-class <?php if($category =="class") echo "action"; else echo ""?>">
                 <span>Thêm phân loại</span>
             </div>
-            <div class="as-head-item as-head-item--add-class">
+            <div class="as-head-item as-head-item--add-size <?php if($category =="size") echo "action"; else echo ""?>">
                 <span>Thêm kích thước</span>
             </div>
         </div>
@@ -128,6 +148,53 @@
             addClassBlock.classList.toggle("open")
         }
     }
+
+    const addSizeBtn=document.querySelector(".add-size-btn");
+    const addSizeBlock=document.querySelector(".cb-add-size-block");
+    if(addSizeBtn){
+        addSizeBtn.onclick=function () {
+            addSizeBlock.classList.toggle("open");
+        }
+    }
+
+    const subnavAddClassBtn=document.querySelector(".as-head-item--add-class")
+    const subnavAddSizeBtn=document.querySelector(".as-head-item--add-size")
+    const addClassContainer=document.querySelector(".add-class-block")
+    const addSizeContainer=document.querySelector(".add-size-block")
+
+    // function pageLoad(){
+    //     if(addClassContainer.classList.contains('open')){
+    //         subnavAddClassBtn.classList.add('open');
+    //     }else if(addSizeContainer.classList.contains('open')){
+    //         subnavAddSizeBtn.classList.add('open');
+    //     }
+    // }
+
+    // pageLoad()
+
+    if(subnavAddClassBtn){
+        subnavAddClassBtn.onclick=function(){
+            if(!addClassContainer.classList.contains('open')){
+                addClassContainer.classList.add('open');
+                addSizeContainer.classList.remove('open');
+                subnavAddClassBtn.classList.add("action");
+                subnavAddSizeBtn.classList.remove("action");
+            }
+        }
+    }
+
+    if(subnavAddSizeBtn){
+        subnavAddSizeBtn.onclick=function(){
+            if(!addSizeContainer.classList.contains('open')){
+                addSizeContainer.classList.add('open');
+                addClassContainer.classList.remove('open');
+                subnavAddSizeBtn.classList.add("action");
+                subnavAddClassBtn.classList.remove("action");
+            }
+        }
+    }
+
+
 </script>
 
 <?php

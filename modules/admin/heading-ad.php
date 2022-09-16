@@ -42,7 +42,7 @@
                         <div class="ad-subnav-list">
                             <div class="ad-subnav-item"><a href="danh-sach-san-pham">Tất cả sản phẩm</a></div>
                             <div class="ad-subnav-item"><a href="them-san-pham">Thêm sản phẩm</a></div>
-                            <div class="ad-subnav-item"><a href="them-phan-loai">Thêm phân loại</a></div>
+                            <div class="ad-subnav-item"><a href="them-phan-loai?category=class">Thêm phân loại</a></div>
                         </div>
                     </div>
                     <div class="ad-nav-item">

@@ -14,7 +14,7 @@
         // echo 'router :'.$router;
         $sql="insert into class(name,code,router) values('".$name."','".$code."','".$router."')";
         if(mysqli_query($connect,$sql)){
-            Header("Location:them-phan-loai");
+            Header("Location:them-phan-loai?category=class");
         }
         // echo '<a href="them-phan-loai" hidden></a>';
     }

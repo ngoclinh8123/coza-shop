@@ -992,6 +992,10 @@ html {
   display: none;
 }
 
+.add-class-block.open {
+  display: block;
+}
+
 .cb-head-row {
   display: flex;
 }
@@ -1110,10 +1114,15 @@ html {
 
 /* sub nav add class block */
 .ac-subnav-block {
-  flex: 1;
+  /* flex: 1; */
   height: 100vh;
   border-left: 1px solid blue;
   font-size: 1.4rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
 }
 
 .as-row-head {
@@ -1139,7 +1148,11 @@ html {
 /* add size block */
 .add-size-block {
   font-size: 1.4rem;
-  /* display: none; */
+  display: none;
+}
+
+.add-size-block.open {
+  display: block;
 }
 
 .add-size-btn {

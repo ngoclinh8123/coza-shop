@@ -39,5 +39,7 @@
         'don-hang'=>'modules/admin/order-detail.php',
         'xu-ly-them-phan-loai'=>'modules/handle/add-class.php',
         'xu-ly-xoa-class'=>'modules/handle/delete-class.php',
+        'xu-ly-xoa-size'=>'modules/handle/delete-size.php',
+        'xu-ly-them-size'=>'modules/handle/add-size.php',
     );
 ?>

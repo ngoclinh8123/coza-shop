@@ -6,6 +6,7 @@
           include_once './modules/handle/connect-database.php';
 
           $data=array();
+          $dataClass=array();
           if($connect){
               $sql='select * from product';
               $result= mysqli_query($connect,$sql);
@@ -13,9 +14,16 @@
                   array_push($data,$row);
                   
               }
+              $sql='select * from class';
+              $result= mysqli_query($connect,$sql);
+              while($row= mysqli_fetch_assoc($result)){
+                  array_push($dataClass,$row);
+                  
+              }
               
           }
           // echo '<pre>';print_r($data);echo '</pre>';
+          // echo '<pre>';print_r($dataClass);echo '</pre>';
         ?>
         <div class="pl-block">
           <div class="pl-block-heading">
@@ -133,12 +141,18 @@
                     <span>Phân loại</span>
                   </span>
                 </div>
+
+                <?php
+                  foreach ($dataClass as $key => $value){
+                ?>
                 <div class="pls-row">
-                  <input type="checkbox" name="" id="1" value="1"><label for="1">Áo Nam</label>
+                  <input type="checkbox" name="" id="<?php echo $value['id'] ?>" value="<?php echo $value['code']?>" checked="checked"><label for="<?php echo $value['id'] ?>"><?php echo $value['name']; ?></label>
                 </div>
-                <div class="pls-row">
-                  <input type="checkbox" name="" id="1" value="1"><label for="1">Áo Nam</label>
-                </div>
+
+                <?php
+                  }
+                ?>
+                
         </div>
 
         </div>
@@ -148,6 +162,40 @@
             changeStatusBtn.onclick=function() {
               alert("Tính năng tạm thời bị khóa")
             }
+
+            const subnavItems=Array.from(document.querySelectorAll(".pls-row input"));
+            const productItemIds=Array.from(document.querySelectorAll(".pl-item .pl-col--7 span"))
+            console.log(productItemIds)
+
+            var renderItemChecked = function(code){
+              productItemIds.forEach(function(productItemId){
+                console.log(productItemId);
+                productItemId.slice(0,2)
+                if(productItemId.slice(0,2) == code){
+                  console.log("ok")
+                }
+              })
+            }
+
+            function checkChecked(){
+              subnavItems.forEach(function(subnavItem,index){
+                if(subnavItem.checked){
+                  renderItemChecked(subnavItem.value);
+                }
+              })
+            }
+
+            
+
+
+
+            checkChecked()
+
+            subnavItems.forEach(function(subnavItem,index){
+              subnavItem.onclick=function(){
+                checkChecked()
+              }
+            })
 
         </script>
         <?php

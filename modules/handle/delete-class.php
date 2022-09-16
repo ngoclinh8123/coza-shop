@@ -6,7 +6,7 @@
             $sql='delete from class where id='.$id;
             if(mysqli_query($connect,$sql)){
                 // echo '<a href="them-phan-loai"></a>';
-                Header("Location:them-phan-loai");
+                Header("Location:them-phan-loai?category=class");
             }
         }
     }
