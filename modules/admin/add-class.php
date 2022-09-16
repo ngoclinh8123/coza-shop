@@ -45,9 +45,10 @@
         </form>
 
         <div class="cb-item cb-item-head">
-        <span class="cb-item-col-1">Tên phân loại</span> 
-        <span class="cb-item-col-2">Mã phân loại</span>
-        <span class="cb-item-col-3">URL</span>
+            <span class="cb-item-col-1">Tên phân loại</span> 
+            <span class="cb-item-col-2">Mã phân loại</span>
+            <span class="cb-item-col-3">URL</span>
+            <span class="cb-item-col-4"></span>
         </div>
 
         <?php
@@ -58,6 +59,7 @@
                 <span class="cb-item-col-1"><?php echo $value['name']; ?></span> 
                 <span class="cb-item-col-2"><?php echo $value['code']; ?></span>
                 <span class="cb-item-col-3"><?php echo $value['router']; ?></span>
+                <span class="cb-item-col-4"><a href="xu-ly-xoa-class?id=<?php echo $value['id']; ?>">Xóa</a></span>
             </div>
 
         <?php
@@ -75,6 +77,15 @@
                 </span>
             </div>
         </div>
+        <form action="xu-ly-them-phan-loai" method="post" class="cb-add-size-block open" name="add-class">
+            <div class="cb-add-class-row">
+                <span>Size :</span><input type="text" name="add-size">
+            </div>
+            
+            <div class="cb-add-class-submit">
+                <input type="submit" value="Thêm">
+            </div>
+        </form>
         <div class="asb-row asb-row-head">
             <div class="asb-col--1">
                 <span>Size</span>

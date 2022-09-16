@@ -5,20 +5,22 @@
         $name="";
         $code="";
         $router="";
-        if(isset($_POST['add-class-name'])) $name=$_POST['add-class-name'];
-        if(isset($_POST['add-class-code'])) $code=$_POST['add-class-code'];
-        if(isset($_POST['add-class-router'])) $router=$_POST['add-class-router'];
+        if(isset($_POST['add-class-name'])) $name=trim($_POST['add-class-name']);
+        if(isset($_POST['add-class-code'])) $code=trim($_POST['add-class-code']);
+        if(isset($_POST['add-class-router'])) $router=trim($_POST['add-class-router']);
 
         // echo 'name :'.$name;
         // echo 'code :'.$code;
         // echo 'router :'.$router;
         $sql="insert into class(name,code,router) values('".$name."','".$code."','".$router."')";
-        mysqli_query($connect,$sql);
-        echo '<a href="them-phan-loai" hidden></a>';
+        if(mysqli_query($connect,$sql)){
+            Header("Location:them-phan-loai");
+        }
+        // echo '<a href="them-phan-loai" hidden></a>';
     }
 ?>
 
-<script>
+<!-- <script>
     const linkBack =document.querySelector("a");
     if(linkBack) linkBack.click();
-</script>
+</script> -->

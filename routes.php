@@ -38,5 +38,6 @@
         'them-nguoi-ban'=>'modules/admin/add-admin.php',
         'don-hang'=>'modules/admin/order-detail.php',
         'xu-ly-them-phan-loai'=>'modules/handle/add-class.php',
+        'xu-ly-xoa-class'=>'modules/handle/delete-class.php',
     );
 ?>
