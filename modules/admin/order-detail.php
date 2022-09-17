@@ -63,66 +63,66 @@
             <div class="od-product--title">
                 <span>Sản phẩm</span>
             </div>
+            <div class="od-product--row">
+                <div class="row od-product--row-heading">
+                    <div class="col c-1"><span>ID</span></div>
+                    <div class="col c-4"><span>Sản phẩm</span></div>
+                    <div class="col c-2"><span>Chi tiết</span></div>
+                    <div class="col c-2"><span>Số lượng</span></div>
+                    <div class="col c-3"><span>Ghi chú</span></div>
+                </div>
 
-            <?php
-                //  echo '<pre>';print_r($dataOrder);
-                foreach($product as $key=>$value){
-                    $item=explode('-',$value);
-                    // echo '<pre>';print_r($item);
-                    $idProduct=$item[0];
-                    $amount=$item[1];
-                    $size=$item[2];
-                    $color=$item[3];
-                    $note=$item[4];
+                <?php
+                    //  echo '<pre>';print_r($dataOrder);
+                    foreach($product as $key=>$value){
+                        $item=explode('-',$value);
+                        // echo '<pre>';print_r($item);
+                        $idProduct=$item[0];
+                        $amount=$item[1];
+                        $size=$item[2];
+                        $color=$item[3];
+                        $note=$item[4];
 
-                    $dataProduct=array();
-                    $sql='select * from product where id='.$idProduct;
-                    $result=mysqli_query($connect,$sql);
-                    while($row=mysqli_fetch_array($result)){
-                        array_push($dataProduct,$row);
-                    }
-                    $dataProduct=$dataProduct[0];
-                    $image=explode("|",$dataProduct['image'])[0];
-                    $path='./includes/images/';
-                    $image=$path.$image;
+                        $dataProduct=array();
+                        $sql='select * from product where id='.$idProduct;
+                        $result=mysqli_query($connect,$sql);
+                        while($row=mysqli_fetch_array($result)){
+                            array_push($dataProduct,$row);
+                        }
+                        $dataProduct=$dataProduct[0];
+                        $image=explode("|",$dataProduct['image'])[0];
+                        $path='./includes/images/';
+                        $image=$path.$image;
+                        $codeProduct=$dataProduct['code'];
 
 
-                    // echo '<pre>';print_r($dataProduct);echo '</pre>';
-            ?>
-
-                        <div class="od-product--row">
-                            <!-- <a href="../users/product-detail.php?id=<?php echo $idProduct;?>"> -->
-                            <a href="">
-                                <div class="row od-product--row-heading">
-                                    <div class="col c-1 m-1 l-1"><span>ID</span></div>
-                                    <div class="col c-7 m-7 l-4"><span>Sản phẩm</span></div>
-                                    <div class="col c-2 m-2 l-1"><span>Chi tiết</span></div>
-                                    <div class="col c-2 m-2 l-1"><span>Số lượng</span></div>
-                                    <div class="col c-12 m-12 l-5 hide-on-mobile-tablet "><span>Ghi chú</span></div>
-                                </div>
-                                <div class="row od-product--row-item">
-                                    <div class="col c-1 m-1 l-1"><span><?php echo $idProduct;?></span></div>
-                                    <div class="col c-7 m-7 l-4 od-product-item">
-                                        <div class="od-product-image">
-                                            <img src="<?php echo $image ?>" alt="">
-                                        </div>
-                                        <div class="od-product-name">
-                                            <span><?php echo $dataProduct['name'] ?></span>
-                                        </div>
-                                    </div>
-                                    <div class="col c-2 m-2 l-1">
-                                        <span><?php echo $color;?></span>,
-                                        <span>Size <?php echo $size;?></span>
-                                    </div>
-                                    <div class="col c-2 m-2 l-1"><span><?php echo $amount;?></span></div>
-                                    <div class="col c-12 m-12 l-5"><span class="od-note-title">Ghi chú : </span><span><?php echo $note;?></span></div>
-                                </div>
-                            </a>
+                        // echo '<pre>';print_r($dataProduct);echo '</pre>';
+                ?>      
+                    <div class="row od-product--row-item">
+                        <div class="col c-1"><a href="san-pham?id=<?php echo $idProduct; ?>"><?php echo $codeProduct;?></a></div>
+                        <div class="col c-4 od-product-item">
+                            <div class="od-product-image">
+                                <a href="san-pham?id=<?php echo $idProduct; ?>">
+                                    <img src="<?php echo $image ?>" alt="">
+                                </a>
+                            </div>
+                            <div class="od-product-name">
+                                <a href="san-pham?id=<?php echo $idProduct; ?>">
+                                    <span><?php echo $dataProduct['name'] ?></span>
+                                </a>
+                            </div>
                         </div>
-
-            <?php
-                }
-            ?>
+                        <div class="col c-2">
+                            <span><?php echo $color;?></span>,
+                            <span>Size <?php echo $size;?></span>
+                        </div>
+                        <div class="col c-2 "><span><?php echo $amount;?></span></div>
+                        <div class="col c-3"><span class="od-note-title">Ghi chú : </span><span><?php echo $note;?></span></div>
+                    </div>
+                <?php
+                    }
+                ?>
+        </div>
 
         </div>
         <div class="od-price">

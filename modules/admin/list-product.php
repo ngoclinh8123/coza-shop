@@ -51,7 +51,7 @@
                 <span>Sản Phẩm</span><span>(<?php echo count($data); ?>)</span>
               </div>
               <div class="pl-col--3 j-c-c">
-                <span>Giá Tiền</span>
+                <span>Giá Bán</span>
               </div>
               <div class="pl-col--4 j-c-c">
                 <span>Size</span>
@@ -165,14 +165,19 @@
 
             const subnavItems=Array.from(document.querySelectorAll(".pls-row input"));
             const productItemIds=Array.from(document.querySelectorAll(".pl-item .pl-col--7 span"))
-            console.log(productItemIds)
+            // console.log(productItemIds)
 
-            var renderItemChecked = function(code){
+            var renderItemChecked = function(code,render){
               productItemIds.forEach(function(productItemId){
-                console.log(productItemId);
-                productItemId.slice(0,2)
-                if(productItemId.slice(0,2) == code){
-                  console.log("ok")
+                // console.log(productItemId);
+                if(render){
+                  if(productItemId.innerText.slice(0,2) == code){
+                    productItemId.parentElement.parentElement.style.display='flex';
+                  }
+                }else{
+                  if(productItemId.innerText.slice(0,2) == code){
+                    productItemId.parentElement.parentElement.style.display='none'
+                  }
                 }
               })
             }
@@ -180,7 +185,9 @@
             function checkChecked(){
               subnavItems.forEach(function(subnavItem,index){
                 if(subnavItem.checked){
-                  renderItemChecked(subnavItem.value);
+                  renderItemChecked(subnavItem.value,true);
+                }else{
+                  renderItemChecked(subnavItem.value,false);
                 }
               })
             }
