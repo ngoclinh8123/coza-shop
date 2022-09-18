@@ -9,17 +9,39 @@
     <?php
         $itemBuy=array();
         $itemBuyString="";
+
+        // kiem tra xem da co session chua, chua co thi tao
+        if(!isset($_SESSION['item-buy-before'])){
+            $_SESSION['item-buy-before']=array();
+        }
         if(isset($_POST['item-buy'])){
+            echo 'o POST';
             $itemBuy=$_POST['item-buy'];
+            // echo '<pre>';print_r($itemBuy);
+            $_SESSION['item-buy-before']=$itemBuy;
+            echo '<pre>';print_r($_SESSION['item-buy-before']);
+
             $itemBuyNewArray=array();
             foreach($itemBuy as $key=>$value){
                 array_push($itemBuyNewArray,explode('-',$value)[0]);
             }
             $itemBuyString=implode(',',$itemBuyNewArray);
         }else if(isset($_GET['item'])){
+            echo 'o GET';
             $itemBuyString=$_GET['item'];
+            // echo $itemBuyString;
+
+            // tao array trong de day itemBuyString la 1 chuoi thanh array
+            $itemBuyArrayFake=array();
+            array_push($itemBuyArrayFake,$itemBuyString);
+            $_SESSION['item-buy-before']=$itemBuyArrayFake;
+            echo '<pre>';print_r($_SESSION['item-buy-before']);
+
             $itemBuyString=explode('-',$itemBuyString)[0];
             // echo $itemBuyString;
+        }else if(count($_SESSION['item-buy-before'])>0){
+            echo 'da o day yeah';
+            echo '<pre>';print_r($_SESSION['item-buy-before']);
         }
         // echo '<pre>';print_r($itemBuy);echo '</pre>';
         // echo '<pre>';print_r($userdata);echo '</pre>';
@@ -98,20 +120,20 @@
                 <?php
                     for($i=0;$i<count($dataAddress);$i++){
                 ?>
-                    <div class="aa-row">
-                        <?php
-                            if($i==0){
-                                echo '<input type="radio" name="bill-aa-address" value="'.$dataAddress[$i]['id'].'" id="bill-aa-address--'.$dataAddress[$i]['id'].'" checked="checked">';
-                            }else{
-                                echo '<input type="radio" name="bill-aa-address" value="'.$dataAddress[$i]['id'].'" id="bill-aa-address--'.$dataAddress[$i]['id'].'">';
-                            }
-                        ?>
-                        <label for="bill-aa-address--<?php echo $dataAddress[$i]['id'] ?>" class="">
-                            <span class="bill-user"><?php echo $dataAddress[$i]['name']; ?></span>
-                            <span class="bill-span">(</span><span class="bill-phone"><?php echo $dataAddress[$i]['phone']; ?></span><span class="bill-span">) - </span>
-                            <span class="bill-address"><?php echo $dataAddress[$i]['address']; ?></span>
-                        </label>
-                    </div>
+                        <div class="aa-row">
+                            <?php
+                                if($i==0){
+                                    echo '<input type="radio" name="bill-aa-address" value="'.$dataAddress[$i]['id'].'" id="bill-aa-address--'.$dataAddress[$i]['id'].'" checked="checked">';
+                                }else{
+                                    echo '<input type="radio" name="bill-aa-address" value="'.$dataAddress[$i]['id'].'" id="bill-aa-address--'.$dataAddress[$i]['id'].'">';
+                                }
+                            ?>
+                            <label for="bill-aa-address--<?php echo $dataAddress[$i]['id'] ?>" class="">
+                                <span class="bill-user"><?php echo $dataAddress[$i]['name']; ?></span>
+                                <span class="bill-span">(</span><span class="bill-phone"><?php echo $dataAddress[$i]['phone']; ?></span><span class="bill-span">) - </span>
+                                <span class="bill-address"><?php echo $dataAddress[$i]['address']; ?></span>
+                            </label>
+                        </div>
                 <?php
                     }
                 ?>

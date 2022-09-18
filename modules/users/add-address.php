@@ -71,7 +71,7 @@
         </div>
 
         <div class="aa-row">
-            <a href="gio-hang" class="aa-link-back">Trở lại</a>
+            <a href="hoa-don" class="aa-link-back">Trở lại</a>
         </div>
     </div>
 </div>
