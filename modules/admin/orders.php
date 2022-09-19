@@ -94,7 +94,7 @@
             <?php
                 $dataOrders=array();
                 if($connect){
-                    $sql='select o.id,o.product,o.year,o.month,o.day,o.time,o.price,o.status,a.userId,a.name,a.phone,a.address  from orders as o inner join orderaddress as a on o.addressId=a.id';
+                    $sql='select o.id,o.product,o.year,o.month,o.day,o.time,o.price,o.status,a.userId,a.name,a.phone,a.address  from orders as o inner join orderaddress as a on o.addressId=a.id order by o.id desc';
                     $result=mysqli_query($connect,$sql);
                     while($row=mysqli_fetch_array($result)){
                         array_push($dataOrders,$row);

@@ -14,14 +14,12 @@
         'tui-xach'=>'modules/users/list-bag-product.php',
         'cua-hang'=>'modules/users/shop.php',
         'dong-ho'=>'modules/users/list-watch-product.php',
+        'tim-kiem'=>'modules/handle/search.php',
 
         'xu-ly-dat-hang'=>'modules/users/order-handle.php',
         'hoa-don'=>'modules/users/bill.php',
-        'xu-ly-xoa-don-hang'=>'modules/handle/delete-order.php',
-        'xu-ly-doi-trang-thai-don-hang'=>'modules/handle/change-title-order.php',
         'xu-ly-them-dia-chi'=>'modules/handle/add-address.php',
         'xu-ly-xoa-dia-chi'=>'modules/handle/delete-address.php',
-        'tim-kiem'=>'modules/handle/search.php',
 
     );
 
@@ -41,5 +39,7 @@
         'xu-ly-xoa-class'=>'modules/handle/delete-class.php',
         'xu-ly-xoa-size'=>'modules/handle/delete-size.php',
         'xu-ly-them-size'=>'modules/handle/add-size.php',
+        'xu-ly-xoa-don-hang'=>'modules/handle/delete-order.php',
+        'xu-ly-doi-trang-thai-don-hang'=>'modules/handle/change-title-order.php',
     );
 ?>

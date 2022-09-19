@@ -69,6 +69,13 @@ function handleUrl(&$module=null,&$action=null,$key=false){
             // $flag=false;
         }
     }
+
+    // foreach($routers as $key=>$value){
+    //     if(password_verify($key,$url)){
+    //         $url=$value;
+    //         break;
+    //     }
+    // }
     // if($flag){
     //     $url='modules/users/404.php';
     // }

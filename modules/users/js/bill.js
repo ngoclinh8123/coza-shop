@@ -8,11 +8,9 @@ const addressRadioInput = Array.from(
   document.querySelectorAll(".aa-row input")
 );
 const nameTag = document.querySelector(".bill-user-default");
-const nameTagInput = document.querySelector(".bill-user-input");
 const phoneTag = document.querySelector(".bill-phone-default");
-const phoneTagInput = document.querySelector(".bill-phone-input");
 const addressTag = document.querySelector(".bill-address-extra");
-const addressTagInput = document.querySelector(".bill-address-input");
+const inputIdAddressTag = document.querySelector(".bill-user-input");
 
 if (addressDefaut) {
   if (changeAddressDefaultBtn) {
@@ -35,13 +33,12 @@ function checkInputChecked() {
       let name = item.parentElement.querySelector(".bill-user").innerText;
       let phone = item.parentElement.querySelector(".bill-phone").innerText;
       let address = item.parentElement.querySelector(".bill-address").innerText;
+      let id = item.parentElement.querySelector(".bill-address-id").innerText;
 
       nameTag.innerText = name;
       phoneTag.innerText = phone;
       addressTag.innerText = address;
-      nameTagInput.value = name;
-      phoneTagInput.value = phone;
-      addressTagInput.value = address;
+      inputIdAddressTag.value = id;
     }
   });
 }
@@ -78,3 +75,14 @@ function renderTotalPrice() {
 renderTotalPrice();
 
 // khi co dia chi thi moi cho dat hang
+const buyBtnReal = document.querySelector(".buy-button");
+const buyBtnFake = document.querySelector(".bill-confirm-btn--fake");
+const noAddressBlock = document.querySelector(".bill-no-address-default");
+
+if (noAddressBlock) {
+  buyBtnReal.style.display = "none";
+  buyBtnFake.style.display = "inline-block";
+} else {
+  buyBtnReal.style.display = "inline-block";
+  buyBtnFake.style.display = "none";
+}

@@ -2025,6 +2025,13 @@
   color: #717fe0;
 }
 
+.bill-no-address-default {
+  color: red;
+  font-size: 1.4rem;
+  margin: 13px 0 13px 24px;
+}
+
+.bill-confirm-btn--fake,
 .bill-row-copyright input {
   font-size: 1.6rem;
   cursor: pointer;
@@ -2032,6 +2039,14 @@
   border: none;
   outline: none;
   padding: 12px 36px;
+}
+
+.bill-confirm-btn--fake {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+}
+
+.bill-row-copyright input {
   color: white;
   background-color: red;
   transition: all linear 0.3s;

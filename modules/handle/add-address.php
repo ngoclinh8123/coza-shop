@@ -9,8 +9,11 @@
             if($connect){
                 $sql="insert into orderaddress(userId,name,phone,address) values(".$userId.",'".$aaName."','".$aaPhone."','".$aaAddress."')";
                 if(mysqli_query($connect,$sql)) echo '<a href="dia-chi-nhan-hang"></a>';
+                else echo '<a href="dia-chi-nhan-hang"></a>';
             }
         }
+    }else{
+        header("Location:trang-chu");
     }
 ?>
 <script>

@@ -1,9 +1,11 @@
 <?php
     // session_start();
-    if(isset($_SESSION['user-email'])){
-    include_once './modules/users/header-html-tag.php';
-    include_once './modules/handle/connect-database.php';
-    include_once './modules/handle/get-user-info.php';
+    if(isset($_GET['item']) || isset($_POST['item-buy']) || isset($_SESSION['item-buy-before'])){
+        if(isset($_SESSION['user-email'])){
+        include_once './modules/users/header-html-tag.php';
+        include_once './modules/handle/connect-database.php';
+        include_once './modules/handle/get-user-info.php';
+        // ini_set('display_errors',1);
 ?> 
 <div class="bill-wrap">
     <?php
@@ -15,11 +17,11 @@
             $_SESSION['item-buy-before']=array();
         }
         if(isset($_POST['item-buy'])){
-            echo 'o POST';
+            // echo 'o POST';
             $itemBuy=$_POST['item-buy'];
             // echo '<pre>';print_r($itemBuy);
             $_SESSION['item-buy-before']=$itemBuy;
-            echo '<pre>';print_r($_SESSION['item-buy-before']);
+            // echo '<pre>';print_r($_SESSION['item-buy-before']);
 
             $itemBuyNewArray=array();
             foreach($itemBuy as $key=>$value){
@@ -27,21 +29,33 @@
             }
             $itemBuyString=implode(',',$itemBuyNewArray);
         }else if(isset($_GET['item'])){
-            echo 'o GET';
-            $itemBuyString=$_GET['item'];
+            // echo 'o GET';
+            $itemBuyStr=$_GET['item'];
             // echo $itemBuyString;
-
+            array_push($itemBuy,$itemBuyStr);
+            $_SESSION['item-buy-before']=$itemBuy;
+            $itemBuyNewArray=array();
+            foreach($itemBuy as $key=>$value){
+                array_push($itemBuyNewArray,explode('-',$value)[0]);
+            }
+            $itemBuyString=implode(',',$itemBuyNewArray);
             // tao array trong de day itemBuyString la 1 chuoi thanh array
-            $itemBuyArrayFake=array();
-            array_push($itemBuyArrayFake,$itemBuyString);
-            $_SESSION['item-buy-before']=$itemBuyArrayFake;
-            echo '<pre>';print_r($_SESSION['item-buy-before']);
-
-            $itemBuyString=explode('-',$itemBuyString)[0];
+            // $itemBuyArrayFake=array();
+            // array_push($itemBuyArrayFake,$itemBuyString);
+            // $_SESSION['item-buy-before']=$itemBuyArrayFake;
+            // echo '<pre>';print_r($_SESSION['item-buy-before']);
+            // $itemBuyString=explode('-',$itemBuyString)[0];
             // echo $itemBuyString;
         }else if(count($_SESSION['item-buy-before'])>0){
-            echo 'da o day yeah';
-            echo '<pre>';print_r($_SESSION['item-buy-before']);
+            // echo 'da o day yeah';
+            // echo '<pre>';print_r($_SESSION['item-buy-before']);
+            $itemBuy=$_SESSION['item-buy-before'];
+            $itemBuyNewArray=array();
+            foreach($itemBuy as $key=>$value){
+                array_push($itemBuyNewArray,explode('-',$value)[0]);
+            }
+            $itemBuyString=implode(',',$itemBuyNewArray);
+            // echo $itemBuyString;
         }
         // echo '<pre>';print_r($itemBuy);echo '</pre>';
         // echo '<pre>';print_r($userdata);echo '</pre>';
@@ -49,10 +63,12 @@
         
         $dataProduct=array();
         if($connect){
-            $sql="select * from product where id in(".$itemBuyString.")";
-            $result=mysqli_query($connect,$sql);
-            while($row=mysqli_fetch_array($result)){
-                array_push($dataProduct,$row);
+            if($itemBuyString!=""){
+                $sql="select * from product where id in(".$itemBuyString.")";
+                $result=mysqli_query($connect,$sql);
+                while($row=mysqli_fetch_array($result)){
+                    array_push($dataProduct,$row);
+                }
             }
         }
         // echo '<pre>';print_r($dataProduct);echo '</pre>';
@@ -84,6 +100,7 @@
             <span>Thanh Toán</span>
         </div>
     </div>
+    <!-- <form action="<?php //echo password_hash("xu-ly-dat-hang",PASSWORD_BCRYPT) ?>" method="post" class="bill-body"> -->
     <form action="xu-ly-dat-hang" method="post" class="bill-body">
         <div class="bill-row">
             <div class="row row-address-title">
@@ -96,25 +113,30 @@
                 </div>
             </div>
 
-            <?php if(count($dataAddress) > 0){ ?>
+            <?php 
+                if(count($dataAddress) > 0){ 
+            ?>
 
                 <div class="row bill-address-default">
                     <div class="col c-3">
                         <div class="bill-user bill-user-default"><?php echo $dataAddress[0]['name'] ?></div>
                         <input type="text" name="bill-user" hidden class="bill-user-input" value="<?php echo $dataAddress[0]['id'] ?>">
                         <div class="bill-phone bill-phone-default"><?php echo $dataAddress[0]['phone'] ?></div>
-                        <input type="text" name="bill-phone" hidden class="bill-phone-input" value="<?php echo $dataAddress[0]['phone'] ?>">
                     </div>
                     <div class="col c-7">
                         <span class="bill-address bill-address-extra"><?php echo $dataAddress[0]['address'] ?></span>
-                        <input type="text" name="bill-address" hidden class="bill-address-input" value="<?php echo $dataAddress[0]['address'] ?>">
                     </div>
                     <div class="col c-2">
                         <span class="bill-edit-address">Thay đổi</span>
                     </div>
                 </div>
 
-            <?php } ?>
+            <?php 
+                }else{ 
+                    echo '<div class="bill-no-address-default">* Bạn chưa thiết lập địa chỉ nhận hàng</div>';
+                } 
+            ?>
+            
                 
             <div class="bill-aa-container">
                 <?php
@@ -129,6 +151,7 @@
                                 }
                             ?>
                             <label for="bill-aa-address--<?php echo $dataAddress[$i]['id'] ?>" class="">
+                                <span class="bill-address-id" hidden><?php echo $dataAddress[$i]['id']; ?></span>
                                 <span class="bill-user"><?php echo $dataAddress[$i]['name']; ?></span>
                                 <span class="bill-span">(</span><span class="bill-phone"><?php echo $dataAddress[$i]['phone']; ?></span><span class="bill-span">) - </span>
                                 <span class="bill-address"><?php echo $dataAddress[$i]['address']; ?></span>
@@ -157,7 +180,8 @@
             $size="";
             $color="";
             $idProduct="";
-            if(isset($_POST['item-buy'])){
+            if(isset($_POST['item-buy'])||isset($_GET['item'])||count($_SESSION['item-buy-before'])>0){
+                // echo '<pre>';print_r($itemBuy);
                 foreach ($itemBuy as $key=>$value){
                     $idProduct=explode("-",$value)[0];
                     $amount=explode("-",$value)[1];
@@ -216,71 +240,12 @@
                                 </div>
         
         <?php
+                        }
                     }
                 }
             }
-
-
-            }else if(isset($_GET['item'])){
-                $dataProduct=$dataProduct[0];
-
-                $image=explode("|",$dataProduct['image'])[0];
-                $path='./includes/images/';
-                $image=$path.$image;
-
-                $name=$dataProduct['name'];
-                $price=$dataProduct['price'];
-                $amount=explode("-",$_GET['item'])[1];
-                $size=explode("-",$_GET['item'])[2];
-                $color=explode("-",$_GET['item'])[3];
-                $idProduct=explode("-",$_GET['item'])[0];
+            
         ?>
-                    <div class="bill-row">
-                        <div class="row bill-row-product">
-                            <input type="text" name="item-buy[]" value="<?php echo $_GET['item'] ?>" hidden>
-                            <div class="col c-1">
-                                <div class="bill-product-img">
-                                    <img src="<?php echo $image ?>" alt="" />
-                                </div>
-                            </div>
-                            <div class="col c-5">
-                                <div class="bill-product-name">
-                                    <span><?php echo $name; ?></span
-                                    >
-                                </div>
-                            </div>
-                            <div class="col c-3">
-                                <div class="bill-product-detail">
-                                    <span class="bill-product-detail-size">Size <?php echo $size; ?></span
-                                    ><span>,</span>
-                                    <span class="bill-product-detail-color"><?php echo $color; ?></span>
-                                </div>
-                            </div>
-                            <div class="col c-1">
-                                <div class="bill-product-amount">
-                                    <span>Số lượng :</span><span class="bill-product-amount-tag"><?php echo $amount; ?></span>
-                                </div>
-                            </div>
-                            <div class="col c-2">
-                            <div class="bill-product-price">
-                                <span class="bill-product-price-tag"><?php echo $price; ?></span>
-                                <span>VNĐ</span>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="row bill-row-message">
-                            <span class="bill-row-message-title">Lời nhắn :</span>
-                            <input
-                            type="text"
-                            class="bill-row-message-input"
-                            placeholder="Lưu ý cho người bán..." name="message[]"
-                            />
-                        </div>
-                    </div>
-        <?php
-            }
-        ?>
-
         <div class="bill-row">
             <div class="row bill-row-bottom">
                 <div class="col c-8"></div>
@@ -318,7 +283,8 @@
                 <div class="col c-3">
                     
                         <input type="text" value="" name="confirm" hidden>
-                        <input type="submit" value="Đặt hàng" class="buy-button"/>
+                        <input type="submit" value="Đặt hàng" class="buy-button " />
+                        <span class="bill-confirm-btn--fake">Đặt hàng</span>
                 
 
                     <!-- insert into orders(userId,product,price,address,phone,username,timeorder) values(1,"12-sizeS-do|14-size39-den","358000","ngoc hoi, dong da, ha noi","0242334","ngoc anh","13:12:30-24/12/2022") -->
@@ -329,6 +295,9 @@
 </div>
 <script src="./modules/users/js/bill.js"></script>
 <?php
-    include './modules/users/footer-html-tag.php';
+            include './modules/users/footer-html-tag.php';
+        }
+    }else{
+        header("Location:trang-chu");
     }
 ?>
