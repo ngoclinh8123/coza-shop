@@ -202,10 +202,19 @@
                 if($keyUserLogin){
               ?>
                 <div class="home-account-list">
+                  <div class="home-account-item home-account-item-head">
+                    Cài đặt và quyền riêng tư
+                  </div>
                   <div class="home-account-item">
-                    <a href="">
+                    <a href="dia-chi-nhan-hang">
                       <i class="fas fa-exit"></i>
                       <span>Địa chỉ nhận hàng</span>
+                    </a>
+                  </div>
+                  <div class="home-account-item">
+                    <a href="don-hang">
+                      <i class="fas fa-exit"></i>
+                      <span>Đơn hàng</span>
                     </a>
                   </div>
                 </div>

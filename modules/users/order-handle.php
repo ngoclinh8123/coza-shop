@@ -1,7 +1,8 @@
 <?php
     // session_start();
+    ini_set('display_errors',1);
     
-    if($_SESSION['user-email']){
+    if(isset($_SESSION['user-email'])){
         if(isset($_POST['bill-user'])){
             include_once './modules/users/header-html-tag.php';
             include_once './modules/handle/connect-database.php';
@@ -56,6 +57,8 @@
         }else{
             header("Location:trang-chu");
         }
+    }else{
+        header("Location:trang-chu");
     }
 ?>
 

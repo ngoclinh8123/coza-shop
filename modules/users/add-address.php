@@ -1,20 +1,20 @@
 <?php
     // session_start();
     if(isset($_SESSION['user-email'])){
-    include_once './modules/users/header-html-tag.php';
-    include_once './modules/handle/connect-database.php';
-    include_once './modules/handle/get-user-info.php';
-    $name="";
-    $phone="";
-    $address="";
-    $dataAddress=array(); 
-    if($connect){
-        $sql="select * from orderaddress where userId =".$userId;
-        $result=mysqli_query($connect,$sql);
-        while($row=mysqli_fetch_array($result)){
-            array_push($dataAddress,$row);
+        include_once './modules/users/header-html-tag.php';
+        include_once './modules/handle/connect-database.php';
+        include_once './modules/handle/get-user-info.php';
+        $name="";
+        $phone="";
+        $address="";
+        $dataAddress=array(); 
+        if($connect){
+            $sql="select * from orderaddress where userId =".$userId;
+            $result=mysqli_query($connect,$sql);
+            while($row=mysqli_fetch_array($result)){
+                array_push($dataAddress,$row);
+            }
         }
-    }
     // echo $userdata['id'];
     // echo '<pre>';print_r($dataAddress);
 ?>
@@ -77,6 +77,8 @@
 </div>
 <script src="./modules/users/js/add-address.js"></script>
 <?php
-    include './modules/users/footer-html-tag.php';
+        include './modules/users/footer-html-tag.php';
+    }else{
+        header('Location:trang-chu');
     }
 ?>

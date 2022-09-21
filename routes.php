@@ -15,6 +15,7 @@
         'cua-hang'=>'modules/users/shop.php',
         'dong-ho'=>'modules/users/list-watch-product.php',
         'tim-kiem'=>'modules/handle/search.php',
+        'don-hang'=>'modules/users/user.php',
 
         'xu-ly-dat-hang'=>'modules/users/order-handle.php',
         'hoa-don'=>'modules/users/bill.php',

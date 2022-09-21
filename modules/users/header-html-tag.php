@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sheeta Shop</title>
-    <link rel="icon" href="./includes/images/logo-icon-bird.png" type="image/x-icon" />
+    <link rel="icon" href="./includes/images/logo-icon-bird.jpg" type="image/x-icon" />
 
     <link
       rel="stylesheet"

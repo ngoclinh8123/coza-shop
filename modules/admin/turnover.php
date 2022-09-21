@@ -44,7 +44,7 @@
                     ?>
                 ],
                 datasets: [{
-                    label: 'Số lượng đơn hàng tháng <?php echo $thisMonth.'/'.$thisYear; ?>',
+                    label: 'Đơn hàng đã bán tháng <?php echo $thisMonth.'/'.$thisYear; ?>',
                     data: [
                         <?php
                             for($i=1;$i<=$dayOfMonth;$i++){

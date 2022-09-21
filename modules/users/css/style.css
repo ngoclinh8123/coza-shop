@@ -1062,13 +1062,51 @@
   color: #717fe0;
 }
 
+.home-account-list {
+  width: 100%;
+  margin: 32px 0;
+}
+
 .home-account-item {
-  margin: 13px 0;
+  margin: 13px auto 13px 0;
+  width: 100%;
 }
 .home-account-item a {
+  color: rgba(0, 0, 0, 0.8);
   font-size: 1.4rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   text-decoration: none;
-  color: blue;
+  padding: 8px;
+  display: block;
+}
+
+.home-account-item a:hover {
+  color: rgba(255, 0, 0, 0.6);
+  border-bottom: 1px solid rgba(255, 0, 0, 0.6);
+}
+
+.home-account-item-head {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 1.6rem;
+}
+
+.home-account-logout {
+  margin: 24px 0;
+}
+
+.home-account-logout a {
+  padding: 6px 13px;
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 3px;
+  transition: all linear 0.3s;
+}
+
+.home-account-logout a:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* register form */
@@ -2325,25 +2363,6 @@
   margin: 8px 0;
 }
 
-.home-account-logout {
-  margin-top: 54px;
-}
-
-.home-account-logout a {
-  padding: 6px 13px;
-  background-color: red;
-  color: white;
-  text-decoration: none;
-  font-size: 1.4rem;
-  font-weight: 600;
-  border-radius: 3px;
-  transition: all linear 0.3s;
-}
-
-.home-account-logout a:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
 /* register modal checkemail */
 .modal-email {
   display: flex;
@@ -2414,4 +2433,57 @@
 .modal-email-submit:hover,
 .modal-email-submit--fake:hover {
   background-color: black;
+}
+
+/* user file */
+.user-wrap {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  font-size: 1.4rem;
+  padding-top: 80px;
+}
+
+.user-nav {
+  flex-basis: 15%;
+  margin: 13px 13px 0 0;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  padding: 0px 0 36px;
+}
+
+.un-item-head {
+  border-bottom: 1px solid #ccc;
+}
+
+.un-name {
+  margin-left: 32px;
+  padding: 24px 0;
+}
+
+.un-item {
+  margin: 13px 0 13px 32px;
+  /* padding: 0 13px; */
+}
+
+.un-item a {
+  /* margin: 13px; */
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.un-item.active a {
+  color: red;
+}
+
+/* user block */
+.user-order-block {
+  margin: 13px 36px;
+  padding: 8px 0;
+  flex: 1;
+}
+
+.uo-head {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
