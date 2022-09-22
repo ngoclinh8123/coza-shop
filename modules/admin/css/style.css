@@ -576,7 +576,11 @@ html {
   padding: 2px 6px 3px;
 }
 
-.o-title.dang-lay-hang {
+.o-title.cho-xac-nhan {
+  background-color: rgba(255, 166, 0, 0.6);
+}
+
+.o-title.cho-lay-hang {
   background-color: rgba(0, 0, 255, 0.5);
 }
 

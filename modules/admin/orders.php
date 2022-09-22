@@ -1,4 +1,5 @@
 <?php
+    // ini_set('display_errors',1);
     include_once './modules/admin/heading-ad.php';
     include_once './modules/handle/function.php';
     include_once './modules/handle/connect-database.php';
@@ -56,7 +57,8 @@
                             <span>Trạng thái mới</span>
                         </div>
                         <select name="choose-title" id="" class="o-choose-title">
-                            <option value="dang-lay-hang">Đang lấy hàng</option>
+                            <option value="cho-xac-nhan">Chờ xác nhận</option>
+                            <option value="cho-lay-hang">Chờ lấy hàng</option>
                             <option value="dang-giao-hang">Đang giao hàng</option>
                             <option value="hoan-thanh">Hoàn thành</option>
                             <option value="da-huy">Đã hủy</option>
