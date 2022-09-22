@@ -1,5 +1,5 @@
 <?php
-    // ini_set('display_errors',1);
+    ini_set('display_errors',1);
     include_once './modules/admin/heading-ad.php';
     include_once './modules/handle/function.php';
     include_once './modules/handle/connect-database.php';
@@ -20,7 +20,7 @@
                         <span>Thao tác</span>
                     </span>
                     <div class="o-suv-nav-list o-suv-nav-list-handle">
-                        <div class="o-suv-nav-item "><span>Đổi trạng thái</span></div>
+                        <div class="o-suv-nav-item "><span>Hủy đơn</span></div>
                         <div class="o-suv-nav-item o-order-success"><span>Giao hàng loạt</span></div>
                     </div>
                 </div>
@@ -57,11 +57,22 @@
                             <span>Trạng thái mới</span>
                         </div>
                         <select name="choose-title" id="" class="o-choose-title">
-                            <option value="cho-xac-nhan">Chờ xác nhận</option>
-                            <option value="cho-lay-hang">Chờ lấy hàng</option>
-                            <option value="dang-giao-hang">Đang giao hàng</option>
-                            <option value="hoan-thanh">Hoàn thành</option>
-                            <option value="da-huy">Đã hủy</option>
+                            <?php
+                                $dataStatus=array();
+                                if($connect){
+                                    $sql="select * from orderstatus order by level";
+                                    $result=mysqli_query($connect,$sql);
+                                    while($row=mysqli_fetch_array($result)){
+                                        array_push($dataStatus,$row);
+                                    }
+
+                                    foreach ($dataStatus as $key => $value){
+                            ?>
+                                <option value=" <?php echo $value['id'] ?> "><?php echo $value['name'] ?></option>
+                            <?php
+                                    }
+                                }
+                            ?>
                         </select>
                         <input type="text" name="order-choose" hidden class="order-choose-input">
                         <div class="o-submit"><input type="submit" value="Lưu" ></div>
@@ -122,7 +133,17 @@
                         <span class="o-name"><?php echo $value['name']; ?></span><span>-</span><span class="o-phone"><?php echo $value['phone']; ?></span>
                     </div>
                     <div class="col c-2">
-                        <span class="o-title <?php echo $value['status']; ?>"><?php echo $value['status']; ?></span>
+                        <?php
+                            foreach($dataStatus as $keyStatus=>$valueStatus) {
+                                if($valueStatus['id']==$value['status']){
+                        ?>
+                                    <span class="o-title <?php echo $valueStatus['class']; ?>"><?php echo $valueStatus['name']; ?></span>
+
+                        <?php
+
+                                }
+                            }
+                        ?>
                     </div>
                     <div class="col c-2">
                         <span class="o-ship">Giao hang tiet kiem</span>

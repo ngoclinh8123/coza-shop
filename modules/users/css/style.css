@@ -2574,11 +2574,15 @@
 
 .uoo-item-name {
   line-height: 1.6rem;
-  height: 3.2rem;
+  height: 1.6rem;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
+}
+
+.uoo-item-size {
+  margin-top: 6px;
 }
 
 .uoo-item-amount {
@@ -2594,4 +2598,8 @@
 .uo-price-total {
   font-size: 2rem;
   color: red;
+}
+
+.uoo-item-address-row {
+  margin-bottom: 6px;
 }
