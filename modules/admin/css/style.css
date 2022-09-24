@@ -681,16 +681,47 @@ html {
 }
 
 .o-suv-nav-item {
-  padding: 3px 12px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  /* padding: 3px 12px; */
+  border-bottom: 1px solid #0000001a;
   min-width: 150px;
   /* transition: all linear 0.1s; */
   cursor: pointer;
+  display: block;
 }
 
-.o-suv-nav-item:hover {
+.o-suv-nav-item-fake span {
+  margin-left: 6px;
+}
+
+.o-suv-nav-item input[type="submit"] {
+  border: none;
+  outline: none;
+  background-color: white;
+  width: 100%;
+  text-align: left;
+}
+
+.o-suv-nav-item-real:hover {
   color: white;
   background-color: rgba(255, 81, 0, 0.7);
+}
+
+.o-suv-nav-item-real:hover input {
+  color: white;
+  background-color: rgba(255, 81, 0, 0.7);
+}
+
+.o-suv-nav-item-fake {
+  /* display: block; */
+  cursor: not-allowed;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.5);
+  padding: 1px 0;
+}
+
+.o-item-handle-ship-real,
+.o-item-handle-cancel-real {
+  display: none;
 }
 
 .o-ship {

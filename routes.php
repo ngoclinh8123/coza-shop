@@ -42,5 +42,6 @@
         'xu-ly-them-size'=>'modules/handle/add-size.php',
         'xu-ly-xoa-don-hang'=>'modules/handle/delete-order.php',
         'xu-ly-doi-trang-thai-don-hang'=>'modules/handle/change-title-order.php',
+        'xu-ly-van-chuyen'=>'modules/handle/ship-order.php',
     );
 ?>

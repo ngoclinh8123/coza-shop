@@ -40,6 +40,13 @@ let selectAllBtn = document.querySelector(".o-select-all");
 let orderItems = document.querySelectorAll(".o-col-input-item input");
 const changeTitleBtn = document.querySelector(".o-change-title");
 const changeTitleFakeBtn = document.querySelector(".o-change-title-fake");
+const handleCancelBtn = document.querySelector(".o-item-handle-cancel-real");
+const handleShipBtn = document.querySelector(".o-item-handle-ship-real");
+const handleCancelBtnFake = document.querySelector(
+  ".o-item-handle-cancel-fake"
+);
+const handleShipBtnFake = document.querySelector(".o-item-handle-ship-fake");
+
 function selectAllOrder() {
   orderItems.forEach(function (item, inxex) {
     if (!item.checked) item.click();
@@ -72,8 +79,31 @@ function renderNumberOrder() {
   });
 }
 
+function renderIfIssetInput() {
+  if (checkInput()) {
+    changeTitleBtn.style.display = "block";
+    changeTitleFakeBtn.style.display = "none";
+
+    handleCancelBtn.style.display = "block";
+    handleCancelBtnFake.style.display = "none";
+    handleShipBtn.style.display = "block";
+    handleShipBtnFake.style.display = "none";
+    insertOrderIntoInput();
+  } else {
+    changeTitleBtn.style.display = "none";
+    changeTitleFakeBtn.style.display = "block";
+
+    handleCancelBtn.style.display = "none";
+    handleCancelBtnFake.style.display = "block";
+    handleShipBtn.style.display = "none";
+    handleShipBtnFake.style.display = "block";
+  }
+}
+
 // get id of order choosed
 const orderChooseInput = document.querySelector(".order-choose-input");
+const itemChooseHandleCancel = document.querySelector(".o-item-handle-cancel");
+const itemChooseHandleShip = document.querySelector(".o-item-handle-ship");
 function getIdOrderChoosed() {
   let itemChoose = "";
   orderItems.forEach(function (item, inxex) {
@@ -86,6 +116,8 @@ function getIdOrderChoosed() {
 
 function insertOrderIntoInput() {
   orderChooseInput.value = getIdOrderChoosed();
+  itemChooseHandleCancel.value = getIdOrderChoosed();
+  itemChooseHandleShip.value = getIdOrderChoosed();
 }
 
 if (selectAllBtn) {
@@ -96,27 +128,13 @@ if (selectAllBtn) {
       clickAllOrder();
     }
 
-    if (checkInput()) {
-      changeTitleBtn.style.display = "block";
-      changeTitleFakeBtn.style.display = "none";
-      insertOrderIntoInput();
-    } else {
-      changeTitleBtn.style.display = "none";
-      changeTitleFakeBtn.style.display = "block";
-    }
+    renderIfIssetInput();
   };
 }
 
 orderItems.forEach(function (item, index) {
   item.onclick = function () {
-    if (checkInput()) {
-      changeTitleBtn.style.display = "block";
-      changeTitleFakeBtn.style.display = "none";
-      insertOrderIntoInput();
-    } else {
-      changeTitleBtn.style.display = "none";
-      changeTitleFakeBtn.style.display = "block";
-    }
+    renderIfIssetInput();
   };
 });
 

@@ -20,8 +20,20 @@
                         <span>Thao tác</span>
                     </span>
                     <div class="o-suv-nav-list o-suv-nav-list-handle">
-                        <div class="o-suv-nav-item "><span>Hủy đơn</span></div>
-                        <div class="o-suv-nav-item o-order-success"><span>Giao hàng loạt</span></div>
+                        <form action="xu-ly-van-chuyen" method="post" class="o-suv-nav-item o-suv-nav-item-real o-item-handle-cancel-real">
+                            <input type="text" class="o-item-handle-cancel" name="o-item-handle-cancel" hidden>
+                            <input type="submit" value="Hủy đơn" class="">
+                        </form>
+                        <div class="o-suv-nav-item o-suv-nav-item-fake o-item-handle-cancel-fake">
+                            <span>Hủy đơn</span>
+                        </div>
+                        <form action="xu-ly-van-chuyen" method="post" class="o-suv-nav-item o-suv-nav-item-real o-item-handle-ship-real">
+                            <input type="text" class="o-item-handle-ship" name="o-item-handle-ship" hidden>
+                            <input type="submit" value="Giao đơn hàng" class="">
+                        </form>
+                        <div class="o-suv-nav-item o-suv-nav-item-fake o-item-handle-ship-fake">
+                            <span>Giao đơn hàng</span>
+                        </div>
                     </div>
                 </div>
                 <div class="o-nav-item o-change-title-fake">
