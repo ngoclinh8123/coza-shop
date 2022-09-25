@@ -34,7 +34,8 @@
                     <div class="ad-nav-item">
                         <span class="ad-nav-item-title">Thống kê</span>
                         <div class="ad-subnav-list">
-                            <div class="ad-subnav-item"><a href="doanh-so-ban-hang">Doanh số bán hàng</a></div>
+                            <div class="ad-subnav-item"><a href="doanh-so-ban-hang">Doanh thu tháng</a></div>
+                            <div class="ad-subnav-item"><a href="doanh-thu-nam">Doanh thu năm</a></div>
                         </div>
                     </div>
                     <div class="ad-nav-item">
@@ -51,14 +52,14 @@
                             <div class="ad-subnav-item"><a href="danh-sach-don-hang">Đơn đặt hàng</a></div>
                         </div>
                     </div>
-                    <div class="ad-nav-item">
+                    <!-- <div class="ad-nav-item">
                         <span class="ad-nav-item-title">Khách hàng</span>
                         <div class="ad-subnav-list">
                             <div class="ad-subnav-item"><a href="">Danh sách khách hàng</a></div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="ad-nav-item">
-                        <span class="ad-nav-item-title">Tài khoản</span>
+                        <span class="ad-nav-item-title">Thiết lập</span>
                         <div class="ad-subnav-list">
                             <div class="ad-subnav-item"><a href="them-nguoi-ban">Thêm người bán</a></div>
                         </div>

@@ -35,9 +35,9 @@
                 }
             }
 
-            echo '<pre>';print_r($idIsValid);
+            // echo '<pre>';print_r($idIsValid);
             $ids=implode(',',$idIsValid);
-            echo $ids;
+            // echo $ids;
             // echo $title;
             if($ids!=""){
                 $sql="update orders set status='".$title."' where id in(".$ids.")";

@@ -28,6 +28,7 @@
         'danh-sach-san-pham'=>'modules/admin/list-product.php',
         'danh-sach-don-hang'=>'modules/admin/orders.php',
         'doanh-so-ban-hang'=>'modules/admin/turnover.php',
+        'doanh-thu-nam'=>'modules/admin/turnover-year.php',
         'xu-li-xoa-san-pham'=>'modules/admin/delete-product.php',
         'them-san-pham'=>'modules/admin/add-product.php',
         'xoa-san-pham'=>'modules/admin/delete-product.php',
