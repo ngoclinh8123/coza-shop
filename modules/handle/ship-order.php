@@ -16,7 +16,7 @@
         if(isset($_POST['o-item-handle-cancel'])){
             $item=$_POST['o-item-handle-cancel'];
             $item=handleItem($item);
-            $sql="update orders set status='3' where id in(".$item.")";
+            $sql="update orders set status='5' where id in(".$item.")";
             if(mysqli_query($connect,$sql)){
                 header('Location: danh-sach-don-hang');
             }else{
@@ -25,7 +25,7 @@
         }else if(isset($_POST['o-item-handle-ship'])){
             $item= $_POST['o-item-handle-ship'];
             $item=handleItem($item);
-            $sql="update orders set status='5' where id in(".$item.")";
+            $sql="update orders set status='3' where id in(".$item.")";
             if(mysqli_query($connect,$sql)){
                 header('Location: danh-sach-don-hang');
             }else{
