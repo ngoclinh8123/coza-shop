@@ -13,14 +13,14 @@
             $thisYear=explode('-',$thisTime)[0];
             $thisMonth=explode('-',$thisTime)[1];
             $thisDay=explode('-',$thisTime)[2];
-            $sql="select day from orders where (year='".$thisYear."' and month='".$thisMonth."')";
-            $sql="select * from orders";
+            // $sql="select day from orders where (year='".$thisYear."' and month='".$thisMonth."')";
+            $sql="select month,count(*) from orders where year='".$thisYear."' group by month";
             $result=mysqli_query($connect,$sql);
             while($row=mysqli_fetch_array($result)){
                 array_push($dataOrders,$row);
             }
             // echo '<pre>';print_r($dataOrders);
-            $dayOfMonth=countDay($thisMonth,$thisYear);
+
             
         }
 
@@ -34,11 +34,11 @@
     <script>
         let myChart=document.getElementById('myChart').getContext("2d");
         const chart = new Chart(myChart, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: [
                     <?php 
-                        for($i=1;$i<=$dayOfMonth;$i++){
+                        for($i=1;$i<=12;$i++){
                             echo $i.",";
                         }
                     ?>
@@ -47,12 +47,17 @@
                     label: 'Đơn hàng đã bán năm <?php echo $thisYear; ?>',
                     data: [
                         <?php
-                            for($i=1;$i<=$dayOfMonth;$i++){
-                                $count=0;
+                            for($i=1;$i<=12;$i++){
+                                $flag=true;
                                 foreach($dataOrders as $key=>$value){
-                                    if($i==$value['day'] && $thisMonth==$value['month'] && $thisYear==$value['year']) $count++;
+                                    if($i==$value[0]){
+                                        echo $value[1] .",";
+                                        $flag=false;
+                                    }
                                 }
-                                echo $count.",";
+                                if($flag){
+                                    echo "0,";
+                                }
                             }
                         ?>,
                     ],
