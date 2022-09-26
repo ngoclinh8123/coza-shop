@@ -48,15 +48,25 @@ html {
   padding: 23px 0;
 }
 
+.ad-nav-item-home,
 .ad-nav-item {
   width: 100%;
   font-size: 1.4rem;
   cursor: pointer;
 }
 
+.ad-nav-item-home a,
 .ad-nav-item a {
   text-decoration: none;
   color: black;
+}
+
+.ad-nav-item-home {
+  padding-bottom: 8px;
+}
+
+.ad-nav-item-home a {
+  margin: 0 0 0 10px;
 }
 
 .ad-subnav-item {
@@ -1230,4 +1240,9 @@ html {
 
 .asb-col--2 {
   flex-basis: 50%;
+}
+
+/* tunover */
+.tun-item {
+  border: 1px solid red;
 }

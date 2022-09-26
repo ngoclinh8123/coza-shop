@@ -13,7 +13,7 @@
             $thisYear=explode('-',$thisTime)[0];
             $thisMonth=explode('-',$thisTime)[1];
             $thisDay=explode('-',$thisTime)[2];
-            $sql="select day from orders where (year='".$thisYear."' and month='".$thisMonth."')";
+            // $sql="select day from orders where (year='".$thisYear."' and month='".$thisMonth."')";
             $sql="select * from orders";
             $result=mysqli_query($connect,$sql);
             while($row=mysqli_fetch_array($result)){
@@ -26,6 +26,63 @@
 
     ?>
         <canvas id="myChart" width="400" height="200"></canvas>
+
+        <div class="tunover-wrap">
+            <div class="row">
+                <div class="col c-6">
+                    <div class="tun-item">
+                        <div class="tun-item-time">
+                            <span>26</span>
+                            <span>/</span>
+                            <span>09</span>
+                        </div>
+                        <div class="tun-item-content">
+                            <span>23</span>
+                            <span>Đơn hàng mới hôm nay</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col c-6">
+                    <div class="tun-item">
+                        <div class="tun-item-time">
+                            <span>26</span>
+                            <span>/</span>
+                            <span>09</span>
+                        </div>
+                        <div class="tun-item-content">
+                            <span>23</span>
+                            <span>Đơn hàng mới hôm nay</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col c-6">
+                    <div class="tun-item">
+                        <div class="tun-item-time">
+                            <span>26</span>
+                            <span>/</span>
+                            <span>09</span>
+                        </div>
+                        <div class="tun-item-content">
+                            <span>23</span>
+                            <span>Đơn hàng mới hôm nay</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col c-6">
+                    <div class="tun-item">
+                        <div class="tun-item-time">
+                            <span>26</span>
+                            <span>/</span>
+                            <span>09</span>
+                        </div>
+                        <div class="tun-item-content">
+                            <span>23</span>
+                            <span>Đơn hàng mới hôm nay</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 <!-- doan nay lay tu foot-ad -->

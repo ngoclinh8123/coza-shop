@@ -30,7 +30,9 @@
                             </div>
                         </a>
                     </div>
-                    <!-- <div class="ad-nav-heading">Kênh Người Bán</div> -->
+                    <!-- <div class="ad-nav-item-home">
+                        <a href="kenh-nguoi-ban">Trang chủ</a>
+                    </div> -->
                     <div class="ad-nav-item">
                         <span class="ad-nav-item-title">Thống kê</span>
                         <div class="ad-subnav-list">
