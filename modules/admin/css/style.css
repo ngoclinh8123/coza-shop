@@ -1243,6 +1243,30 @@ html {
 }
 
 /* tunover */
+.tunover-wrap {
+  margin: 24px 0;
+}
+
 .tun-item {
-  border: 1px solid red;
+  padding: 8px;
+  margin: 13px;
+  box-shadow: 0px 0px 4px rgb(0 0 0 / 50%);
+  border-radius: 11px;
+  font-size: 1.4rem;
+}
+
+.tun-item-time {
+  border-radius: 8px;
+  display: inline-block;
+  padding: 4px;
+  background-image: linear-gradient(45deg, #e1e1e1, transparent);
+  box-shadow: -1px 1px 4px rgb(0 0 0 / 40%);
+  margin-bottom: 4px;
+  color: rgba(0, 0, 255, 0.8);
+}
+
+.tun-item-main {
+  font-size: 1.8rem;
+  color: red;
+  font-weight: 700;
 }

@@ -22,6 +22,20 @@
             // echo '<pre>';print_r($dataOrders);
             $dayOfMonth=countDay($thisMonth,$thisYear);
             
+            $turnoverDay=0;
+            $turnoverMonth=0;
+            $amountOrderDay=0;
+            $amountOrderMonth=0;
+            foreach($dataOrders as $key=>$value){
+                if($value['year']==$thisYear && $value['month']==$thisMonth && $value['day']==$thisDay){
+                    $turnoverDay+=(int)$value['price'];
+                    $amountOrderDay++;
+                }if($value['year']==$thisYear && $value['month']==$thisMonth){
+                    $turnoverMonth+=(int)$value['price'];
+                }if($value['year']==$thisYear && $value['month']==$thisMonth && $value['status']=="4"){
+                    $amountOrderMonth++;
+                }
+            }
         }
 
     ?>
@@ -32,12 +46,12 @@
                 <div class="col c-6">
                     <div class="tun-item">
                         <div class="tun-item-time">
-                            <span>26</span>
+                            <span><?php echo $thisDay ?></span>
                             <span>/</span>
-                            <span>09</span>
+                            <span><?php echo $thisMonth ?></span>
                         </div>
                         <div class="tun-item-content">
-                            <span>23</span>
+                            <span class="tun-item-main"><?php echo $amountOrderDay ?></span>
                             <span>Đơn hàng mới hôm nay</span>
                         </div>
                     </div>
@@ -45,39 +59,41 @@
                 <div class="col c-6">
                     <div class="tun-item">
                         <div class="tun-item-time">
-                            <span>26</span>
+                            <span><?php echo $thisMonth ?></span>
                             <span>/</span>
-                            <span>09</span>
+                            <span><?php echo $thisYear ?></span>
                         </div>
                         <div class="tun-item-content">
-                            <span>23</span>
-                            <span>Đơn hàng mới hôm nay</span>
+                            <span class="tun-item-main"><?php echo $amountOrderMonth ?></span>
+                            <span>Đơn hàng đã được giao thành công</span>
                         </div>
                     </div>
                 </div>
                 <div class="col c-6">
                     <div class="tun-item">
                         <div class="tun-item-time">
-                            <span>26</span>
+                            <span><?php echo $thisDay ?></span>
                             <span>/</span>
-                            <span>09</span>
+                            <span><?php  echo $thisMonth ?></span>
                         </div>
                         <div class="tun-item-content">
-                            <span>23</span>
-                            <span>Đơn hàng mới hôm nay</span>
+                            <span>Doanh thu hôm nay</span>
+                            <span class="tun-item-main"><?php echo $turnoverDay ?></span>
+                            <span>VNĐ</span>
                         </div>
                     </div>
                 </div>
                 <div class="col c-6">
                     <div class="tun-item">
                         <div class="tun-item-time">
-                            <span>26</span>
+                            <span><?php echo $thisMonth ?></span>
                             <span>/</span>
-                            <span>09</span>
+                            <span><?php echo $thisYear ?></span>
                         </div>
                         <div class="tun-item-content">
-                            <span>23</span>
-                            <span>Đơn hàng mới hôm nay</span>
+                            <span>Doanh thu tháng này </span>
+                            <span class="tun-item-main"><?php echo $turnoverMonth ?></span>
+                            <span>VNĐ</span>
                         </div>
                     </div>
                 </div>
