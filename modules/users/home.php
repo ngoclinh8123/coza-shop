@@ -475,7 +475,7 @@
     ></script>
     <script
       type="text/javascript"
-      src="./includes/libraries/slick-1.8.1/slick/slick.min.js"
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
     ></script>
     <script src="./modules/users/js/home-user.js"></script>
 <?php

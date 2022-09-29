@@ -233,4 +233,9 @@
           </div>
         </div>
       </div>
+
+      <!-- loading animation -->
+      <!-- <div class="ring">Loading
+        <span></span>
+      </div> -->
 <script src="./modules/users/js/heading.js"></script>

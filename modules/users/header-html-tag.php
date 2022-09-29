@@ -10,11 +10,11 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="./includes/libraries/slick-1.8.1/slick/slick.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
     />
     <link
       rel="stylesheet"
-      href="./includes/fonts/fontawesome-free-5.15.4-web/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
     <link rel="stylesheet" href="./includes/fonts/poppins/Poppins-Regular.ttf" />
     <link rel="stylesheet" href="./modules/users/css/grid.css" />
