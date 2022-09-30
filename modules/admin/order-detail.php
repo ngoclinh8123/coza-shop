@@ -4,6 +4,7 @@
         include_once './modules/handle/connect-database.php';
         $idOrder=$_GET['id'];
         $dataOrder=array();
+        $dataStatus=array();
 
         if($connect){
             $sql='select * from orders where id='.$idOrder;
@@ -19,8 +20,15 @@
             while($row=mysqli_fetch_array($result)){
                 array_push($dataAddress,$row);
             }
+
+            $sql='select * from orderstatus where id='.$dataOrder['status'];
+            $result=mysqli_query($connect,$sql);
+            while($row=mysqli_fetch_array($result)){
+                array_push($dataStatus,$row);
+            }
         }
         // echo '<pre>';print_r($dataAddress);
+        // echo '<pre>';print_r($dataStatus);
         $dataAddress=$dataAddress[0];
         $product=$dataOrder['product'];
         $product=explode('|',$product);
@@ -56,7 +64,7 @@
             </div>
             <div class="od-address--row">
                 <span>Trạng thái : </span>
-                <span><?php echo $dataOrder['status']; ?></span>
+                <span><?php echo $dataStatus[0]['name']; ?></span>
             </div>
         </div>
         <div class="od-product">

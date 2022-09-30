@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sheeta Shop</title>
     <link rel="icon" href="./includes/images/logo-icon-bird.jpg" type="image/x-icon" />
-
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js"></script> -->
     <link
       rel="stylesheet"
       type="text/css"

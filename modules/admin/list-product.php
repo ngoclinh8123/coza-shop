@@ -8,7 +8,7 @@
           $data=array();
           $dataClass=array();
           if($connect){
-              $sql='select * from product';
+              $sql='select * from product order by id desc';
               $result= mysqli_query($connect,$sql);
               while($row= mysqli_fetch_assoc($result)){
                   array_push($data,$row);

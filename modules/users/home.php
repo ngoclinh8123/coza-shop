@@ -1,6 +1,7 @@
 <?php
   // session_start();
   include_once './modules/handle/connect-database.php';
+  // die("ok");
   
   include_once './modules/users/header-html-tag.php';
 
@@ -316,7 +317,7 @@
               <div class="store-ovv-product">
               <?php
                   $dataWatch=array();
-                  $sql="select * from product where class='DH'";
+                  $sql="select * from product where class='ĐH'";
                   if($connect){
                     $result=mysqli_query($connect,$sql);
                     while($row=mysqli_fetch_array($result)){
@@ -479,6 +480,6 @@
     ></script>
     <script src="./modules/users/js/home-user.js"></script>
 <?php
-  include './modules/users/footer-html-tag.php';
+  include_once './modules/users/footer-html-tag.php';
 ?>
 <!-- https://technext.github.io/cozastore/contact.html# -->

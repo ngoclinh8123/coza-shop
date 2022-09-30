@@ -21,7 +21,10 @@
           }
 
           // echo '<pre>';print_r($dataClass);
+
+          // include_once './modules/users/loading.php';
       ?>
+
       <div class="heading">
         <div class="wrap f-c-c">
           <div class="logo">
@@ -234,8 +237,4 @@
         </div>
       </div>
 
-      <!-- loading animation -->
-      <!-- <div class="ring">Loading
-        <span></span>
-      </div> -->
 <script src="./modules/users/js/heading.js"></script>
