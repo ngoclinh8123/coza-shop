@@ -129,39 +129,6 @@
                                 <input type="file" name="add-image-3">
                             </div>
                             <div class="form-row">
-                                <div class="form-title">Màu sắc<span>(Bắt buộc)</span></div>
-                                <?php 
-                                    if(isset($_POST['add-color']) && trim($_POST['add-color'])!=""){
-                                        echo '<input type="text" name="add-color" value="'.$_POST['add-color'].'">';
-                                    }else{
-                                        echo '<input type="text" name="add-color" value="" class="input-error" placeholder="xanh|đen|trắng...">';
-                                        echo '<div class="form-error">Trường này không được để trống</div>';
-                                    }
-                                ?>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-title">Chất liệu</div>
-                                <input type="text " name="add-material">
-                            </div>
-                            <div class="form-row">
-                                <div class="form-title">Khối lượng</div>
-                                <input type="text" name="add-weight">
-                            </div>
-                            <div class="form-row-size">
-                                <div class="form-title">Size </div>
-                                <?php 
-                                    foreach ($dataSize as $key => $value){
-                                        echo '<span class="form-add-size"><span>'.$value['size'].'</span><input type="checkbox" name="add-size[]" value="'.$value['size'].'"></span>';
-                                    }
-                                ?>
-                                
-          
-                            </div>
-                            <div class="form-row">
-                                <div class="form-title">Kích thước</div>
-                                <input type="text" name="add-dimension">
-                            </div>
-                            <div class="form-row">
                                 <div class="add-btn">
                                     <input type="submit" value="Thêm">
                                 </div>
