@@ -125,19 +125,6 @@
     </div>
 </div>
 
-
-<!-- cac san pham tu class -->
-<div class="ac-subnav-block">
-        <div class="as-row-head">
-            <div class="as-head-item as-head-item--add-class <?php if($category =="class") echo "action"; else echo ""?>">
-                <span>Thêm phân loại</span>
-            </div>
-            <div class="as-head-item as-head-item--add-size <?php if($category =="size") echo "action"; else echo ""?>">
-                <span>Thêm kích thước</span>
-            </div>
-        </div>
-</div>
-
 <script>
     const addClassBtn=document.querySelector(".cb-head-add");
     const addClassBlock=document.querySelector(".cb-add-class-block");
