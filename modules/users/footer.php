@@ -4,10 +4,9 @@
         <div class="row footer-nav">
           <div class="col l-3 m-6 c-12 footer-nav-col">
             <div class="footer-nav-col--title">CATEGORIES</div>
-            <span class="footer-nav-col--item"><a href="thoi-trang-nu?page=1">Women</a></span>
-            <span class="footer-nav-col--item"><a href="thoi-trang-nam?page=1">Men</a></span>
-            <span class="footer-nav-col--item"><a href="tui-xach?page=1">Bags</a></span>
-            <span class="footer-nav-col--item"><a href="dong-ho?page=1">Watches</a></span>
+            <span class="footer-nav-col--item"><a href="thoi-trang-nu?page=1">Fastfoods</a></span>
+            <span class="footer-nav-col--item"><a href="thoi-trang-nam?page=1">Drinks</a></span>
+            <span class="footer-nav-col--item"><a href="tui-xach?page=1">Dishes</a></span>
           </div>
           <div class="col l-3 m-6 c-12 footer-nav-col">
             <div class="footer-nav-col--title">HELP</div>
@@ -49,7 +48,7 @@
       </div>
       <div class="copy-right">
         Copyright<i class="fas fa-copyright"></i>2022 All rights reserved | Made
-        with <i class="far fa-heart"></i> by<span><a href="">Linh</a></span
+        with <i class="far fa-heart"></i> by<span><a href="">Linh, Chinh, Hung, Truong</a></span
         >& distributed by
         <span><a href="">Colorlib</a></span>
       </div>

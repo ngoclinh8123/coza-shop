@@ -158,9 +158,6 @@
                     <div class="home-cart-item--name">
                       <a href="san-pham?id=<?php echo $dataCart[$i]['productId']; ?>"><?php echo $name; ?></a>
                     </div>
-                    <div class="home-cart-size-color">
-                      <span><?php echo $size; ?></span> - <span><?php echo $color; ?></span>
-                    </div>
                     <div class="home-cart-item--amount"><?php echo $amount ?></div>
                     x
                     <span class="home-cart-item--price"><?php echo $price ?></span>
