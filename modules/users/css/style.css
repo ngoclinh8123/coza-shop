@@ -290,6 +290,8 @@
   width: 100%;
   height: 100vh;
   animation: slowOpacity2 0.7s ease-out;
+  object-fit: cover;
+  object-position: center;
 }
 
 .slide-content {
@@ -373,7 +375,8 @@
   border: 1px solid #ccc;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  aspect-ratio: 3/2;
 }
 
 .banner-content {
@@ -672,6 +675,9 @@
   width: 100%;
   transition: all linear 0.5s;
   transform-origin: center;
+  /* Keeping the picture ratio regardless of any picture */
+  object-fit: cover;
+  aspect-ratio: 3/2;
 }
 
 .h-blog__item-img img:hover {

@@ -18,7 +18,7 @@
       <!-- slide -->
       <div class="home-slide">
         <div class="home-slide__item active">
-          <img src="./includes/images/slide-01.jpg" alt="" />
+          <img src="./includes/images/slide-05.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
               <span>Women Collection 2022</span>
@@ -32,7 +32,7 @@
           </div>
         </div>
         <div class="home-slide__item">
-          <img src="./includes/images/slide-02.jpg" alt="" />
+          <img src="./includes/images/slide-06.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
               <span>Men New-Season</span>
@@ -46,7 +46,7 @@
           </div>
         </div>
         <div class="home-slide__item">
-          <img src="./includes/images/slide-03.jpg" alt="" />
+          <img src="./includes/images/slide-07.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
               <span>Men Collection 2022</span>
@@ -75,10 +75,10 @@
           <div class="row">
             <div class="col l-4">
               <div class="banner-item">
-                <img src="./includes/images/banner-01.jpg" alt="" />
+                <img src="./includes/images/banner1.jpg" alt="" />
                 <div class="banner-content">
                   <div class="banner-content--top">
-                    <p>Women</p>
+                    <p>Fast food</p>
                   </div>
                   <div class="banner-content--bot">
                     <p>Spring 2022</p>
@@ -98,10 +98,10 @@
             </div>
             <div class="col l-4">
               <div class="banner-item">
-                <img src="./includes/images/banner-02.jpg" alt="" />
+                <img src="./includes/images/banner2.jpg" alt="" />
                 <div class="banner-content">
                   <div class="banner-content--top">
-                    <p>Men</p>
+                    <p>Drinks</p>
                   </div>
                   <div class="banner-content--bot">
                     <p>Spring 2022</p>
@@ -121,10 +121,10 @@
             </div>
             <div class="col l-4">
               <div class="banner-item">
-                <img src="./includes/images/banner-03.jpg" alt="" />
+                <img src="./includes/images/banner3.jpg" alt="" />
                 <div class="banner-content">
                   <div class="banner-content--top">
-                    <p>Accessories</p>
+                    <p>Dishes</p>
                   </div>
                   <div class="banner-content--bot">
                     <p>New Trend</p>
@@ -154,10 +154,10 @@
               <span>Store Overview</span>
             </div>
             <div class="store-ovv-nav">
-              <span class="store-ovv-nav-item active">Men</span>
-              <span class="store-ovv-nav-item">Women</span>
-              <span class="store-ovv-nav-item">Handbag</span>
-              <span class="store-ovv-nav-item">Wristwatch</span>
+              <span class="store-ovv-nav-item active">Fastfoods</span>
+              <span class="store-ovv-nav-item">Drinks</span>
+              <span class="store-ovv-nav-item">Dishes</span>
+              <!-- <span class="store-ovv-nav-item">Wristwatch</span> -->
             </div>
             <div class="store-ovv-block-product show best-seller">
               <div class="store-ovv-product">
@@ -384,7 +384,7 @@
               <div class="col l-4 c-12 m-4">
                 <div class="h-blog__item-img">
                   <a href="">
-                    <img src="./includes/images/blog-02.jpg" alt="" />
+                    <img src="./includes/images/cooking2.jpg" alt="" />
                   </a>
                 </div>
                 <div class="h-blog__item-info">
@@ -409,7 +409,7 @@
               <div class="col l-4 c-12 m-4">
                 <div class="h-blog__item-img">
                   <a href="">
-                    <img src="./includes/images/blog-01.jpg" alt="" />
+                    <img src="./includes/images/cooking1.jpg" alt="" />
                   </a>
                 </div>
                 <div class="h-blog__item-info">
@@ -434,7 +434,7 @@
               <div class="col l-4 c-12 m-4">
                 <div class="h-blog__item-img">
                   <a href="">
-                    <img src="./includes/images/blog-03.jpg" alt="" />
+                    <img src="./includes/images/cooking3.jpg" alt="" />
                   </a>
                 </div>
                 <div class="h-blog__item-info">

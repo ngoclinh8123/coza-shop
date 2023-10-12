@@ -29,13 +29,6 @@
           <div class="pl-block-heading">
             <!-- <span>Danh sách sản phẩm</span> -->
             <div class="pl-nav">
-
-              <div class="pl-nav-item pl-nav-change-status">
-                <span>
-                  <i class="fas fa-cog"></i>
-                  <span>Đổi trạng thái</span>
-                </span>
-              </div>
               
             </div>
           </div>
