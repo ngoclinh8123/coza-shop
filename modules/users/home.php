@@ -72,17 +72,17 @@
       <!-- banner -->
       <div class="banner">
         <div class="wrap">
-          <div class="row">
+          <div class="row" style="width:100%">
             <div class="col l-4">
               <div class="banner-item">
-                <img src="./includes/images/banner1.jpg" alt="" />
+                <img src="./includes/images/banner-1.jpg" alt="" />
                 <div class="banner-content">
-                  <div class="banner-content--top">
+                  <!-- <div class="banner-content--top">
                     <p>Fast food</p>
                   </div>
                   <div class="banner-content--bot">
                     <p>Spring 2022</p>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="banner-modal">
                   <div class="banner-action">
@@ -98,14 +98,14 @@
             </div>
             <div class="col l-4">
               <div class="banner-item">
-                <img src="./includes/images/banner2.jpg" alt="" />
+                <img src="./includes/images/banner-2.jpg" alt="" />
                 <div class="banner-content">
-                  <div class="banner-content--top">
+                  <!-- <div class="banner-content--top">
                     <p>Drinks</p>
                   </div>
                   <div class="banner-content--bot">
                     <p>Spring 2022</p>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="banner-modal">
                   <div class="banner-action">
@@ -121,14 +121,14 @@
             </div>
             <div class="col l-4">
               <div class="banner-item">
-                <img src="./includes/images/banner3.jpg" alt="" />
+                <img src="./includes/images/banner-3.jpg" alt="" />
                 <div class="banner-content">
-                  <div class="banner-content--top">
+                  <!-- <div class="banner-content--top">
                     <p>Dishes</p>
                   </div>
                   <div class="banner-content--bot">
                     <p>New Trend</p>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="banner-modal">
                   <div class="banner-action">
@@ -384,7 +384,7 @@
               <div class="col l-4 c-12 m-4">
                 <div class="h-blog__item-img">
                   <a href="">
-                    <img src="./includes/images/cooking2.jpg" alt="" />
+                    <img src="./includes/images/blog-1.jpg" alt="" />
                   </a>
                 </div>
                 <div class="h-blog__item-info">
@@ -409,7 +409,7 @@
               <div class="col l-4 c-12 m-4">
                 <div class="h-blog__item-img">
                   <a href="">
-                    <img src="./includes/images/cooking1.jpg" alt="" />
+                    <img src="./includes/images/blog-2.jpg" alt="" />
                   </a>
                 </div>
                 <div class="h-blog__item-info">
@@ -434,7 +434,7 @@
               <div class="col l-4 c-12 m-4">
                 <div class="h-blog__item-img">
                   <a href="">
-                    <img src="./includes/images/cooking3.jpg" alt="" />
+                    <img src="./includes/images/blog-3.jpg" alt="" />
                   </a>
                 </div>
                 <div class="h-blog__item-info">
