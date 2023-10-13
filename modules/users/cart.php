@@ -52,10 +52,8 @@
                 <p>Sản Phẩm</p>
             </div>
             <div class="cart-col--6">
-                <p>Size</p>
             </div>
             <div class="cart-col--7">
-                <p>Màu sắc</p>
             </div>
             <div class="cart-col--3">
                 <p>Số lượng</p>
@@ -77,14 +75,12 @@
                     $path='./includes/images/';
                     $image=$path.$image;
                     $name=$value['name'];
-                    $size=$dataCart[$i]['size'];
-                    $color=$dataCart[$i]['color'];
                     $desc=$value['description'];
                     $amount=$dataCart[$i]['amount'];
         ?>
             <div class="cart-row">
                 <div class="cart-col--1">
-                    <input type="checkbox" name="item-buy[]" value="<?php echo $value['id']."-".$amount."-".$size."-".$color; ?>">
+                    <input type="checkbox" name="item-buy[]" value="<?php echo $value['id']."-".$amount ?>">
                 </div>
                 <div class="cart-col--2">
                     <div class="cart-item-img">
@@ -100,11 +96,10 @@
                     </div>
                 </div>
                 <div class="cart-col--6">
-                    <span>Size</span>
-                    <span><?php echo $size; ?></span>
+                    
                 </div>
                 <div class="cart-col--7">
-                    <span><?php echo $color; ?></span>
+                    
                 </div>
                 <div class="cart-col--3">
                     <div class="cart-item-dec cart-item-button">
