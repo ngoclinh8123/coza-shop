@@ -11,12 +11,13 @@
         while($row=mysqli_fetch_array($result)){
             array_push($dataClass,$row);
         }
-        $sql="select * from size";
-        $result=mysqli_query($connect,$sql);
-        while($row=mysqli_fetch_array($result)){
-            array_push($dataSize,$row);
-        }
+        // $sql="select * from size";
+        // $result=mysqli_query($connect,$sql);
+        // while($row=mysqli_fetch_array($result)){
+        //     array_push($dataSize,$row);
+        // }
     }
+
 
     $category="";
     if(isset($_GET['category'])){
