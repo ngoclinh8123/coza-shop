@@ -141,8 +141,6 @@
                       $path='./includes/images/';
                       $image=$path.$image;
                       $name=$value['name'];
-                      $size=$dataCart[$i]['size'];
-                      $color=$dataCart[$i]['color'];
                       $amount=$dataCart[$i]['amount'];
                       $price=$value['price'];
                 

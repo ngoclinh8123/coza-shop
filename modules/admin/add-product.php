@@ -68,14 +68,10 @@
         
                         <!-- product description -->
                         <div class="form-row">
-                            <div class="form-title">Mô tả <span>(Bắt buộc)</span></div>
+                            <div class="form-title">Mô tả</div>
                             <?php 
-                            if(isset($_POST['add-desc']) && trim($_POST['add-desc'])!=""){
-                                    echo '<textarea class="add-textarea" name="add-desc">'.$_POST['add-desc'].'</textarea>';
-                                }else{
-                                    echo '<textarea class="add-textarea" name="add-desc" class="input-error"></textarea>';
-                                    echo '<div class="form-error">Trường này không được để trống</div>';
-                                }
+                                echo '<textarea class="add-textarea" name="add-desc">'.$_POST['add-desc'].'</textarea>';
+                                
                             ?>
                             
                         </div>
@@ -150,18 +146,14 @@
                 $name=$_POST['add-name'];
                 $desc=$_POST['add-desc'];
                 $price=$_POST['add-price'];
-                $color=$_POST['add-color'];
-                $material=$_POST['add-material'];
-                $weight=$_POST['add-weight'];
                 // $size="";
                 // if(!empty($_POST['add-size'])){
                 //     $size=implode("|",$_POST['add-size']);
                 // }      
-                $dimension=$_POST['add-dimension'];
 
                 
                 
-                if( trim($_POST['add-name'])!="" && trim($_POST['add-desc'])!="" && trim($_POST['add-price'])!="" && trim($_FILES['add-image-1']['tmp_name'])!="" && trim($_FILES['add-image-2']['tmp_name'])!=""  && trim($_FILES['add-image-3']['tmp_name'])!=""){
+                if( trim($_POST['add-name'])!="" && trim($_POST['add-price'])!="" && trim($_FILES['add-image-1']['tmp_name'])!="" && trim($_FILES['add-image-2']['tmp_name'])!=""  && trim($_FILES['add-image-3']['tmp_name'])!=""){
 
                     $path='./includes/images/';
                     $image=array();

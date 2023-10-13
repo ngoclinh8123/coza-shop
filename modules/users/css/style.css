@@ -530,6 +530,8 @@
   width: 100%;
   transform-origin: center;
   transition: all linear 0.5s;
+  height: 400px;
+  object-fit: cover;
 }
 
 .store-ovv__item:hover .store-ovv__item-img img {

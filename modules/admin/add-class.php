@@ -80,50 +80,6 @@
         ?>
     </div>
 
-    <!-- add size -->
-    <div class="add-size-block <?php if($category =="size") echo "open"; else echo ""?>">
-        <div class="cb-head-row">
-            <div class="cb-head-item add-size-btn">
-                <span>
-                    <i class="fas fa-plus"></i>
-                    <span>Thêm kích thước</span>
-                </span>
-            </div>
-        </div>
-        <form action="xu-ly-them-size" method="post" class="cb-add-size-block" name="add-class">
-            <div class="cb-add-class-row">
-                <span>Size :</span><input type="text" name="add-size">
-            </div>
-            
-            <div class="cb-add-class-submit">
-                <input type="submit" value="Thêm">
-            </div>
-        </form>
-        <div class="asb-row asb-row-head">
-            <div class="asb-col--1">
-                <span>Size</span>
-            </div>
-            <div class="asb-col--2">
-                <span>Thao tác</span>
-            </div>
-        </div>
-
-        <?php
-            foreach ($dataSize as $key => $value){
-        ?>
-        <div class="asb-row">
-            <div class="asb-col--1">
-                <span><?php echo $value['size'] ?></span>
-            </div>
-            <div class="asb-col--2">
-                <a href="xu-ly-xoa-size?id=<?php echo $value['id'] ?>" class="asb--delete-btn">Xóa</a>
-            </div>
-        </div>
-        <?php
-            }
-        ?>
-
-    </div>
 </div>
 
 <script>
