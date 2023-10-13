@@ -32,7 +32,7 @@
           </div>
         </div>
         <div class="home-slide__item">
-          <img src="./includes/images/slide-05.jpg" alt="" />
+          <img src="./includes/images/slide-06.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
               <span>Men New-Season</span>
