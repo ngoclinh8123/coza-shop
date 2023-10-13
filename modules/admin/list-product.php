@@ -46,12 +46,6 @@
               <div class="pl-col--3 j-c-c">
                 <span>Giá Bán</span>
               </div>
-              <!-- <div class="pl-col--4 j-c-c">
-                <span>Size</span>
-              </div>
-              <div class="pl-col--5 j-c-c">
-                <span>Màu Sắc</span>
-              </div> -->
               <div class="pl-col--6 j-c-c">
                 <span>Thao Tác</span>
               </div>

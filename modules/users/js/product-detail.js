@@ -86,28 +86,14 @@ const buyNowBtn = document.querySelector(".prd-buy-now");
 const amountTag = document.querySelector(".prd-form-row-btn.prd-amount");
 const buynowFake = document.querySelector(".prd-buy-now-fake");
 const idTag = document.querySelector(".prd-id");
-// console.log(amountTag);
-// console.log(buyNowBtn);
-// console.log(sizeTag);
-// console.log(colorTag);
 
 function checkInputSelect() {
-  if (sizeTag.value != "" && colorTag.value != "") {
-    let size = sizeTag.value;
-    let color = colorTag.value;
-    let amount = amountTag.innerText;
-    let id = idTag.value;
-    let path = "hoa-don?item=" + id + "-" + amount + "-" + size + "-" + color;
-    buyNowBtn.setAttribute("href", path);
-    buynowFake.style.display = "none";
-    buyNowBtn.style.display = "block";
-  }
+  let amount = amountTag.innerText;
+  let id = idTag.value;
+  let path = "hoa-don?item=" + id + "-" + amount;
+  buyNowBtn.setAttribute("href", path);
+  buynowFake.style.display = "none";
+  buyNowBtn.style.display = "block";
 }
 
-sizeTag.oninput = function () {
-  checkInputSelect();
-};
-
-colorTag.oninput = function () {
-  checkInputSelect();
-};
+checkInputSelect();

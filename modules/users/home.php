@@ -164,7 +164,7 @@
                 
                 <?php
                   $dataMen=array();
-                  $sql="select * from product where class='AA' or class ='QA'";
+                  $sql="select * from product where class='FF' or class ='DR'";
                   if($connect){
                     $result=mysqli_query($connect,$sql);
                     while($row=mysqli_fetch_array($result)){

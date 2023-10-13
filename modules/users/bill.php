@@ -177,16 +177,12 @@
             $name="";
             $price="";
             $amount="";
-            $size="";
-            $color="";
             $idProduct="";
             if(isset($_POST['item-buy'])||isset($_GET['item'])||count($_SESSION['item-buy-before'])>0){
                 // echo '<pre>';print_r($itemBuy);
                 foreach ($itemBuy as $key=>$value){
                     $idProduct=explode("-",$value)[0];
                     $amount=explode("-",$value)[1];
-                    $size=explode("-",$value)[2];
-                    $color=explode("-",$value)[3];
                     foreach($dataProduct as $key2=>$value2){
                         if($idProduct==$value2['id']){
                             $image=explode("|",$value2['image'])[0];
@@ -194,7 +190,6 @@
                             $image=$path.$image;
                             $name=$value2['name'];
                             $price=$value2['price'];
-
         ?>
                                 <div class="bill-row">
                                     <div class="row bill-row-product">
@@ -212,9 +207,9 @@
                                         </div>
                                         <div class="col c-3">
                                             <div class="bill-product-detail">
-                                                <span class="bill-product-detail-size">Size <?php echo $size; ?></span
+                                                <!-- <span class="bill-product-detail-size">Size <?php echo $size; ?></span
                                                 ><span>,</span>
-                                                <span class="bill-product-detail-color"><?php echo $color; ?></span>
+                                                <span class="bill-product-detail-color"><?php echo $color; ?></span> -->
                                             </div>
                                         </div>
                                         <div class="col c-1">
