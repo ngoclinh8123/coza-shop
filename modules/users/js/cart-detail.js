@@ -52,9 +52,12 @@ function countTotalPrice() {
 const cartDecButton = Array.from(document.querySelectorAll(".cart-item-dec"));
 cartDecButton.forEach(function (cartItem, index) {
   cartItem.onclick = function (e) {
-    // console.log(e.path[2]);
-    let cartItemAmount = e.path[2].querySelector(".cart-item-amount span");
-    let cartItemAmountInput = e.path[2].querySelector(".cart-item-amount span");
+    let cartItemAmount = cartItem.parentElement.querySelector(
+      ".cart-item-amount span"
+    );
+    let cartItemAmountInput = cartItem.parentElement.querySelector(
+      ".cart-item-amount span"
+    );
     let amountItem = cartItemAmountInput.innerText;
     amountItem = parseInt(amountItem);
     if (amountItem > 1) amountItem--;
@@ -63,22 +66,29 @@ cartDecButton.forEach(function (cartItem, index) {
     totalPriceTag.innerText = totalPrice;
 
     let cartCheckboxInput =
-      e.path[2].parentElement.querySelector(".cart-col--1 input").value;
-    cartCheckboxInputArray = cartCheckboxInput.split("-");
+      cartItem.parentElement.parentElement.querySelector(
+        ".cart-col--1 input"
+      ).value;
+    let cartCheckboxInputArray = cartCheckboxInput.split("-");
     let id = cartCheckboxInputArray[0];
     let size = cartCheckboxInputArray[2];
     let color = cartCheckboxInputArray[3];
     let newValue = id + "-" + amountItem + "-" + size + "-" + color;
-    e.path[2].parentElement.querySelector(".cart-col--1 input").value =
-      newValue;
+    cartItem.parentElement.parentElement.querySelector(
+      ".cart-col--1 input"
+    ).value = newValue;
   };
 });
 
 const cartIncButton = Array.from(document.querySelectorAll(".cart-item-inc"));
 cartIncButton.forEach(function (cartItem, index) {
   cartItem.onclick = function (e) {
-    let cartItemAmount = e.path[2].querySelector(".cart-item-amount span");
-    let cartItemAmountInput = e.path[2].querySelector(".cart-item-amount span");
+    let cartItemAmount = cartItem.parentElement.querySelector(
+      ".cart-item-amount span"
+    );
+    let cartItemAmountInput = cartItem.parentElement.querySelector(
+      ".cart-item-amount span"
+    );
     let amountItem = cartItemAmountInput.innerText;
     amountItem = parseInt(amountItem);
     amountItem++;
@@ -87,14 +97,17 @@ cartIncButton.forEach(function (cartItem, index) {
     totalPriceTag.innerText = totalPrice;
 
     let cartCheckboxInput =
-      e.path[2].parentElement.querySelector(".cart-col--1 input").value;
-    cartCheckboxInputArray = cartCheckboxInput.split("-");
+      cartItem.parentElement.parentElement.querySelector(
+        ".cart-col--1 input"
+      ).value;
+    let cartCheckboxInputArray = cartCheckboxInput.split("-");
     let id = cartCheckboxInputArray[0];
     let size = cartCheckboxInputArray[2];
     let color = cartCheckboxInputArray[3];
     let newValue = id + "-" + amountItem + "-" + size + "-" + color;
-    e.path[2].parentElement.querySelector(".cart-col--1 input").value =
-      newValue;
+    cartItem.parentElement.parentElement.querySelector(
+      ".cart-col--1 input"
+    ).value = newValue;
   };
 });
 
