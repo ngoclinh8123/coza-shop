@@ -37,16 +37,6 @@
     $price=$data['price'];
     $color=$data['color'];
     $size=$data['size'];
-    $weight=$data['weight'];
-    $dimension=$data['dimension'];
-    $material=$data['material'];
-
-
-    $sizes = explode('|',$size);
-    $colors=explode('|',$color);
-
-    $size=implode(', ',explode('|',$size));
-    $color=implode(', ',explode('|',$color));
 
     $path='./includes/images/';
 ?>
@@ -87,57 +77,6 @@
 
             <form action="" method="post">
               <input type="text" class="prd-id" value="<?php echo $_GET["id"] ?>" hidden>
-              <div class="prd-form-row size">
-                <span>Size</span>
-                <select name="size" id="">
-                  <option value="">Choose an option</option>
-                  <?php
-                    
-                      foreach ($sizes as $key=>$value) {
-                        if(isset($_POST['size'])){
-                          if($_POST['size']==$value){
-                            echo '<option value="'.$value.'" selected>Size '.$value.'</option>';
-                          }else echo '<option value="'.$value.'">Size '.$value.'</option>';
-                        }else echo '<option value="'.$value.'">Size '.$value.'</option>';
-                      }
-                    
-                  ?>
-                </select>
-              </div>
-              <?php
-                if(isset($_POST['size'])){
-                  if($_POST['size']==''){
-                    echo '<div class="prd-form-error size"><span>* Vui lòng chọn trường này</span></div>';
-                  }else echo '';
-                }
-              ?>
-      
-              <div class="prd-form-row color">
-                <span>Màu sắc</span>
-                <select name="color" id="">
-                  <option value="">Choose an option</option>
-                  <?php
-                    if(isset($_POST['color'])){
-                      foreach ($colors as $key => $value){
-                        if($_POST['color'] == $value){
-                          echo '<option value="'.$value.'" selected>'.$value.'</option>';
-                        }else echo '<option value="'.$value.'">'.$value.'</option>';
-                      }
-                    }else {
-                      foreach ($colors as $key => $value){
-                        echo '<option value="'.$value.'">'.$value.'</option>';
-                      }
-                    }
-                  ?>
-                </select>
-              </div>
-                <?php
-                  if(isset($_POST['color'])){
-                    if($_POST['color']==''){
-                      echo '<div class="prd-form-error color"><span>* Vui lòng chọn trường này</span></div>';
-                    }else echo '';
-                  }
-                ?>
               <div class="prd-form-row">
                 <div class="prd-btn-avtive">
                   <p class="prd-form-row-btn prd-des-btn">-</p>
@@ -160,37 +99,10 @@
         <!-- prd detail -->
         <div class="prd-detail-info">
           <div class="prd-detail-nav">
-            <span class="active">Description</span>
-            <span>Addition infomation</span>
-            <span>Reviews</span>
+            <span class="active">Description</span>%$_COOKIEX
           </div>
           <div class="prd-detail-row">
             <div class="prd-detail-item-infomation prd-detail-desc active"><?php echo $desc ?></div>
-            <div class="prd-detail-item-infomation prd-detail-infomation">
-              <div class="prd-detail-infomation-wrap">
-                <div class="prd-detail-info-row">
-                  <div>Weight</div>
-                  <span><?php echo $weight; ?></span>
-                </div>
-                <div class="prd-detail-info-row">
-                  <div>Dimensions</div>
-                  <span><?php  echo $dimension; ?></span>
-                </div>
-                <div class="prd-detail-info-row">
-                  <div>Materials</div>
-                  <span><?php echo $material; ?></span>
-                </div>
-                <div class="prd-detail-info-row">
-                  <div>Color</div>
-                  <span><?php echo $color; ?></span>
-                </div>
-                <div class="prd-detail-info-row">
-                  <div>Size</div>
-                  <span><?php echo $size; ?></span>
-                </div>
-              </div>
-            </div>
-            <div class="prd-detail-item-infomation prd-detail-review"></div>
           </div>
         </div>
       </div>
@@ -199,10 +111,8 @@
 
     <!-- handle add product to cart -->
     <?php
-      if(isset($_POST['size']) && $_POST['size'] !='' && isset($_POST['color']) && $_POST['color'] !=''){
+      if(isset($_POST['amount-item']) && $_POST['amount-item'] !='' ){
         $id=$_GET['id'];
-        $size=$_POST['size'];
-        $color=$_POST['color'];
         $amountItem=$_POST['amount-item'];
         // $userId=$_SESSION['id'];
         // $newItem=$id."-".$size."-".$color."-".$amountItem;
@@ -218,7 +128,7 @@
           // $newData=implode("|",$allItem);
           // $sql="update cart set product='".$newData."' where id=(select cartid from user where id=".$userId.")";
             if($keyUserLogin){
-              $sql="insert into cart(userId,productId,amount,color,size) values (".$userId.",".$id.",'".$amountItem."','".$color."','".$size."')";
+              $sql="insert into cart(userId,productId,amount) values (".$userId.",".$id.",'".$amountItem."')";
               if(mysqli_query($connect,$sql)){
                 echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đã thêm sản phẩm vào giỏ hàng</div><a href="san-pham?id='.$_GET['id'].'">Tiếp tục</a></div></div>';
               }else echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Có lỗi xảy ra khi thêm vào giỏ hàng</div><a href="tat-ca-san-pham?page=1">Thử lại</a></div></div>';
