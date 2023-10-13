@@ -14,14 +14,14 @@
                     }
                 }
 
-                $dataSize=array();
-                if($connect){
-                    $sql='select * from size';
-                    $result= mysqli_query($connect,$sql);
-                    while($row=mysqli_fetch_array($result)){
-                        array_push($dataSize,$row);
-                    }
-                }
+                // $dataSize=array();
+                // if($connect){
+                //     $sql='select * from size';
+                //     $result= mysqli_query($connect,$sql);
+                //     while($row=mysqli_fetch_array($result)){
+                //         array_push($dataSize,$row);
+                //     }
+                // }
 
                 $idArray = array();
                 $sql='select max(id) from product';
@@ -33,7 +33,6 @@
                 
                 // echo '<pre>';print_r($dataClass);echo '</pre>';
 
-                
             ?>
             <div class="ap-block">
                 <form action="" method="POST" enctype="multipart/form-data">
@@ -154,10 +153,10 @@
                 $color=$_POST['add-color'];
                 $material=$_POST['add-material'];
                 $weight=$_POST['add-weight'];
-                $size="";
-                if(!empty($_POST['add-size'])){
-                    $size=implode("|",$_POST['add-size']);
-                }      
+                // $size="";
+                // if(!empty($_POST['add-size'])){
+                //     $size=implode("|",$_POST['add-size']);
+                // }      
                 $dimension=$_POST['add-dimension'];
 
                 
@@ -187,7 +186,7 @@
                     
                     
                     // $sql="insert into product(productname,productdescription,productimage,productprice,productdimension,productcolor,productzise,productweight,productmaterial) values('".$name."','".$desc."','".$image."','".$price."','".$dimension."','".$color."','".$size."','".$weight."','".$material."');";
-                    $sql="insert into product(class,name,description,image,price,color,size,weight,dimension,material) values('".$class."','".$name."','".$desc."','".$image."','".$price."','".$color."','".$size."','".$weight."','".$dimension."','".$material."')";
+                    $sql="insert into product(class,name,description,image,price) values('".$class."','".$name."','".$desc."','".$image."','".$price."')";
                     if($connect){
                         if(mysqli_query($connect,$sql)){
                             $idArray = array();

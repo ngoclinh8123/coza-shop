@@ -46,12 +46,12 @@
               <div class="pl-col--3 j-c-c">
                 <span>Giá Bán</span>
               </div>
-              <div class="pl-col--4 j-c-c">
+              <!-- <div class="pl-col--4 j-c-c">
                 <span>Size</span>
               </div>
               <div class="pl-col--5 j-c-c">
                 <span>Màu Sắc</span>
-              </div>
+              </div> -->
               <div class="pl-col--6 j-c-c">
                 <span>Thao Tác</span>
               </div>
@@ -79,12 +79,7 @@
                 </div>
               </div>
               <div class="pl-col--3"><span><?php echo $value['price']; ?></span><span>VND</span></div>
-              <div class="pl-col--4">
-                <span><?php echo implode(', ',explode('|',$value['size'])); ?></span>
-              </div>
-              <div class="pl-col--5">
-                <span><?php echo implode(', ',explode('|',$value['color'])); ?></span>
-              </div>
+      
               <div class="pl-col--6">
                 <span class="pl-edit-btn"><a href="sua-san-pham?id=<?php echo $value['id']; ?>">Sửa</a></span>
                 <span>|</span>
@@ -151,14 +146,14 @@
         </div>
         <script>
 
-            const changeStatusBtn=document.querySelector(".pl-nav-change-status");
-            changeStatusBtn.onclick=function() {
-              alert("Tính năng tạm thời bị khóa")
-            }
+            // const changeStatusBtn=document.querySelector(".pl-nav-change-status");
+            // changeStatusBtn.onclick=function() {
+            //   alert("Tính năng tạm thời bị khóa")
+            // }
 
             const subnavItems=Array.from(document.querySelectorAll(".pls-row input"));
             const productItemIds=Array.from(document.querySelectorAll(".pl-item .pl-col--7 span"))
-            // console.log(productItemIds)
+            console.log(productItemIds)
 
             var renderItemChecked = function(code,render){
               productItemIds.forEach(function(productItemId){
@@ -184,11 +179,6 @@
                 }
               })
             }
-
-            
-
-
-
             checkChecked()
 
             subnavItems.forEach(function(subnavItem,index){

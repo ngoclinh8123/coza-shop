@@ -23,14 +23,14 @@
                 }
                 // echo '<pre>';print_r($dataClass);
 
-                $dataSize=array();
-                if($connect){
-                    $sql='select * from size';
-                    $result= mysqli_query($connect,$sql);
-                    while($row=mysqli_fetch_array($result)){
-                        array_push($dataSize,$row);
-                    }
-                }
+                // $dataSize=array();
+                // if($connect){
+                //     $sql='select * from size';
+                //     $result= mysqli_query($connect,$sql);
+                //     while($row=mysqli_fetch_array($result)){
+                //         array_push($dataSize,$row);
+                //     }
+                // }
                 // ini_set('display_errors','off');
                 $data=$data[0];
                 $image=explode('|',$data['image']);
@@ -144,79 +144,6 @@
                                 ?>
                             </div>
                             <input type="file" name="add-image-3">
-                            
-                        </div>
-
-                        <!-- product color -->
-                        <div class="form-row">
-                            <div class="form-title">Màu sắc</div>
-                            <?php
-                                if(isset($_POST['add-color'])){
-                                    echo '<input type="text" name="add-color" placeholder="Trắng|Nâu|...." value="'.$_POST['add-color'].'">';
-                                }else echo '<input type="text" name="add-color" placeholder="Trắng|Nâu|...." value="'.$data['color'].'">'
-                            ?>
-                            
-                        </div>
-
-                        <!-- product material -->
-                        <div class="form-row">
-                            <div class="form-title">Chất liệu</div>
-                            <?php
-                                if(isset($_POST['add-material'])){
-                                    echo '<input type="text " name="add-material" value="'.$_POST['add-material'].'" />';
-                                }else echo '<input type="text " name="add-material" value="'.$data['material'].'">'
-                            ?>
-                        </div>
-
-                        <!-- product weight -->
-                        <div class="form-row">
-                            <div class="form-title">Khối lượng</div>
-                            <?php
-                                if(isset($_POST['add-weight'])){
-                                    echo '<input type="text " name="add-weight" value="'.$_POST['add-weight'].'" />';
-                                }else echo '<input type="text " name="add-weight" value="'.$data['weight'].'">'
-                            ?>
-                        </div>
-
-
-                        <div class="form-row-size">
-                            <div class="form-title">Size </div>
-                            <?php 
-                                $size=$data['size'];
-                                $size=explode("|",$size);
-                                // echo '<pre>';print_r($size);echo '</pre>';
-                                foreach ($dataSize as $key => $value){
-                                    if(count($size)>0){
-                                        foreach ($size as $key2 => $value2) {
-                                            if($value['size']==$value2){
-                                                echo '<span class="form-add-size"><span>'.$value['size'].'</span><input type="checkbox" name="add-size[]" value="'.$value['size'].'" checked></span>';
-                                                array_splice($size,$key2,1);
-                                                break;
-    
-                                            }else{
-                                                echo '<span class="form-add-size"><span>'.$value['size'].'</span><input type="checkbox" name="add-size[]" value="'.$value['size'].'"></span>';
-                                                break;
-                                            }
-                                        }
-                                    }else{
-                                        echo '<span class="form-add-size"><span>'.$value['size'].'</span><input type="checkbox" name="add-size[]" value="'.$value['size'].'"></span>';
-
-                                    }
-                                }
-                            ?>
-                            
-        
-                        </div>
-                        
-
-
-                        <div class="form-row">
-                            <div class="form-title">Kích thước</div>
-                            <?php
-                                if(isset($_POST['add-dimension'])){
-                                    echo '<input type="text " name="add-dimension" value="'.$_POST['add-dimension'].'" />';
-                                }else echo '<input type="text " name="add-dimension" value="'.$data['dimension'].'">'
-                            ?>
                         </div>
                         <div class="form-row">
                             <div class="add-btn">
@@ -241,13 +168,6 @@
                 $desc=$_POST['add-desc'];
                 $price=$_POST['add-price'];
                 $color=$_POST['add-color'];
-                $material=$_POST['add-material'];
-                $weight=$_POST['add-weight'];
-                $size="";
-                if(!empty($_POST['add-size'])){
-                    $size=implode("|",$_POST['add-size']);
-                }      
-                $dimension=$_POST['add-dimension'];
                 if( trim($_POST['add-name'])!="" && trim($_POST['add-desc'])!="" && trim($_POST['add-price'])!=""){
                     // if(trim($_FILES['add-image-1']['tmp_name'])!="" && trim($_FILES['add-image-2']['tmp_name'])!=""  && trim($_FILES['add-image-3']['tmp_name'])!=""){
 
@@ -291,7 +211,7 @@
 
                     
                     // $sql='update product set class="'.$class.'" name="'.$name.'",description="'.$desc.'",image="'.$image.'",price="'.$price.'",dimension="'.$dimension.'",color="'.$color.'",size="'.$size.'",weight="'.$weight.'",material="'.$material.'" where id='.$id;
-                    $sql="update product set code='".$code."', class='".$class."', name='".$name."',description='".$desc."',image='".$image."',price='".$price."',dimension='".$dimension."',color='".$color."',size='".$size."',weight='".$weight."',material='".$material."' where id=".$id;
+                    $sql="update product set code='".$code."', class='".$class."', name='".$name."',description='".$desc."',image='".$image."',price='".$price."' where id=".$id;
                     if($connect){
                         if(mysqli_query($connect,$sql)){
                             echo '<div class="add-success-model"><div class="add-success-title"><span class="add-sucess-message">Sửa dữ liệu thành công</span><span class="add-sucess-button"><a href="danh-sach-san-pham">OK</a></span></div></div>';
