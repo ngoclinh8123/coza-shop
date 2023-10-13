@@ -105,6 +105,7 @@ html {
 .ap-block {
   /* width: 800px; */
   /* margin: 0 auto; */
+  min-height: 100vh;
   flex: 1;
   background-color: #dfd;
   padding-bottom: 48px;
@@ -166,7 +167,7 @@ html {
 
 .form-row > input {
   width: 100%;
-  height: 24px;
+  height: 32px;
 }
 
 .add-textarea {
@@ -1038,7 +1039,7 @@ html {
 /* add-class */
 .class-block {
   width: 100%;
-  margin: 0 23px;
+  margin: 0 86px;
 }
 
 .add-class-block {

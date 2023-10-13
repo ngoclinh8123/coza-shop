@@ -123,9 +123,7 @@
                                 $productItem=explode('-',$valueProduct);
                                 $idProduct=$productItem[0];
                                 $amountProduct=$productItem[1];
-                                $sizeProduct=$productItem[2];
-                                $colorProduct=$productItem[3];
-                                $noteProduct=$productItem[4];
+                                $noteProduct=$productItem[2];
                                 foreach ($dataProduct as $keyPr =>$valuePr){
                                     if($valuePr['id']==$idProduct){
                         ?>
@@ -144,9 +142,8 @@
                                         <span>SL : </span><span style="color:red"><?php echo $amountProduct ?></span>
                                     </div>
                                     <div class="uoo-item-size">
-                                        <span>Phân loại hàng :</span>
-                                        <span>Size </span><span style="color:red"><?php echo $sizeProduct ?></span>,
-                                    <span style="color:red"><?php echo $colorProduct ?></span>
+                                     
+                                    <span style="color:red"></span>
                                 </div>
                                 </div>
                             </div>
