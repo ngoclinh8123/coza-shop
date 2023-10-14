@@ -32,7 +32,7 @@
           </div>
         </div>
         <div class="home-slide__item">
-          <img src="./includes/images/slide-06.jpg" alt="" />
+          <img src="./includes/images/banner-2.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
               <span>Applauding</span>
@@ -46,7 +46,7 @@
           </div>
         </div>
         <div class="home-slide__item">
-          <img src="./includes/images/slide-07.jpg" alt="" />
+          <img src="./includes/images/slide-06.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
               <span>Presenting</span>
@@ -55,7 +55,7 @@
               <span>Huge Noodle</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="cua-hang?request=dong-ho&page=1">SHOP NOW</a></span>
+              <span><a href="cua-hang?request=bua-com-mang-ve&page=1">SHOP NOW</a></span>
             </div>
           </div>
         </div>

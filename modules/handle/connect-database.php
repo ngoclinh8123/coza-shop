@@ -5,8 +5,8 @@
     // $dbname="epiz_32686373_sheeta";
     $server="127.0.0.1";
     $username="root";
-    $password="123";
-    $dbname="coza_shop";
+    $password="";
+    $dbname="coza-shop";
     // ini_set('display_errors',1);
 
     $connect=mysqli_connect($server,$username,$password,$dbname);
