@@ -8,12 +8,12 @@
     <div class="orders-wrap">
         <div class="o-container">
             <div class="o-nav">
-                <div class="o-nav-item o-add-order">
+                <!-- <div class="o-nav-item o-add-order">
                     <span>
                         <i class="fas fa-plus"></i>
                         <span>Thêm đơn hàng</span>
                     </span>
-                </div>
+                </div> -->
                 <div class="o-nav-item o-handle">
                     <span>
                         <i class="fas fa-cog"></i>

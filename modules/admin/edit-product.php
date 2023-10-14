@@ -73,14 +73,9 @@
         
                             <!-- product description -->
                             <div class="form-row">
-                                <div class="form-title">Mô tả <span>(Bắt buộc)</span></div>
+                                <div class="form-title">Mô tả</div>
                                 <?php 
-                                if(isset($_POST['add-desc']) && trim($_POST['add-desc'])!=""){
-                                        echo '<textarea class="add-textarea" name="add-desc">'.$_POST['add-desc'].'</textarea>';
-                                    }else{
-                                        echo '<textarea class="add-textarea" name="add-desc" class="input-error">'.$data['description'].'</textarea>';
-                                        echo '<div class="form-error">Trường này không được để trống</div>';
-                                    }
+                                    echo '<textarea class="add-textarea" name="add-desc">'.$_POST['add-desc'].'</textarea>';
                                 ?>
                             </div>
 
