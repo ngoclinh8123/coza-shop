@@ -65,7 +65,7 @@ if (isset($_GET['category'])) {
                 <span class="cb-item-col-1"><?php echo $value['name']; ?></span>
                 <span class="cb-item-col-2"><?php echo $value['code']; ?></span>
                 <span class="cb-item-col-3"><?php echo $value['router']; ?></span>
-                <span class="cb-item-col-4"><a href="#" onclick="return confirmDelete(<?php echo $value['id']; ?>);">Xóa</a></span>
+                <span class="cb-item-col-4"><a href="xu-ly-xoa-class?id=<?php echo $value['id']; ?>">Xóa</a></span>
             </div>
         <?php
         }
@@ -117,16 +117,6 @@ if (isset($_GET['category'])) {
             }
         }
     }
-</script>
-<script>
-function confirmDelete(id) {
-    if (confirm("Bạn muốn xóa phân loại này?")) {
-        // If the user clicks "OK," navigate to the delete URL with the ID.
-        window.location.href = "xu-ly-xoa-class?id=" + id;
-    }
-    // If the user clicks "Cancel" or closes the dialog, the navigation won't happen.
-    return false;
-}
 </script>
 
 <?php
