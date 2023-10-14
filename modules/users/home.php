@@ -21,13 +21,27 @@
           <img src="./includes/images/slide-05.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
-              <span>Women Collection 2022</span>
+              <span>Featuring</span>
             </div>
             <div class="slide__title--mid">
-              <span>NEW SEASON</span>
+              <span>BIG BURGER</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="cua-hang?page=1">SHOP NOW</a></span>
+              <span><a href="cua-hang?page=1">BUY NOW</a></span>
+            </div>
+          </div>
+        </div>
+        <div class="home-slide__item">
+          <img src="./includes/images/banner-2.jpg" alt="" />
+          <div class="slide-content">
+            <div class="slide__title--top">
+              <span>Applauding</span>
+            </div>
+            <div class="slide__title--mid">
+              <span>GIGANTIC RAMEN</span>
+            </div>
+            <div class="slide__title--action">
+              <span><a href="cua-hang?page=1">BUY NOW</a></span>
             </div>
           </div>
         </div>
@@ -35,27 +49,13 @@
           <img src="./includes/images/slide-06.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
-              <span>Men New-Season</span>
+              <span>Presenting</span>
             </div>
             <div class="slide__title--mid">
-              <span>JACKETS & COATS</span>
+              <span>Huge Noodle</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="cua-hang?page=1">SHOP NOW</a></span>
-            </div>
-          </div>
-        </div>
-        <div class="home-slide__item">
-          <img src="./includes/images/slide-07.jpg" alt="" />
-          <div class="slide-content">
-            <div class="slide__title--top">
-              <span>Men Collection 2022</span>
-            </div>
-            <div class="slide__title--mid">
-              <span>NEW ARRIVALS</span>
-            </div>
-            <div class="slide__title--action">
-              <span><a href="cua-hang?page=1">SHOP NOW</a></span>
+              <span><a href="cua-hang?page=1">BUY NOW</a></span>
             </div>
           </div>
         </div>

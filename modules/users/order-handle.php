@@ -42,10 +42,10 @@
                 // echo $timedetail;
 
 
-                $sql="insert into orders(addressId,product,price,day,month,year,time,status) value(".$addressId.",'".$product."','".$price."','".$day."','".$month."','".$year."','".$timedetail."','1')";
+                $sql="insert into orders(addressId,product,price,day,month,year,time,status) value(".$addressId.",'".$product."','".$price."','".$day."','".$month."','".$year."','".$timedetail."','1')
+                        ";
                     if(mysqli_query($connect,$sql)){
                         echo '<div class="order-sucess-wrap"><div class="order-sucess-content"><div class="order-sucess-title"><span>Đơn hàng của bạn đã được gửi cho người bán</span></div><a href="trang-chu">Quay lại</a></div></div>';
-                    
                 }else {
                     echo '<div class="order-sucess-wrap"><div class="order-sucess-content"><div class="order-sucess-title"><span>Có lỗi xảy ra khi gửi đơn hàng của bạn :(</span></div><a href="trang-chu">Quay lại</a></div></div>';
                 }
