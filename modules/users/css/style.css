@@ -1612,9 +1612,10 @@
 }
 
 .prd-col--2 img {
-  width: 514;
+  width: 100%;
   height: 614px;
   display: none;
+  object-fit: cover;
 }
 
 .prd-col--2 img.active {

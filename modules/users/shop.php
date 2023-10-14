@@ -87,7 +87,7 @@
                                         <span><?php echo $name ?></span>
                                     </div>
                                     <div class="lap-item-price">
-                                        <span><?php echo $price ?></span><span> VNĐ</span>
+                                        <span><?php echo number_format($price, 0, '.', '.') ?></span><span> VNĐ</span>
                                     </div>
                                 </a>
                             </div>     
