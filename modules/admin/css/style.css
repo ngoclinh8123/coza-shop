@@ -1095,15 +1095,17 @@ html {
 }
 
 .cb-add-class-row {
+  display: flex;
+  align-items: center;
   margin: 4px 0;
   padding: 8px 13px;
 }
 
-.cb-add-class-row span {
+.cb-add-class-row div {
+  width: 10%;
 }
 
 .cb-add-class-row input {
-  margin-left: 13px;
   width: 60%;
 }
 
