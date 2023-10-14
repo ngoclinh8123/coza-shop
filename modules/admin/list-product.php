@@ -77,7 +77,7 @@
               <div class="pl-col--6">
                 <span class="pl-edit-btn"><a href="sua-san-pham?id=<?php echo $value['id']; ?>">Sửa</a></span>
                 <span>|</span>
-                <span class="pl-delete-btn"><a href="xoa-san-pham?id=<?php echo $value['id']; ?>">Xóa</a></span>
+                <span class="pl-delete-btn"><a onClick = "return confirmDelete(<?php echo $value['id']; ?>)" href="#">Xóa</a></span>
               </div>
             </div>
             <?php
@@ -181,6 +181,15 @@
               }
             })
 
+        </script>
+
+        <script>
+          function confirmDelete (productID) {
+            if (confirm("Bạn muốn xóa sản phẩm này?")) {
+              window.location.href = `xoa-san-pham?id=${productID}`;
+            }
+            return false;
+          }
         </script>
         <?php
           include './modules/admin/foot-ad.php';

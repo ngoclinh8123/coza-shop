@@ -117,7 +117,7 @@
                     <span> VNĐ</span>
                 </div>
                 <div class="cart-col--5">
-                    <a href="./handle/delete-product-cart.php?index=<?php echo $i?>">Xóa</a>
+                    <a href="#" onclick="return confirmDelete(<?php echo $i?>);">Xóa</a>
                 </div>
             </div>
 
@@ -147,6 +147,16 @@
 
       </form>
     </div>
+    <script>
+        function confirmDelete(index) {
+                if (confirm("Bạn có muốn xóa sản phẩm này?")) {
+                    // If the user clicks "OK," navigate to the delete-product-cart.php with the index.
+                    window.location.href = "./handle/delete-product-cart.php?index=" + index;
+                }
+                // If the user clicks "Cancel" or closes the dialog, the navigation won't happen.
+                return false;
+            }
+    </script>
     <script src="./modules/users/js/cart-detail.js"></script>
 <?php
     include './modules/users/footer-html-tag.php';
