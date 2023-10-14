@@ -21,13 +21,13 @@
           <img src="./includes/images/slide-05.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
-              <span>Featuring</span>
+              <span>Fastfoods</span>
             </div>
             <div class="slide__title--mid">
-              <span>BIG BURGER</span>
+              <span>RECOMMEND</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="cua-hang?request=ao-nu&page=1">BUY NOW</a></span>
+              <span><a href="cua-hang?request=do-an-nhanh&page=1">SHOP NOW</a></span>
             </div>
           </div>
         </div>
@@ -35,13 +35,13 @@
           <img src="./includes/images/banner-2.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
-              <span>Applauding</span>
+              <span>Drinks</span>
             </div>
             <div class="slide__title--mid">
-              <span>GIGANTIC RAMEN</span>
+              <span>TOP SALE</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="cua-hang?request=ao-nam&page=1">BUY NOW</a></span>
+              <span><a href="cua-hang?request=do-uong&page=1">SHOP NOW</a></span>
             </div>
           </div>
         </div>
@@ -49,10 +49,10 @@
           <img src="./includes/images/slide-06.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
-              <span>Presenting</span>
+              <span>Dishes</span>
             </div>
             <div class="slide__title--mid">
-              <span>Huge Noodle</span>
+              <span>Enjoy your meal</span>
             </div>
             <div class="slide__title--action">
               <span><a href="cua-hang?request=bua-com-mang-ve&page=1">SHOP NOW</a></span>
