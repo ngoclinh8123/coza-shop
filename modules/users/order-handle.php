@@ -41,9 +41,6 @@
                 // echo $year;
                 // echo $timedetail;
 
-                
-
-
 
                 $sql="insert into orders(addressId,product,price,day,month,year,time,status) value(".$addressId.",'".$product."','".$price."','".$day."','".$month."','".$year."','".$timedetail."','1')";
                     if(mysqli_query($connect,$sql)){

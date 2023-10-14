@@ -27,7 +27,7 @@
               <span>NEW SEASON</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="cua-hang?request=ao-nu&page=1">SHOP NOW</a></span>
+              <span><a href="cua-hang?page=1">SHOP NOW</a></span>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
               <span>JACKETS & COATS</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="cua-hang?request=ao-nam&page=1">SHOP NOW</a></span>
+              <span><a href="cua-hang?page=1">SHOP NOW</a></span>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@
               <span>NEW ARRIVALS</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="cua-hang?request=dong-ho&page=1">SHOP NOW</a></span>
+              <span><a href="cua-hang?page=1">SHOP NOW</a></span>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@
                 <div class="banner-modal">
                   <div class="banner-action">
                     <span>
-                      <a href="cua-hang?request=ao-nu&page=1">
+                      <a href="cua-hang?page=1">
                         <div class="banner-title">SHOP NOW</div>
                         <span class="banner-line"></span>
                       </a>
@@ -110,7 +110,7 @@
                 <div class="banner-modal">
                   <div class="banner-action">
                     <span>
-                      <a href="cua-hang?request=ao-nam&page=1">
+                      <a href="cua-hang?page=1">
                         <div class="banner-title">SHOP NOW</div>
                         <span class="banner-line"></span>
                       </a>
@@ -199,7 +199,7 @@
                       </div>
                       <div class="store-ovv--bot">
                         <div class="store-ovv--price">
-                          <span><?php echo $value['price'].' VND' ?></span>
+                          <span><?php echo number_format($value['price'], 0, '.', '.').' VND' ?></span>
                         </div>
                         <div class="store-ovv--like">
                           <i class="fas fa-heart active"></i>
