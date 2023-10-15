@@ -1862,6 +1862,8 @@
 
 .lap-item-img img {
   width: 100%;
+  height: 225px;
+  object-fit: cover;
 }
 .lap-item-name {
   margin: 12px 8px;
@@ -1905,9 +1907,7 @@
 .lap-pag-prev,
 .lap-pag-next,
 .lap-pag-item a {
-  /* margin: 0 6px; */
   padding: 4px 8px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .lap-pag-item--1,
