@@ -6,7 +6,7 @@
     $server="127.0.0.1";
     $username="root";
     $password="";
-    $dbname="coza-shop";
+    $dbname="coza_shop";
     // ini_set('display_errors',1);
 
     $connect=mysqli_connect($server,$username,$password,$dbname);

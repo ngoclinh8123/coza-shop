@@ -530,7 +530,7 @@
   width: 100%;
   transform-origin: center;
   transition: all linear 0.5s;
-  height: 400px;
+  height: 225px;
   object-fit: cover;
 }
 
@@ -564,8 +564,9 @@
   font-size: 1.4rem;
   font-weight: 600;
   position: absolute;
-  top: 65%;
-  left: 30%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   background-color: white;
   border-radius: 16px;
@@ -658,8 +659,8 @@
 }
 .h-blog-block {
   flex-direction: column;
-  margin-top: 130px;
 }
+
 .h-blog__title {
   margin: 130px 0 62px;
   font-size: 5.2rem;
@@ -1591,9 +1592,10 @@
 .prd-col--1 {
   display: flex;
   flex-direction: column;
+  width: 10%;
 }
 .prd-col--1 img {
-  width: 68px;
+  width: 100%;
   height: 84px;
   margin-bottom: 28px;
   cursor: pointer;
@@ -1604,31 +1606,37 @@
 }
 
 .prd-col--2 {
-  margin-left: 32px;
+  width: 60%;
 }
 
 .prd-col--2-border {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
 }
 
 .prd-col--2 img {
   width: 100%;
-  height: 614px;
+  height: 430px;
   display: none;
   object-fit: cover;
 }
 
 .prd-col--2 img.active {
   display: block;
+  width: 85%;
 }
 
 .prd-col--3 {
   display: flex;
   flex-direction: column;
+  width: 30%;
 }
 
 .prd-col--3-row {
-  margin: 16px 0 16px 48px;
+  margin: 16px 0 16px 0;
 }
 
 .prd-name {
@@ -1648,7 +1656,6 @@
 
 .prd-col--3 form {
   margin-top: 16px;
-  margin-left: 80px;
 }
 
 .prd-form-row {
@@ -1656,7 +1663,6 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 12px 0 12px 12px;
 }
 
 .prd-form-row.error {
