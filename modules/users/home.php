@@ -164,7 +164,7 @@
                 
                 <?php
                   $dataMen=array();
-                  $sql="select * from product where class='FF' or class ='DR'";
+                  $sql="select * from product where class='FF'";
                   if($connect){
                     $result=mysqli_query($connect,$sql);
                     while($row=mysqli_fetch_array($result)){
@@ -215,7 +215,7 @@
               <div class="store-ovv-product">
                 <?php
                     $dataWomen=array();
-                    $sql="select * from product where class='AN' or class ='QN'";
+                    $sql="select * from product where class ='DR'";
                     if($connect){
                       $result=mysqli_query($connect,$sql);
                       while($row=mysqli_fetch_array($result)){
@@ -250,7 +250,7 @@
                       </div>
                       <div class="store-ovv--bot">
                         <div class="store-ovv--price">
-                          <span><?php echo $value['price'].' VND' ?></span>
+                          <span><?php echo number_format($value['price'], 0, '.', '.').' VND' ?></span>
                         </div>
                         <div class="store-ovv--like">
                           <i class="fas fa-heart active"></i>
@@ -266,7 +266,7 @@
               <div class="store-ovv-product">
               <?php
                   $dataBag=array();
-                  $sql="select * from product where class='TX'";
+                  $sql="select * from product where class='DI'";
                   if($connect){
                     $result=mysqli_query($connect,$sql);
                     while($row=mysqli_fetch_array($result)){
@@ -301,7 +301,7 @@
                       </div>
                       <div class="store-ovv--bot">
                         <div class="store-ovv--price">
-                          <span><?php echo $value['price'].' VND' ?></span>
+                          <span><?php echo number_format($value['price'], 0, '.', '.').' VND' ?></span>
                         </div>
                         <div class="store-ovv--like">
                           <i class="fas fa-heart active"></i>
