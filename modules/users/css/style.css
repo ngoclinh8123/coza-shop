@@ -1196,17 +1196,26 @@
   width: 100vw;
   height: 100vh;
   /* background-color: rgba(0, 0, 0, 0.696); */
-  background-image: linear-gradient(#e66465, #9198e5);
+  /* background-image: linear-gradient(#e66465, #9198e5); */
+  background: hsla(0, 0%, 0%, 1);
+  background: linear-gradient(135deg, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+  background: -moz-linear-gradient(135deg, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+  background: -webkit-linear-gradient(135deg, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000000", endColorstr="#FFFFFF", GradientType=1 );
   /* background-color: #dfd; */
 }
 
 .login-form-block {
-  width: 50%;
+  position: relative;
+  border-radius: 30px;
+  transform: translateY(-50%);
+  top: 50%;
+  max-width: 600px;
   margin: 0 auto;
   /* background-color: #dfd; */
   background-color: white;
   flex-direction: column;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .login-form-block form {
@@ -1284,13 +1293,14 @@
 }
 
 .login-form-block input:last-child {
-  background-color: #96f8f6;
+  background-color: #808080b0;
   color: white;
   cursor: pointer;
 }
 
 .login-form-block input:last-child:hover {
-  filter: contrast(0.8);
+  /* filter: contrast(0.8); */
+  opacity: 0.8;
 }
 
 .login-form-bottom {
