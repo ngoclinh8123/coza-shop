@@ -1,24 +1,13 @@
 <?php
     session_start();
-    $userid=$_SESSION['id'];
-    include './connect-database.php';
+    $user_email=$_SESSION['user-email'];
+    include_once './modules/handle/connect-database.php';
     $dataCart = array();
-    $itemDelete=$_GET['index'];
+    $itemDelete=$_GET['product_id'];
     if($connect){
-        $sql='select product from  cart where id= (select cartid from user where id='.$userid.')';
-        $result=mysqli_query($connect,$sql);
-        while ($row=mysqli_fetch_array($result)){
-            array_push($dataCart,$row);
-        }
-        // ngan cach cac id san pham bang '|'
-        $dataCart=explode("|",$dataCart[0]['product']);
-    }
-    array_splice($dataCart,$itemDelete,1);
-    $newData=implode("|",$dataCart);
-    if($connect){
-        $sql="update cart set product='".$newData."' where id=(select cartid from user where id=".$userid.")";
+        $sql="delete from cart where productId=".$itemDelete." and userId= (select id from user where email='".$user_email."')";
         if(mysqli_query($connect,$sql)){
-            echo '<a class="link" href="../users/cart.php"></a>';
+            echo '<a class="link" href="gio-hang"></a>';
         }else echo 'Có lỗi xảy ra !';
     }
 ?>

@@ -21,6 +21,7 @@
         'hoa-don'=>'modules/users/bill.php',
         'xu-ly-them-dia-chi'=>'modules/handle/add-address.php',
         'xu-ly-xoa-dia-chi'=>'modules/handle/delete-address.php',
+        'xu-ly-xoa-san-pham-gio-hang'=>'modules/handle/delete-product-cart.php'
 
     );
 
