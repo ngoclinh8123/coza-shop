@@ -1,12 +1,7 @@
 <?php
   // session_start();
   include_once './modules/handle/connect-database.php';
-  // die("ok");
-  
   include_once './modules/users/header-html-tag.php';
-
-
-  // get product infomation
 
 ?>
     <div class="home-user">
@@ -163,17 +158,15 @@
               <div class="store-ovv-product">
                 
                 <?php
-                  $dataMen=array();
+                  $dataFastFood=array();
                   $sql="select * from product where class='FF'";
                   if($connect){
                     $result=mysqli_query($connect,$sql);
                     while($row=mysqli_fetch_array($result)){
-                      array_push($dataMen,$row);
+                      array_push($dataFastFood,$row);
                     }
                   }
-                  // echo '<pre>';
-                  // print_r($dataBestSeller[0]);
-                  foreach($dataMen as $key=>$value){
+                  foreach($dataFastFood as $key=>$value){
                 ?>
                     <div class="store-ovv__item">
                       <div class="store-ovv__item-img">
@@ -214,15 +207,15 @@
             <div class="store-ovv-block-product featured">
               <div class="store-ovv-product">
                 <?php
-                    $dataWomen=array();
+                    $dataDrink=array();
                     $sql="select * from product where class ='DR'";
                     if($connect){
                       $result=mysqli_query($connect,$sql);
                       while($row=mysqli_fetch_array($result)){
-                        array_push($dataWomen,$row);
+                        array_push($dataDrink,$row);
                       }
                     }
-                    foreach($dataWomen as $key=>$value){
+                    foreach($dataDrink as $key=>$value){
                   ?>
                     <div class="store-ovv__item">
                       <div class="store-ovv__item-img">
@@ -263,15 +256,15 @@
             <div class="store-ovv-block-product sale">
               <div class="store-ovv-product">
               <?php
-                  $dataBag=array();
+                  $dataDishes=array();
                   $sql="select * from product where class='DI'";
                   if($connect){
                     $result=mysqli_query($connect,$sql);
                     while($row=mysqli_fetch_array($result)){
-                      array_push($dataBag,$row);
+                      array_push($dataDishes,$row);
                     }
                   }
-                  foreach($dataBag as $key=>$value){
+                  foreach($dataDishes as $key=>$value){
                 ?>
                     <div class="store-ovv__item">
                       <div class="store-ovv__item-img">
@@ -298,55 +291,6 @@
                       <div class="store-ovv--bot">
                         <div class="store-ovv--price">
                           <span><?php echo number_format($value['price'], 0, '.', '.').' VND' ?></span>
-                        </div>
-                        <div class="store-ovv--like">
-                          <i class="fas fa-heart active"></i>
-                          <i class="far fa-heart"></i>
-                        </div>
-                      </div>
-                    </div>
-
-                <?php } ?>
-              </div>
-            </div>
-            <div class="store-ovv-block-product top-rate">
-              <div class="store-ovv-product">
-              <?php
-                  $dataWatch=array();
-                  $sql="select * from product where class='ĐH'";
-                  if($connect){
-                    $result=mysqli_query($connect,$sql);
-                    while($row=mysqli_fetch_array($result)){
-                      array_push($dataWatch,$row);
-                    }
-                  }
-                  foreach($dataWatch as $key=>$value){
-                ?>
-                    <div class="store-ovv__item">
-                      <div class="store-ovv__item-img">
-                        <img src="
-                        <?php 
-                          $image=explode("|",$value['image']);
-                          $path='./includes/images/';
-                          echo $path.$image[0];
-                         ?>
-                         " alt="" />
-                        <div class="store-ovv__detail">
-                          <a href="san-pham?id=<?php echo $value['id']; ?>"
-                            ><span class="store-ovv__detail-content"
-                              >Chi Tiết</span
-                            ></a
-                          >
-                        </div>
-                      </div>
-                      <div class="store-ovv--content">
-                        <div class="store-ovv--name">
-                          <span><?php  echo $value['name'] ?></span>
-                        </div>
-                      </div>
-                      <div class="store-ovv--bot">
-                        <div class="store-ovv--price">
-                          <span><?php echo $value['price'].' VND' ?></span>
                         </div>
                         <div class="store-ovv--like">
                           <i class="fas fa-heart active"></i>
