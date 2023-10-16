@@ -27,7 +27,7 @@
               <span>BIG BURGER</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="cua-hang?page=1">BUY NOW</a></span>
+              <span><a href="cua-hang?request=do-an-nhanh&page=1">BUY NOW</a></span>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@
               <span>GIGANTIC RAMEN</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="cua-hang?page=1">BUY NOW</a></span>
+              <span><a href="cua-hang?request=do-uong&page=1">BUY NOW</a></span>
             </div>
           </div>
         </div>
@@ -55,7 +55,7 @@
               <span>Huge Noodle</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="cua-hang?page=1">BUY NOW</a></span>
+              <span><a href="cua-hang?request=bua-com-mang-ve&page=1">BUY NOW</a></span>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@
                 <div class="banner-modal">
                   <div class="banner-action">
                     <span>
-                      <a href="cua-hang?page=1">
+                      <a href="cua-hang?request=do-an-nhanh&page=1">
                         <div class="banner-title">SHOP NOW</div>
                         <span class="banner-line"></span>
                       </a>
@@ -110,7 +110,7 @@
                 <div class="banner-modal">
                   <div class="banner-action">
                     <span>
-                      <a href="cua-hang?page=1">
+                      <a href="cua-hang?request=do-uong&page=1">
                         <div class="banner-title">SHOP NOW</div>
                         <span class="banner-line"></span>
                       </a>
@@ -133,7 +133,7 @@
                 <div class="banner-modal">
                   <div class="banner-action">
                     <span>
-                      <a href="cua-hang?page=1">
+                      <a href="cua-hang?request=bua-com-mang-ve&page=1">
                         <div class="banner-title">SHOP NOW</div>
                         <span class="banner-line"></span>
                       </a>
@@ -163,17 +163,17 @@
               <div class="store-ovv-product">
                 
                 <?php
-                  $dataMen=array();
+                  $dataFastFood=array();
                   $sql="select * from product where class='FF'";
                   if($connect){
                     $result=mysqli_query($connect,$sql);
                     while($row=mysqli_fetch_array($result)){
-                      array_push($dataMen,$row);
+                      array_push($dataFastFood,$row);
                     }
                   }
                   // echo '<pre>';
                   // print_r($dataBestSeller[0]);
-                  foreach($dataMen as $key=>$value){
+                  foreach($dataFastFood as $key=>$value){
                 ?>
                     <div class="store-ovv__item">
                       <div class="store-ovv__item-img">
@@ -214,17 +214,17 @@
             <div class="store-ovv-block-product featured">
               <div class="store-ovv-product">
                 <?php
-                    $dataWomen=array();
-                    $sql="select * from product where class ='DR'";
+                    $dataDrinks=array();
+                    $sql="select * from product where class='DR'";
                     if($connect){
                       $result=mysqli_query($connect,$sql);
                       while($row=mysqli_fetch_array($result)){
-                        array_push($dataWomen,$row);
+                        array_push($dataDrinks,$row);
                       }
                     }
                     // echo '<pre>';
                     // print_r($dataBestSeller[0]);
-                    foreach($dataWomen as $key=>$value){
+                    foreach($dataDrinks as $key=>$value){
                   ?>
                     <div class="store-ovv__item">
                       <div class="store-ovv__item-img">
@@ -265,17 +265,17 @@
             <div class="store-ovv-block-product sale">
               <div class="store-ovv-product">
               <?php
-                  $dataBag=array();
-                  $sql="select * from product where class='DI'";
+                  $dataDishes=array();
+                  $sql="select * from product where class='DS'";
                   if($connect){
                     $result=mysqli_query($connect,$sql);
                     while($row=mysqli_fetch_array($result)){
-                      array_push($dataBag,$row);
+                      array_push($dataDishes,$row);
                     }
                   }
                   // echo '<pre>';
                   // print_r($dataBestSeller[0]);
-                  foreach($dataBag as $key=>$value){
+                  foreach($dataDishes as $key=>$value){
                 ?>
                     <div class="store-ovv__item">
                       <div class="store-ovv__item-img">
@@ -352,7 +352,7 @@
                       </div>
                       <div class="store-ovv--bot">
                         <div class="store-ovv--price">
-                          <span><?php echo $value['price'].' VND' ?></span>
+                          <span><?php echo number_format($value['price'], 0, '.', '.').' VND' ?></span>
                         </div>
                         <div class="store-ovv--like">
                           <i class="fas fa-heart active"></i>
