@@ -1,12 +1,7 @@
 <?php
   // session_start();
   include_once './modules/handle/connect-database.php';
-  // die("ok");
-  
   include_once './modules/users/header-html-tag.php';
-
-
-  // get product infomation
 
 ?>
     <div class="home-user">
@@ -171,8 +166,6 @@
                       array_push($dataFastFood,$row);
                     }
                   }
-                  // echo '<pre>';
-                  // print_r($dataBestSeller[0]);
                   foreach($dataFastFood as $key=>$value){
                 ?>
                     <div class="store-ovv__item">
@@ -222,8 +215,6 @@
                         array_push($dataDrinks,$row);
                       }
                     }
-                    // echo '<pre>';
-                    // print_r($dataBestSeller[0]);
                     foreach($dataDrinks as $key=>$value){
                   ?>
                     <div class="store-ovv__item">
@@ -273,60 +264,7 @@
                       array_push($dataDishes,$row);
                     }
                   }
-                  // echo '<pre>';
-                  // print_r($dataBestSeller[0]);
                   foreach($dataDishes as $key=>$value){
-                ?>
-                    <div class="store-ovv__item">
-                      <div class="store-ovv__item-img">
-                        <img src="
-                        <?php 
-                          $image=explode("|",$value['image']);
-                          $path='./includes/images/';
-                          echo $path.$image[0];
-                         ?>
-                         " alt="" />
-                        <div class="store-ovv__detail">
-                          <a href="san-pham?id=<?php echo $value['id']; ?>"
-                            ><span class="store-ovv__detail-content"
-                              >Chi Tiết</span
-                            ></a
-                          >
-                        </div>
-                      </div>
-                      <div class="store-ovv--content">
-                        <div class="store-ovv--name">
-                          <span><?php  echo $value['name'] ?></span>
-                        </div>
-                      </div>
-                      <div class="store-ovv--bot">
-                        <div class="store-ovv--price">
-                          <span><?php echo number_format($value['price'], 0, '.', '.').' VND' ?></span>
-                        </div>
-                        <div class="store-ovv--like">
-                          <i class="fas fa-heart active"></i>
-                          <i class="far fa-heart"></i>
-                        </div>
-                      </div>
-                    </div>
-
-                <?php } ?>
-              </div>
-            </div>
-            <div class="store-ovv-block-product top-rate">
-              <div class="store-ovv-product">
-              <?php
-                  $dataWatch=array();
-                  $sql="select * from product where class='ĐH'";
-                  if($connect){
-                    $result=mysqli_query($connect,$sql);
-                    while($row=mysqli_fetch_array($result)){
-                      array_push($dataWatch,$row);
-                    }
-                  }
-                  // echo '<pre>';
-                  // print_r($dataBestSeller[0]);
-                  foreach($dataWatch as $key=>$value){
                 ?>
                     <div class="store-ovv__item">
                       <div class="store-ovv__item-img">
@@ -482,4 +420,3 @@
 <?php
   include_once './modules/users/footer-html-tag.php';
 ?>
-<!-- https://technext.github.io/cozastore/contact.html# -->

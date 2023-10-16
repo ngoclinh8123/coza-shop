@@ -11,18 +11,12 @@
             while($row=mysqli_fetch_array($result)){
               array_push($allProduct,$row);
             }
-            // echo '<pre>';print_r($allProduct);
-
             $sql='select * from class';
             $result=mysqli_query($connect,$sql);
             while($row=mysqli_fetch_array($result)){
               array_push($dataClass,$row);
             }
           }
-
-          // echo '<pre>';print_r($dataClass);
-
-          // include_once './modules/users/loading.php';
       ?>
 
       <div class="heading">
@@ -56,15 +50,9 @@
                   ?>
                 </ul>
               </li>
-              <!-- <li class="nav-item">
-                <a href="">Features</a>
-              </li> -->
               <li class="nav-item">
-                <a href="tin-tuc">Bài viết</a>
+                <a href="tin-tuc?page=1">Bài viết</a>
               </li>
-              <!-- <li class="nav-item">
-                <a href="">About</a>
-              </li> -->
               <li class="nav-item">
                 <a href="">Liên hệ</a>
               </li>
@@ -78,15 +66,6 @@
               <i class="fas fa-shopping-cart"></i>
               <span class="heading-ac-status">0</span>
             </div>
-
-            <!-- liked product update late -->
-            <!-- <div class="heading-ac-icon heading-liked">
-              <i class="far fa-heart"></i>
-              <span class="heading-ac-status">0</span>
-            </div> -->
-            <!-- <div class="heading-ac-avatar">
-              <img src="../../includes/images/product-01.jpg" alt="" />
-            </div> -->
             <div class="heading-ac-icon heading-account-guess">
               <i class="fas fa-user"></i>
             </div>
@@ -119,10 +98,6 @@
           while ($row=mysqli_fetch_array($result)){
             array_push($dataCart,$row);
           }
-
-          // ngan cach cac id san pham bang '|'
-          // $dataCart=explode("|",$dataCart[0]['product']);
-          // echo '<pre>';print_r($dataCart);echo '</pre>';
         }
          ?>
         <div class="home-cart">
@@ -133,8 +108,6 @@
               <div class="home-cart-empty"><span>Bạn chưa có sản phẩm nào trong giỏ</span></div>
               <?php
                 for($i=0;$i<count($dataCart);$i++){
-                  // echo '<pre>';print_r($dataCart[$i]);
-                //   $item=explode("-",$dataCart[$i]);
                   foreach($allProduct as $key=>$value){
                     if($dataCart[$i]['productId']==$value['id']){
                       $image=explode("|",$value['image'])[0];
@@ -158,7 +131,7 @@
                     </div>
                     <div class="home-cart-item--amount"><?php echo $amount ?></div>
                     x
-                    <span class="home-cart-item--price"><?php echo $price ?></span>
+                    <span class="home-cart-item--price"><?php echo number_format($price, 0, '.', '.') ?></span>
                     <span>VNĐ</span>
                   </div>
                 </div>
@@ -168,7 +141,7 @@
                 }
               ?>
               <div class="home-cart-total">
-                Tổng cộng : <span class="home-cart-total-price">0</span>
+                Tổng cộng: <span class="home-cart-total-price">0</span>
                 <span>VNĐ</span>
               </div>
               <a href="gio-hang" class="home-cart-view">
@@ -226,7 +199,6 @@
                   echo '<div class="home-account-logout"><a href="dang-nhap">Đăng nhập</a></div>';
                 }
               ?>
-              
             </div>
           </div>
         </div>
