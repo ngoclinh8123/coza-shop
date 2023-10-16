@@ -5,7 +5,7 @@
     // $dbname="epiz_32686373_sheeta";
     $server="127.0.0.1";
     $username="root";
-    $password="123";
+    $password="";
     $dbname="coza_shop";
     // ini_set('display_errors',1);
 

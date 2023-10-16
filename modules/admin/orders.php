@@ -8,12 +8,12 @@
     <div class="orders-wrap">
         <div class="o-container">
             <div class="o-nav">
-                <div class="o-nav-item o-add-order">
+                <!-- <div class="o-nav-item o-add-order">
                     <span>
                         <i class="fas fa-plus"></i>
                         <span>Thêm đơn hàng</span>
                     </span>
-                </div>
+                </div> -->
                 <div class="o-nav-item o-handle">
                     <span>
                         <i class="fas fa-cog"></i>
@@ -170,11 +170,11 @@
                             <div class="o-action-item">
                                 <span>Hủy đơn</span>
                             </div>
-                            <label for="o-detete--<?php echo $value[0] ?>" class="o-action-item">Xóa đơn</label>
-                                <form action="xu-ly-xoa-don-hang" method="POST">
-                                    <input type="text" value="<?php echo $value[0] ?>" name="id-product-delete" hidden>
-                                    <input type="submit" value="Xóa đơn" id="o-detete--<?php echo $value[0] ?>" hidden>
-                                </form>
+                            <label for="o-delete--<?php echo $value[0] ?>" class="o-action-item">Xóa đơn</label>
+                            <form action="xu-ly-xoa-don-hang" method="POST" id="delete-form-<?php echo $value[0] ?>" onsubmit="return confirmDelete(<?php echo $value[0] ?>);">
+                                <input type="text" value="<?php echo $value[0] ?>" name="id-product-delete" hidden>
+                                <input type="submit" value="Xóa đơn" id="o-delete--<?php echo $value[0] ?>" hidden>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -186,5 +186,10 @@
         </div>
     </div>
 <script src="./modules/admin/js/admin.js"></script>
+<script>
+    function confirmDelete(orderId) {
+        return confirm("Bạn muốn xóa đơn hàng này?");
+    }
+</script>
 </body>
 </html>

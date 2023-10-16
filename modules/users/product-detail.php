@@ -71,7 +71,7 @@
           <div class="prd-col--3">
             <div class="prd-col--3-row prd-name"><?php echo $name ?></div>
             <div class="prd-col--3-row prd-price">
-              <span><?php echo $price ?></span><span> VNĐ</span>
+              <span><?php echo number_format($price, 0, '.', '.') ?></span><span> VNĐ</span>
             </div>
             <div class="prd-col--3-row prd-desc"><?php echo $desc ?></div>
 

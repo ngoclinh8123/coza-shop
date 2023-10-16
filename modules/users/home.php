@@ -21,13 +21,27 @@
           <img src="./includes/images/slide-05.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
-              <span>Women Collection 2022</span>
+              <span>Featuring</span>
             </div>
             <div class="slide__title--mid">
-              <span>NEW SEASON</span>
+              <span>BIG BURGER</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="cua-hang?request=ao-nu&page=1">SHOP NOW</a></span>
+              <span><a href="cua-hang?request=do-an-nhanh&page=1">BUY NOW</a></span>
+            </div>
+          </div>
+        </div>
+        <div class="home-slide__item">
+          <img src="./includes/images/banner-2.jpg" alt="" />
+          <div class="slide-content">
+            <div class="slide__title--top">
+              <span>Applauding</span>
+            </div>
+            <div class="slide__title--mid">
+              <span>GIGANTIC RAMEN</span>
+            </div>
+            <div class="slide__title--action">
+              <span><a href="cua-hang?request=do-uong&page=1">BUY NOW</a></span>
             </div>
           </div>
         </div>
@@ -35,27 +49,13 @@
           <img src="./includes/images/slide-06.jpg" alt="" />
           <div class="slide-content">
             <div class="slide__title--top">
-              <span>Men New-Season</span>
+              <span>Presenting</span>
             </div>
             <div class="slide__title--mid">
-              <span>JACKETS & COATS</span>
+              <span>Huge Noodle</span>
             </div>
             <div class="slide__title--action">
-              <span><a href="cua-hang?request=ao-nam&page=1">SHOP NOW</a></span>
-            </div>
-          </div>
-        </div>
-        <div class="home-slide__item">
-          <img src="./includes/images/slide-07.jpg" alt="" />
-          <div class="slide-content">
-            <div class="slide__title--top">
-              <span>Men Collection 2022</span>
-            </div>
-            <div class="slide__title--mid">
-              <span>NEW ARRIVALS</span>
-            </div>
-            <div class="slide__title--action">
-              <span><a href="cua-hang?request=dong-ho&page=1">SHOP NOW</a></span>
+              <span><a href="cua-hang?request=bua-com-mang-ve&page=1">BUY NOW</a></span>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@
                 <div class="banner-modal">
                   <div class="banner-action">
                     <span>
-                      <a href="cua-hang?request=ao-nu&page=1">
+                      <a href="cua-hang?request=do-an-nhanh&page=1">
                         <div class="banner-title">SHOP NOW</div>
                         <span class="banner-line"></span>
                       </a>
@@ -110,7 +110,7 @@
                 <div class="banner-modal">
                   <div class="banner-action">
                     <span>
-                      <a href="cua-hang?request=ao-nam&page=1">
+                      <a href="cua-hang?request=do-uong&page=1">
                         <div class="banner-title">SHOP NOW</div>
                         <span class="banner-line"></span>
                       </a>
@@ -133,7 +133,7 @@
                 <div class="banner-modal">
                   <div class="banner-action">
                     <span>
-                      <a href="cua-hang?page=1">
+                      <a href="cua-hang?request=bua-com-mang-ve&page=1">
                         <div class="banner-title">SHOP NOW</div>
                         <span class="banner-line"></span>
                       </a>
@@ -163,17 +163,17 @@
               <div class="store-ovv-product">
                 
                 <?php
-                  $dataMen=array();
-                  $sql="select * from product where class='FF' or class ='DR'";
+                  $dataFastFood=array();
+                  $sql="select * from product where class='FF'";
                   if($connect){
                     $result=mysqli_query($connect,$sql);
                     while($row=mysqli_fetch_array($result)){
-                      array_push($dataMen,$row);
+                      array_push($dataFastFood,$row);
                     }
                   }
                   // echo '<pre>';
                   // print_r($dataBestSeller[0]);
-                  foreach($dataMen as $key=>$value){
+                  foreach($dataFastFood as $key=>$value){
                 ?>
                     <div class="store-ovv__item">
                       <div class="store-ovv__item-img">
@@ -199,7 +199,7 @@
                       </div>
                       <div class="store-ovv--bot">
                         <div class="store-ovv--price">
-                          <span><?php echo $value['price'].' VND' ?></span>
+                          <span><?php echo number_format($value['price'], 0, '.', '.').' VND' ?></span>
                         </div>
                         <div class="store-ovv--like">
                           <i class="fas fa-heart active"></i>
@@ -214,17 +214,17 @@
             <div class="store-ovv-block-product featured">
               <div class="store-ovv-product">
                 <?php
-                    $dataWomen=array();
-                    $sql="select * from product where class='AN' or class ='QN'";
+                    $dataDrinks=array();
+                    $sql="select * from product where class='DR'";
                     if($connect){
                       $result=mysqli_query($connect,$sql);
                       while($row=mysqli_fetch_array($result)){
-                        array_push($dataWomen,$row);
+                        array_push($dataDrinks,$row);
                       }
                     }
                     // echo '<pre>';
                     // print_r($dataBestSeller[0]);
-                    foreach($dataWomen as $key=>$value){
+                    foreach($dataDrinks as $key=>$value){
                   ?>
                     <div class="store-ovv__item">
                       <div class="store-ovv__item-img">
@@ -250,7 +250,7 @@
                       </div>
                       <div class="store-ovv--bot">
                         <div class="store-ovv--price">
-                          <span><?php echo $value['price'].' VND' ?></span>
+                          <span><?php echo number_format($value['price'], 0, '.', '.').' VND' ?></span>
                         </div>
                         <div class="store-ovv--like">
                           <i class="fas fa-heart active"></i>
@@ -265,17 +265,17 @@
             <div class="store-ovv-block-product sale">
               <div class="store-ovv-product">
               <?php
-                  $dataBag=array();
-                  $sql="select * from product where class='TX'";
+                  $dataDishes=array();
+                  $sql="select * from product where class='DS'";
                   if($connect){
                     $result=mysqli_query($connect,$sql);
                     while($row=mysqli_fetch_array($result)){
-                      array_push($dataBag,$row);
+                      array_push($dataDishes,$row);
                     }
                   }
                   // echo '<pre>';
                   // print_r($dataBestSeller[0]);
-                  foreach($dataBag as $key=>$value){
+                  foreach($dataDishes as $key=>$value){
                 ?>
                     <div class="store-ovv__item">
                       <div class="store-ovv__item-img">
@@ -301,7 +301,7 @@
                       </div>
                       <div class="store-ovv--bot">
                         <div class="store-ovv--price">
-                          <span><?php echo $value['price'].' VND' ?></span>
+                          <span><?php echo number_format($value['price'], 0, '.', '.').' VND' ?></span>
                         </div>
                         <div class="store-ovv--like">
                           <i class="fas fa-heart active"></i>
@@ -352,7 +352,7 @@
                       </div>
                       <div class="store-ovv--bot">
                         <div class="store-ovv--price">
-                          <span><?php echo $value['price'].' VND' ?></span>
+                          <span><?php echo number_format($value['price'], 0, '.', '.').' VND' ?></span>
                         </div>
                         <div class="store-ovv--like">
                           <i class="fas fa-heart active"></i>
