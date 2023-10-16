@@ -7,7 +7,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sheeta Shop</title>
+    <link rel="icon" href="./includes/images/logo-icon-bird.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="./modules/users/css/style.css" />
     <link rel="stylesheet" href="./modules/users/css/base.css" />
   </head>
@@ -36,7 +37,7 @@
               }
             ?>
             
-            <label for="user-sign-up-password">Mật khẩu</label>
+            <label for="user-sign-up-password" style="margin-top:24px">Mật khẩu</label>
             <?php
               if(isset($_POST['user-sign-up-password'])){
                   if(trim($_POST['user-sign-up-password'])!=''){
@@ -49,7 +50,7 @@
                 echo '<input id="user-sign-up-password" type="text" name="user-sign-up-password" placeholder="Mật khẩu" />';
               }
             ?>
-            <input type="submit" value="Đăng nhập " />
+            <input type="submit" value="Đăng nhập " style="margin-top:24px"/>
           </div>
         </form>
         <?php

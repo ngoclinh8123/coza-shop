@@ -1197,13 +1197,17 @@
 .login-form {
   width: 100vw;
   height: 100vh;
-  /* background-color: rgba(0, 0, 0, 0.696); */
-  /* background-image: linear-gradient(#e66465, #9198e5); */
-  background: hsla(0, 0%, 0%, 1);
+  background-image: linear-gradient(to top, #0000004b, #0000002a),
+    url("../../../includes/images/bg_login.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #2222223c;
+  background-position: center;
+  /* background: hsla(0, 0%, 0%, 1);
   background: linear-gradient(135deg, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
   background: -moz-linear-gradient(135deg, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
   background: -webkit-linear-gradient(135deg, hsla(0, 0%, 0%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000000", endColorstr="#FFFFFF", GradientType=1 );
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000000", endColorstr="#FFFFFF", GradientType=1 ); */
   /* background-color: #dfd; */
 }
 
@@ -1212,18 +1216,17 @@
   border-radius: 30px;
   transform: translateY(-50%);
   top: 50%;
-  max-width: 600px;
-  margin: 0 auto;
-  /* background-color: #dfd; */
-  background-color: white;
+  max-width: 640px;
+  margin: 0 100px 0 auto;
+  background-color: rgba(0, 0, 0, 0.6);
   flex-direction: column;
-  /* height: 100%; */
+  padding: 36px 0;
 }
 
 .login-form-block form {
   flex-direction: column;
   width: 68%;
-  color: #292929;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1248,29 +1251,29 @@
 }
 
 .sign-up-form-title {
-  font-size: 3rem;
+  font-size: 2.6rem;
   margin-bottom: 38px;
   font-weight: 700;
   letter-spacing: 0.6px;
-  color: #292929;
+  color: #ffffff;
 }
 
 .sign-in-form-title {
-  font-size: 3rem;
+  font-size: 2.6rem;
   margin-bottom: 38px;
   font-weight: 700;
   letter-spacing: 0.6px;
-  color: #292929;
+  color: #f8f8f8;
 }
 
 .login-form-block label {
   font-size: 1.5rem;
-  color: #292929;
+  color: #ffffff;
   margin-bottom: 8px;
   cursor: pointer;
 }
 .login-form-block label:first-child {
-  margin-top: 24px;
+  margin-top: 36px;
 }
 
 .login-form-block input {
@@ -1302,12 +1305,14 @@
 
 .login-form-block input:last-child:hover {
   /* filter: contrast(0.8); */
-  opacity: 0.8;
+  background-color: rgba(255, 179, 0, 0.784);
+  color: white;
 }
 
 .login-form-bottom {
   margin: 24px 0;
   font-size: 1.5rem;
+  color: #717fe0;
 }
 
 .login-form-bottom a {
@@ -1626,7 +1631,6 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-
 }
 
 .prd-col--2 img {
