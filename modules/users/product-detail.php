@@ -35,8 +35,6 @@
     $name=$data['name'];
     $desc=$data['description'];
     $price=$data['price'];
-    $color=$data['color'];
-    $size=$data['size'];
 
     $path='./includes/images/';
 ?>

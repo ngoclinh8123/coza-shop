@@ -216,8 +216,8 @@
 }
 
 .search-wrap {
-  height: 116px;
-  width: 70%;
+  height: 70px;
+  width: 50%;
   position: relative;
 }
 
@@ -227,6 +227,7 @@
   background-color: white;
   border: 2px solid rgba(0, 0, 0, 0.5);
   display: flex;
+  border-radius: 8px;
 }
 
 .search-modal input {
@@ -247,6 +248,7 @@
   padding: 0 32px;
   cursor: pointer;
   animation: slowOpacity 0.3s linear;
+  border-radius: 8px;
 }
 
 .search-modal input:last-child:hover {
