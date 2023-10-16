@@ -222,8 +222,6 @@
                         array_push($dataWomen,$row);
                       }
                     }
-                    // echo '<pre>';
-                    // print_r($dataBestSeller[0]);
                     foreach($dataWomen as $key=>$value){
                   ?>
                     <div class="store-ovv__item">
@@ -273,8 +271,6 @@
                       array_push($dataBag,$row);
                     }
                   }
-                  // echo '<pre>';
-                  // print_r($dataBestSeller[0]);
                   foreach($dataBag as $key=>$value){
                 ?>
                     <div class="store-ovv__item">
@@ -324,8 +320,6 @@
                       array_push($dataWatch,$row);
                     }
                   }
-                  // echo '<pre>';
-                  // print_r($dataBestSeller[0]);
                   foreach($dataWatch as $key=>$value){
                 ?>
                     <div class="store-ovv__item">
@@ -482,4 +476,3 @@
 <?php
   include_once './modules/users/footer-html-tag.php';
 ?>
-<!-- https://technext.github.io/cozastore/contact.html# -->
