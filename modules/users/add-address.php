@@ -41,7 +41,8 @@
                     <span class="bill-phone">( <?php echo $dataAddress[$i]['phone']; ?> ) - </span>
                     <span class="bill-address"><?php echo $dataAddress[$i]['address']; ?></span>
                 </label>
-                <a href="xu-ly-xoa-dia-chi?id=<?php echo $dataAddress[$i]['id']; ?>">Xóa</a>
+                <a href="#" onclick = "confirmDelete(<?php echo $dataAddress[$i]['id']; ?>)"
+                >Xóa</a>
             </div>
         <?php
             }
@@ -75,6 +76,16 @@
         </div>
     </div>
 </div>
+<script>
+    function confirmDelete(id) {
+        if (confirm("Bạn muốn xóa địa chỉ này?")) {
+            window.location.href = "xu-ly-xoa-dia-chi?id=" + id; 
+        }
+        return false;
+    }
+
+</script>
+
 <script src="./modules/users/js/add-address.js"></script>
 <?php
         include './modules/users/footer-html-tag.php';
