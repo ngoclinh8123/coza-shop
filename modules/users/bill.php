@@ -183,6 +183,7 @@
                 foreach ($itemBuy as $key=>$value){
                     $idProduct=explode("-",$value)[0];
                     $amount=explode("-",$value)[1];
+
                     foreach($dataProduct as $key2=>$value2){
                         if($idProduct==$value2['id']){
                             $image=explode("|",$value2['image'])[0];

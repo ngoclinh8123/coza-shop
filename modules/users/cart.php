@@ -36,7 +36,7 @@
       <div class="cart-heading">
           <div class="cart-heading-logo">
             <a href="trang-chu">
-                <img src="./includes/images/logo-coza-store.png" alt="">
+                <img src="./includes/images/logo-sheeta-shop.png" alt="">
             </a>
           </div>
           <div class="cart-heading-title">Giỏ Hàng</div>
@@ -90,7 +90,7 @@
                     </div>
                     <div class="">
                         <div class="cart-item-desc">
-                            <a href="san-pham?id=<?php echo $value['id']; ?>"><?php echo $desc; ?></a>
+                            <a href="san-pham?id=<?php echo $value['id']; ?>"><?php echo $name; ?></a>
                         </div>
                         <div class="cart-item-code"><span><?php echo $value['code'] ?></span></div>
                     </div>
