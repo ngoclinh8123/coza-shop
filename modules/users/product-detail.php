@@ -96,12 +96,12 @@
 
         <!-- prd detail -->
         <div class="prd-detail-info">
-          <div class="prd-detail-nav">
+          <!-- <div class="prd-detail-nav">
             <span class="active">Description</span>%$_COOKIEX
           </div>
           <div class="prd-detail-row">
             <div class="prd-detail-item-infomation prd-detail-desc active"><?php echo $desc ?></div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

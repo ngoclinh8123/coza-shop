@@ -115,7 +115,7 @@ function renderTotalPrice() {
     let amountItem = parseInt(amount.innerText);
     let price = parseInt(priceTags[index].innerText);
     totalPrice += amountItem * price;
-    totalPriceCartTag.innerText = totalPrice;
+    totalPriceCartTag.innerText = totalPrice + ".000";
   });
 }
 renderTotalPrice();

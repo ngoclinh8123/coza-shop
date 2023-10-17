@@ -1607,15 +1607,17 @@
 
 .prd-wrap-row {
   display: flex;
+  justify-content: center;
 }
 .prd-col--1 {
   display: flex;
   flex-direction: column;
   width: 10%;
+  margin-right: 24px;
 }
 .prd-col--1 img {
-  width: 100%;
-  height: 84px;
+  width: 160px;
+  height: 160px;
   margin-bottom: 28px;
   cursor: pointer;
 }
@@ -1625,7 +1627,8 @@
 }
 
 .prd-col--2 {
-  width: 60%;
+  width: 40%;
+  margin-right: 24px;
 }
 
 .prd-col--2-border {
@@ -1636,15 +1639,16 @@
 }
 
 .prd-col--2 img {
-  width: 100%;
-  height: 430px;
+  /* width: 430px; */
+  /* height: 600px; */
   display: none;
   object-fit: cover;
 }
 
 .prd-col--2 img.active {
   display: block;
-  width: 85%;
+  width: 100%;
+  aspect-ratio: 1 / 1;
 }
 
 .prd-col--3 {
