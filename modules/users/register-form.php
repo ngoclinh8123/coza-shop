@@ -48,10 +48,10 @@
             
             <?php
               if(isset($_POST['user-sign-up-password']) && trim($_POST['user-sign-up-password'])!=''){
-                echo '<input id="user-sign-up-password" type="text" name="user-sign-up-password" placeholder="Mật khẩu" value="'.$_POST["user-sign-up-password"].'"/>';
+                echo '<input id="user-sign-up-password" type="password" name="user-sign-up-password" placeholder="Mật khẩu" value="'.$_POST["user-sign-up-password"].'"/>';
 
               }else{
-                echo '<input id="user-sign-up-password" type="text" name="user-sign-up-password" placeholder="Mật khẩu" />';
+                echo '<input id="user-sign-up-password" type="password" name="user-sign-up-password" placeholder="Mật khẩu" />';
                 echo '<span class="error-login-form">Vui lòng nhập trường này</span>';
               } 
             ?>
@@ -66,9 +66,7 @@
       </div>
     </div>
 
-    
-    <!-- <div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đăng ký tài khoản thành công</div><a href="./login-form.php">Đăng nhập</a></div></div> -->
-    <?php
+   <?php
         include_once './modules/handle/connect-database.php';
         include_once './modules/handle/function.php';
       if(isset($_POST['user-sign-up-name']) && trim($_POST['user-sign-up-name'])!='' && isset($_POST['user-sign-up-email']) && trim($_POST['user-sign-up-email'])!='' && isset($_POST['user-sign-up-password']) && trim($_POST['user-sign-up-password'])!='' && $flagEmail){
@@ -93,22 +91,12 @@
           while($row=mysqli_fetch_array($result)){
             array_push($adminList,$row);
           }
-          // echo '<pre>';print_r($userList);
-          // echo '<pre>';print_r($adminList);
           if(count($userList)>0 || count($adminList)>0){
             $flag=true;
           }
           if($flag){
             echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Tài khoản đã tồn tại</div></div></div>';
           }else{
-            // $cartid=randomString(15);
-            // // $cartid='1';
-            // $to = $email;
-            
-
-            // modal xac minh password
-            // echo '<div class="modal-email"><div class="modal-email-content"><form action="xac-minh-mat-khau" method="post"><div class="modal-email-title"><span>Hãy nhập mã xác minh được gửi tới email <span>'.$email.'</span></span></div><div class="modal-email-input"><input type="text" name="email-confirm"></div><span class="modal-email-submit--fake">Xác minh</span><input type="submit" value="Xác minh" class="modal-email-submit"></form></div></div>';
-
 
             $sql="insert into user(name,email,avatar) values ('".$name."','".$email."','')";
 
@@ -120,41 +108,12 @@
                 array_push($arrTemp,$row);
               }
               $userId=$arrTemp[0][0];
-              // echo $userId;
               $sql="insert into userlogin(userId,email,password) values(".$userId.",'".$email."','".$password."')";
               if(mysqli_query($connect,$sql)){
                 echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đăng ký tài khoản thành công</div><a href="dang-nhap">Đăng nhập</a></div></div>';
               }
             }
-
-            // // $sql="insert into user(username,email,password,cartid,admin) values('".$name."','".$email."','".$password."','".$cartid."','admin')";
-            // $sql2="insert into cart(id,product) values ('".$cartid."','')";
-            // if(mysqli_query($connect,$sql2) && mysqli_query($connect,$sql)){
-            //   echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đăng ký tài khoản thành công</div><a href="dang-nhap">Đăng nhập</a></div></div>';
-            // }else{
-            //   echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Có lỗi xảy ra</div><a href="dang-ky">Thử lại</a></div></div>';
-            // }
           }
-          // foreach($userList as $key=>$value){
-          //   if( $value['password']==$password && $value['email']==$email){
-          //       $flag=true;       
-          //       break;
-          //   }
-          // }
-          // if($flag){
-          //   echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Tài khoản đã tồn tại</div></div></div>';
-          // }else{
-            // $cartid=randomString(15);
-            // // $cartid='1';
-            // $sql="insert into user(username,email,password,cartid) values('".$name."','".$email."','".$password."','".$cartid."')";
-            // // $sql="insert into user(username,email,password,cartid,admin) values('".$name."','".$email."','".$password."','".$cartid."','admin')";
-            // $sql2="insert into cart(id,product) values ('".$cartid."','')";
-            // if(mysqli_query($connect,$sql2) && mysqli_query($connect,$sql)){
-              // echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đăng ký tài khoản thành công</div><a href="dang-nhap">Đăng nhập</a></div></div>';
-            // }else{
-              // echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Có lỗi xảy ra</div><a href="dang-ky">Thử lại</a></div></div>';
-            // }
-          // }
         }else{
               echo '<div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Có lỗi xảy ra</div><a href="dang-ky">Thử lại</a></div></div>';
         }

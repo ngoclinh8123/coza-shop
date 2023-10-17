@@ -48,10 +48,10 @@
             
             <?php
               if(isset($_POST['user-sign-up-password']) && trim($_POST['user-sign-up-password'])!=''){
-                echo '<input id="user-sign-up-password" type="text" name="user-sign-up-password" placeholder="Mật khẩu" value="'.$_POST["user-sign-up-password"].'"/>';
+                echo '<input id="user-sign-up-password" type="password" name="user-sign-up-password" placeholder="Mật khẩu" value="'.$_POST["user-sign-up-password"].'"/>';
 
               }else{
-                echo '<input id="user-sign-up-password" type="text" name="user-sign-up-password" placeholder="Mật khẩu" />';
+                echo '<input id="user-sign-up-password" type="password" name="user-sign-up-password" placeholder="Mật khẩu" />';
                 echo '<span class="error-login-form">Vui lòng nhập trường này</span>';
               } 
             ?>
@@ -59,16 +59,11 @@
             <input type="submit" value="Thêm tài khoản" />
           </div>
         </form>
-        <!-- <div class="login-form-bottom">
-          Bạn đã có tài khoản ?
-          <a href="dang-nhap">Đăng nhập </a>
-        </div> -->
+       
       </div>
     </div>
 
-    
-    <!-- <div class="register-success-form"><div class="register-success-content"><i class="fas fa-times"></i><div class="register-success-title">Đăng ký tài khoản thành công</div><a href="./login-form.php">Đăng nhập</a></div></div> -->
-    <?php
+   <?php
         include_once './modules/handle/connect-database.php';
         include_once './modules/handle/function.php';
       if(isset($_POST['user-sign-up-name']) && trim($_POST['user-sign-up-name'])!='' && isset($_POST['user-sign-up-email']) && trim($_POST['user-sign-up-email'])!='' && isset($_POST['user-sign-up-password']) && trim($_POST['user-sign-up-password'])!='' && $flagEmail){
@@ -93,9 +88,7 @@
           while($row=mysqli_fetch_array($result)){
             array_push($adminList,$row);
           }
-          // echo '<pre>';print_r($userList);
-          // echo '<pre>';print_r($adminList);
-          if(count($userList)>0 || count($adminList)>0){
+           if(count($userList)>0 || count($adminList)>0){
             $flag=true;
           }
           if($flag){

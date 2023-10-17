@@ -1212,6 +1212,7 @@
 }
 
 .login-form-block {
+  max-height: 100%;
   position: relative;
   border-radius: 30px;
   transform: translateY(-50%);
@@ -1417,6 +1418,7 @@
 .cart-heading-logo img {
   width: 100%;
   margin-left: 18px;
+  margin-bottom: 8px;
 }
 
 .cart-heading-title {
