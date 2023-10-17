@@ -912,6 +912,8 @@
 
 .home-cart-item--img img {
   width: 60px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 .home-cart-item--img span {
@@ -1448,7 +1450,8 @@
 }
 
 .cart-item-img img {
-  width: 100%;
+  width: 72%;
+  aspect-ratio: 1 / 1;
   /* height: 100%; */
   object-fit: cover;
 }
