@@ -46,6 +46,7 @@ incBtn.onclick = function () {
   amountInput.value = currentAmount;
   amountBtn.innerText = currentAmount;
   if (desBtn.classList.contains("off")) desBtn.classList.remove("off");
+  checkInputSelect();
 };
 desBtn.onclick = function () {
   if (currentAmount > 1) {
@@ -54,6 +55,7 @@ desBtn.onclick = function () {
     amountBtn.innerText = currentAmount;
   }
   if (currentAmount == 1) desBtn.classList.add("off");
+  checkInputSelect();
 };
 
 // error if no chooses
